@@ -78,6 +78,33 @@
 </pln:plug>
 <!-- end zhaoxianlin 2013-03-08 STORY #3484 证券停牌提示  增加预警指标-->
   
+  <!--add by songjie 2014.05.10 STORY #15961 需求上海-[交银施罗德]QDIIV4.0[紧急]20140401001 start-->
+  <pln:plug id="CheckCashStockScaleOfNav">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>本币现金占总净值比例</pln:plug-name>
+    <pln:plug-type id="check" name = "业务提醒"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>所有现金库存的本位币合计值除以该日资产净值，当它的百分比小于等于阀值中所设置金额，需要给出提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id="scale">百分比</pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id="scale">%</pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule> </pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time> </pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  <!--add by songjie 2014.05.10 STORY #15961 需求上海-[交银施罗德]QDIIV4.0[紧急]20140401001 end-->
+  
   <!-- add by songjie 2013.40.28 STORY #3895 需求深圳-(南方基金)QDII估值系统V4.0(紧急)20130425001 start -->
   <pln:plug id="checkYesNavScale">  <!-- 单个预警插件定义的节点 -->
     <pln:plug-name>停牌证券当日市值 / 前一估值日的资产净值  >= 0.25%</pln:plug-name>

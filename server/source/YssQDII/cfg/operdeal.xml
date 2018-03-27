@@ -478,6 +478,10 @@
   <bean id="CheckforcedConversion" class="com.yss.main.operdeal.valcheck.CheckforcedConversion" scope="prototype">  </bean>
   <!-- add by liubo 2013.05.22 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 end -->
 
+    <!--add by songjie 2014.05.10 STORY #15961 需求上海-[交银施罗德]QDIIV4.0[紧急]20140401001 start-->
+  <bean id="CheckCashStockScaleOfNav" class="com.yss.main.operdeal.valcheck.CheckCashStockScaleOfNav"
+		scope="prototype"></bean>
+    <!--add by songjie 2014.05.10 STORY #15961 需求上海-[交银施罗德]QDIIV4.0[紧急]20140401001 end-->
   <!-- add by liubo 2013.07.02 STORY #4065 需求北京-需求上海-[开发部]QDIIV4[低]20130609003 start -->
   <bean id="CheckTurnToCirculationInfo" class="com.yss.main.operdeal.valcheck.CheckTurnToCirculationInfo" scope="prototype">  </bean>
   <!-- add by liubo 2013.07.02 STORY #4065 需求北京-需求上海-[开发部]QDIIV4[低]20130609003 end -->
@@ -719,14 +723,6 @@
       <value>a	b	c	d	e</value>
     </property>
   </bean>
-  	<!-- add by hongqingbing 2014-01-07 Story_14490_招商基金_新增基金净值公告报表  -->
-	<bean id="navnotice" class="com.yss.main.operdeal.report.repfix.NavNotice" scope="prototype">
-		<property name="reportFields1">
-		<value>a	b	c	d	e</value>
-		</property>
-	</bean>
-	<!-- end by hongqingbing 2014-01-07 Story_14490_招商基金_新增基金净值公告报表  --> 
-
   <!-- add by songjie 20130425 STORY #3869 需求上海-(国泰基金)QDIIV4.0(紧急)20130418001 start-->
   <bean id="etfnongrtstl" class="com.yss.main.operdeal.report.repfix.ETFNonGrtStl" scope="prototype">
     	<property name="reportFields1">
@@ -787,4 +783,14 @@
   </property>
 </bean>
 <!-- end shashijie 2013-5-18 STORY 3857-->
+	<!-- add by tongjun 20150119 STORY #20609 需求上海-[申银万国证券]QDII资产管理系统[高]20141225001（多基金余额表）-->
+	<bean id="SumMultiAssetBalTab"
+		class="com.yss.main.operdeal.report.repfix.SumMultiAssetBean"
+		scope="prototype">
+		<property name="reportFields1">
+			<value>a	b	c	d	e	f	g	h	i	j	k	l	m	n	o	p	q	r	s	t	u	v	w	x	y	z</value>
+		</property>
+	</bean>
+	<!-- end -->
+	
 </beans>

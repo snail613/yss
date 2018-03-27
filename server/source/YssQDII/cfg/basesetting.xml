@@ -279,13 +279,13 @@
              <value>FIVPayCatCode	FIVPayCatName	FPayTypeValue	FFeeTypeName	FTradeUsageCode	Ffeetype2	FDesc</value><!-- modify huangqirong 2012-04-13 story #2326 -->
           </property>
           <property name="moduleName">
-	          <value>base</value>
+	          <value>set</value>
 	       </property>
 	       <property name="funName">
-	          <value>investpaycat </value>
+	          <value>investpaycat</value>
 	       </property>
           <property name="refName">
-             <value>0000080</value>
+             <value>000123</value>
           </property>
    </bean>
 <!-- end shashijie 2013-01-28 STORY 3513 --> 
@@ -438,13 +438,13 @@
   			<value>FTgR	FHKType	FHKcode	FBwType	FCreator	FCheckUser	FCreateTime	FCheckTime	FDesc</value>
   		</property>
   		<property name="moduleName">
-  			<value>report</value>
+  			<value>set</value>
   		</property>
   		<property name="funName">
     		<value>Eletransfer</value>
     	</property>
     	<property name="refName">
-      		<value>0000114</value>
+      		<value>000011A</value>
     	</property>
 	</bean>
 	<!-- end -->

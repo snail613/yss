@@ -626,7 +626,7 @@
       <value>set</value>
     </property>
     <property name="funName">
-      <value>optioncontract</value>
+      <value>stockoption</value>
     </property>
     <property name="refName">
       <value>000368</value>
@@ -891,7 +891,7 @@
     </property>
 
     <property name="moduleName">
-      <value>set</value>
+      <value>portpara</value>
     </property>
     <property name="funName">
       <value>investpay</value>
@@ -1171,10 +1171,10 @@
       <value>set</value>
     </property>
     <property name="funName">
-      <value>interest</value>
+      <value>InterestTime</value>
     </property>
     <property name="refName">
-      <value>000134</value>
+      <value>003528</value>
     </property>
   </bean>
   

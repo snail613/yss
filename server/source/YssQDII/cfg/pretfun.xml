@@ -150,8 +150,9 @@
 	  <!--start 20130717 added by liubo.Story #4123.需求深圳-(南方基金)QDII估值系统V4.0(高)20130621001.自动生成债券计息期间设置-->
 	  <bean id="ctlinteresttime" class="com.yss.main.operdeal.datainterface.cnstock.CtlInterestTime"  scope="prototype"></bean>
 	  <!--end  20130717 added by liubo.Story #4123.需求深圳-(南方基金)QDII估值系统V4.0(高)20130621001.-->
-	  
-	  
+	  <!--start 20140808 added by songjie STORY #18037 需求上海-[华安]QDIIV4.0[中]20140724001-->
+	  <bean id="etfNonGrtStl" class="com.yss.main.operdeal.datainterface.etf.ExpETFNonGrtStl"  scope="prototype"></bean>
+	  <!--end 20140808 added by songjie STORY #18037 需求上海-[华安]QDIIV4.0[中]20140724001-->
 </beans>
 
 

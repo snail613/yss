@@ -169,6 +169,9 @@
       <property name="listView1ShowCols"><!-- add by zhaoxianlin 20120808 BUG 5242 QDV4赢时胜(测试)2012年08月06日01_B -->
         <value>FMODULERELACODE	FMODULERELANAME	FREPFORMATCODE	FCOMMMONDNAME	FPORTCODE	freceivername	fpayername	fexstatename	fhkcode	FDesc</value>
      </property>
+     <property name="moduleName">
+  			<value>set</value>
+  			</property>
       <property name="funName">
 	     <value>commandmodrela</value>
 	  </property>
@@ -185,6 +188,9 @@
       <property name="listView1ShowCols">
         <value>FCommmondCODE	FCommmondNAME	FDesc</value>
      </property>
+     <property name="moduleName">
+  			<value>set</value>
+  			</property>
       <property name="funName">
 	     <value>commandmodule</value>
 	  </property>

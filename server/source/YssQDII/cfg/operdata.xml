@@ -1237,6 +1237,12 @@
      <property name="listView1ShowCols">
        <value>FTplNum	FTplName	FDesc</value>
      </property>
+      <property name="moduleName">
+      <value>set</value>
+    </property>
+     <property name="funName">
+      <value>MaintenanceTpl</value>
+    </property>
      <!-- add by songjie 2013.05.21 STORY #3821 需求深圳-[大成基金]QDV4.0[紧急]20130407001 start -->
      <property name="refName">
        <value>00000075</value>

@@ -7,5 +7,5 @@
     <updateXml>true</updateXml>
     <warLocation>C:\Users\YssGreg\Desktop\YssQDII.war</warLocation>
     <extraInfo></extraInfo>
-    <webPath>/YssQDII</webPath>
+    <webPath>/YssQDII_60</webPath>
 </tomcatProjectProperties>

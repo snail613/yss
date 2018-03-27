@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+	<bean id="repformat" class="com.yss.main.cusreport.RepFormatBean" scope="prototype">
+	  <property name="listView1Headers">
+		<value>报表编号	报表名称	描述</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FRepFormatCode	FRepFormatName	FDesc</value>
+     </property>
+	</bean>
+
+      <!--add by libo-->
+     <bean id="summaryadjust" class="com.yss.main.cusreport.SummaryAdjustSet" scope="prototype">
+	  <property name="listView1Headers">
+	<value>组合代码	日期	金额	基础金额</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FPortCode	FDate	FBal	FBaseCuryBal</value>
+     </property>
+	  <property name="funName">
+	     <value>summaryadjust</value>
+	  </property>
+          <property name="refName">
+             <value >000117</value>
+          </property>
+   </bean>
+	
+     <!--add by libo-->
+
+	<bean id="repparamctlgrp" class="com.yss.main.cusreport.RepParamCtlGrpBean" scope="prototype">
+	  <property name="listView1Headers">
+		<value>控件组代码	控件组名称</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FCtlGrpCode	FCtlGrpName</value>
+     </property>
+	</bean>
+	<bean id="repparamctl" class="com.yss.main.cusreport.RepParamCtlBean" scope="prototype">
+	  <property name="listView1Headers">
+		<value>控件代码</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FText</value>
+     </property>
+	</bean>
+	<bean id="repcustom" class="com.yss.main.cusreport.RepCustomBean" scope="prototype">
+	  <property name="listView1Headers">
+		<value>报表代码	报表名称	报表类型	报表格式代码	报表格式名称	参数控件组代码	参数控件组名称	描述	导出路径	模板路径</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FCusRepCode	FCusRepName	FRepTypeValue	FRepFormatCode	FRepFormatName	FCtlGrpCode	FCtlGrpName	FDesc	FEXPORTPATH	FTEMPLATEPATH</value>
+     </property>
+	<property name="funName">
+	     <value>cusreport</value>
+	  </property>
+          <property name="refName">
+             <value >000107</value>
+          </property>
+	</bean>
+	<bean id="repdatasource" class="com.yss.main.cusreport.RepDataSourceBean" scope="prototype">
+	  <property name="listView1Headers">
+		<value>数据源代码	数据源名称	数据源类型	预处理代码组	亮色筛选	临时表	上行色	下行色	描述	存储表</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FRepDsCode	FRepDsName	FDsTypeValue	FDPCodes	FCOLORFILTERID	FTempTabValue	FTRowColor	FBRowColor	FDesc	FStorageTabValue</value>
+     </property>
+	</bean>
+	<!-- ============================================= add by jiangshichao 2010.06.22     报表预处理 ============================= -->
+   <bean id="reppretreat" class="com.yss.main.cusreport.RepPretreatBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>数据源代码	数据源名称	 数据源类型	目标表名称	配置的BeanID	描述</value>
+	</property>
+	<property name="listView1ShowCols">
+		<value>FDPDsCode	FDPDsName	FDsTypeCode	FTargetTab	FBeanId	FDesc</value>
+	</property>
+   </bean>
+      <bean id="tgttabcond" class="com.yss.main.cusreport.RepTgtTabCond" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>数据源代码	数据源名称	描述</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FDPDsCode	FDPDsName	FDesc</value>
+	 </property>
+   </bean>
+   <bean id="repprefield" class="com.yss.main.cusreport.RepPretreatFieldBean" scope="prototype">
+   <property name="listView1Headers">
+     <value>数据源字段	目标表字段	Spring调用</value>
+   </property>
+   <property name="listView1ShowCols">
+     <value>FDsField	FTargetField	FSICode</value>
+   </property>
+   </bean>
+   <!-- ===========================================  报表预处理   end ========================================================== -->
+   <bean id="repdsfield" class="com.yss.main.cusreport.RepDsFieldBean" scope="prototype">
+	  <property name="listView1Headers">
+		<value>字段名称	合计	合计标识</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FDsField	FIsTotal	FIsTotalInd</value>
+     </property>
+	</bean>
+	   <bean id="groupset" class="com.yss.main.cusreport.RepGroupSetBean" scope="prototype">
+	</bean>
+	<bean id="repinterface" class="com.yss.main.cusreport.RepInterface" scope="prototype">
+	</bean>
+   <bean id="dstemplate" class="com.yss.main.cusreport.RepDsTemplate" scope="prototype">
+      <property name="listView1Headers">
+		<value>报表模板代码	报表模板名称	描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FRepDsTplCode	FRepDsTplName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+   </bean>
+   <!--Add by xuxuming,20090904 QDV4中保2009年09月02日04_B-->
+   <bean id="unrealisedfxadjust" class="com.yss.main.cusreport.UnrealisedFxAdjustSet" scope="prototype">
+      </bean>
+   <!-- end==========-->
+   <!--  by jiangshichao 20100711 MS01184 QDV4赢时胜_报表管理2010年5月13日02_A 报表浏览需根据指定条件显示不同颜色 -->
+   <bean id="colorfilter" class="com.yss.main.cusreport.RepColorFilter" scope="prototype">
+     <property name="listView1Headers">
+	  <value>数据源代码	报表字段	字段类型	误差值	数据颜色	亮色格式	亮色显示	筛选内容	关系	描述</value>
+	 </property>
+     <property name="listView1ShowCols">
+	  <value>frepdscode	FFIELNAME	FFIELDTYPE	FDISCREPANCY	FCOLOR	FCOLORSTYLE	FSHOWSTYLE	FCONTENT	FRELATION	FDESC</value>
+	 </property>
+   </bean>
+   <!--  by jiangshichao 20100711 MS01184 QDV4赢时胜_报表管理2010年5月13日02_A 报表浏览需根据指定条件显示不同颜色-->
+   <!-- ============= add by jiangshichao 20110521 #352 希望实施人员能够自行添加所需函数，并在数据源中进行调用 =========================  -->
+   <bean id="repfunction" class="com.yss.main.cusreport.RepFunction" scope="prototype">
+     <property name="listView1Headers">
+	  <value>报表函数代码	报表函数名称	函数类型	描述</value>
+	 </property>
+     <property name="listView1ShowCols">
+	  <value>FREPFUNCTIONCODE	FREPFUNCTIONNAME	FFUNCTIONName	FDESC</value>
+	 </property>
+   </bean>
+   <!-- ============= add by jiangshichao 20110521 #352 希望实施人员能够自行添加所需函数，并在数据源中进行调用 end =====================  -->
+   
+    <!--  ================add by guolongchao 201120110 STORY 1284=====================================  -->
+    <bean id="repfilename" class="com.yss.main.cusreport.RepFileNameBean" scope="prototype">
+      <property name="listView1Headers">
+	        <value>文件名内容	文件名类型名称	延迟天数	节假日代码	节假日名称	描述	格式</value>
+	  </property>
+      <property name="listView1ShowCols">
+	        <value>FFileNameContent	FFileNameTypeValue	delaydays;#,##0.####	holidaycode	holidayname	FDesc	FFormat</value>
+	  </property>
+   </bean>   
+   <!--  ================add by guolongchao 201120110 STORY 1284=====================================  -->
+   <!-- start add by huangqirong 2013-02-17 story # 3489 -->
+   <bean id="reppayfee" class="com.yss.main.cusreport.RepPayFeeSet" scope="prototype">
+   		<property name="listView1Headers">
+   			<value>组合代码	组合名称	费用类型	支付方式	风险金比例;R</value>
+   		</property>
+   		<property name="listView1ShowCols">
+   			<value>FPortCode	FPortName	FFeeName	FPayName	FRiskGoldScale;#,##0.####</value>
+   		</property>
+   </bean>
+   <!-- end add by huangqirong 2013-02-17 story # 3489 -->
+</beans>

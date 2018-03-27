@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ysstech.com/warn-plugin" xmlns:pln="http://www.ysstech.com/warn-plugin" elementFormDefault="qualified">
+	  <element name = "plug-name" type = "string"></element>
+	  
+	  <element name = "plug-type">
+	 		<complexType>
+        		<attribute name ="id"  type ="string"/>
+        		<attribute name ="name"  type ="string"/>
+        	</complexType>
+	  </element>
+	  
+	  <element name = "plug-range" >
+	  		<complexType>
+        		<attribute name ="id"  type ="string"/>
+        		<attribute name ="name"  type ="string"/>
+        	</complexType>
+	  </element>
+	  
+	  <element name = "plug-desc" type = "string"></element>
+	  
+	  <element name="item">
+        	<complexType>
+        		<simpleContent>
+        			<extension base="string">
+        				<attribute name = "id" type = "string"/>
+        			</extension>
+        		</simpleContent>
+        			
+        	</complexType>
+        </element>
+	  
+	  <element name = "plug-threshold-items">
+	 		<complexType>
+        		<sequence>
+        			<element  ref ="pln:item" maxOccurs = "unbounded" />
+        		</sequence>
+        	</complexType>
+	  </element>
+	  
+	  <element name="condition">
+        	<complexType>
+        		<simpleContent>
+        			<extension base="string">
+        				<attribute name = "id" type = "string"/>
+        			</extension>
+        		</simpleContent>	
+        	</complexType>
+      </element>
+      
+      <element name = "plug-conditions">
+	 		<complexType>
+        		<sequence>
+        			<element  ref ="pln:condition" maxOccurs = "unbounded" />
+        		</sequence>
+        	</complexType>
+	  </element>
+	  
+	  <element name = "plug-threshold-rule" type = "string"></element>
+	  
+	  <element name = "plug-warning-type" type = "string"></element>
+	  
+	  <element name = "plug-warning-time" type = "string"></element>
+	  
+	  <element name = "plug-logic" type = "string"></element>
+	  
+	  <element name="type">
+        	<complexType>
+        		<simpleContent>
+        			<extension base="string">
+        				<attribute name = "id" type = "string"/>
+        			</extension>
+        		</simpleContent>	
+        	</complexType>
+      </element>
+      
+      <element name = "plug-result-types" > 
+	 		<complexType>
+        		<sequence>
+        			<element  ref ="pln:type" maxOccurs = "unbounded" />
+        		</sequence>
+        	</complexType>
+	  </element>
+	  
+	  <element name = "plug-result-show" type = "string"></element>
+	  
+	  <element name = "plug-url-mapping" type = "string"></element>
+	  
+	  <element name = "plug-property" type = "string"></element>
+	  
+	  <element name = "plug-include-product" type = "string"></element>
+	  
+	  <element name="plug">
+        	<complexType>
+        		<sequence>
+        			<element ref ="pln:plug-name"/>
+        			<element ref ="pln:plug-type"/>
+        			<element ref ="pln:plug-range"/>
+        			<element ref ="pln:plug-desc"/>
+        			<element ref ="pln:plug-threshold-items"/>
+        			<element ref ="pln:plug-conditions"/>
+        			<element ref ="pln:plug-threshold-rule"/>
+        			<element ref ="pln:plug-warning-type"/>
+        			<element ref ="pln:plug-warning-time"/>
+        			<element ref ="pln:plug-logic"/>
+        			<element ref ="pln:plug-result-types"/>
+        			<element ref ="pln:plug-result-show"/>
+        			<element ref ="pln:plug-url-mapping"/>
+        			<element ref ="pln:plug-property"/>
+        			<element ref ="pln:plug-include-product"/>
+        		</sequence>
+        		<attribute name ="id" type ="string"/>
+        	</complexType>
+        </element>
+        
+        <element name="plugs-app">
+        	<complexType>
+        		<sequence>
+        			<element ref ="pln:plug" maxOccurs = "unbounded"/>
+        		</sequence>
+        	</complexType>
+        </element>
+</schema>

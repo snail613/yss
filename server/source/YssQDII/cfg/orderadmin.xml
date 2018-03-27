@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+	<bean id="maintenance" class="com.yss.main.orderadmin.MaintenanceBean" scope="prototype">
+      <property name="listView1Headers">
+          <value>投资经理代码	投资经理名称	订单代码	订单日期	订单时间	成交编号	组合代码	组合名称	证券代码	证券名称	交易方式代码	交易方式名称	券商代码	券商名称	交易数量;R	交易价格;R	虚拟价格;R	交易总额;R	应收利息	报价方式	订单描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FInvMgrCode	FInvMgrName	FOrderNum	FOrderDate	FOrderTime	FTradeNum	FPortCode	FPortName	FSecurityCode	FSecurityName	FTradeTypeCode	FTradeTypeName	FBrokerCode	FBrokerName	FTradeAmount;#,##0.##	FTradePrice;#,##0.####	FVirtualPrice;#,##0.####	FTradeTotal;#,##0.##	FInterest;#,##0.##	FQuoteModeValue	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+
+	    <property name="moduleName">
+	     <value>orderadmin</value>
+	  </property>
+	  <property name="funName">
+	     <value>ordermaintenance</value>
+	  </property>
+          <property name="refName">
+             <value>000068</value>
+          </property>
+	</bean>
+   <bean id="confirm" class="com.yss.main.orderadmin.ConfirmBean" scope="prototype">
+      <property name="listView1Headers">
+        <value>成交编号	成交日期	成交时间	投资经理代码	投资经理名称	下单代码	下单日期	下单时间	组合代码	组合名称	证券代码	证券名称	交易方式代码	交易方式名称	交易市场	券商代码	券商名称	下单数量;R	下单价格;R	下单总额;R	成交数量;R	成交价格;R	成交总额;R	应收利息	报价方式	拆分状态	订单描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FTradeNum	FTransDate	FTransTime	FInvMgrCode	FInvMgrName	FOrderNum	FOrderDate	FOrderTime	FPortCode	FPortName	FSecurityCode	FSecurityName	FTradeTypeCode	FTradeTypeName	FExchangeCode	FBrokerCode	FBrokerName	FTradeAmount;#,##0.##	FTradePrice;#,##0.####	FTradeTotal;#,##0.##	FAmount;#,##0.##	FPrice;#,##0.####	FBargainTotal;#,##0.##	FInterest;#,##0.##	FQuoteModeValue	FTradeState	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	  <property name="listView3Headers">
+        <value>订单代码	下单日期	下单时间	组合代码	组合名称	交易数量	交易价格	交易总额	应收利息	报价方式	订单描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView3ShowCols">
+        <value>FOrderNum	FOrderDate	FOrderTime	FPortCode	FPortName	FTradeAmount;#,##0.##	FTradePrice;#,##0.####	FTradeTotal;#,##0.##	FInterest;#,##0.##	FQuoteModeValue	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+
+
+	      <property name="moduleName">
+	     <value>orderadmin</value>
+	  </property>
+	  <property name="funName">
+	     <value>confirm</value>
+	  </property>
+          <property name="refName">
+             <value>000071</value>
+          </property>
+	</bean>
+</beans>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<endpoints version="2.0"
+	xmlns="http://java.sun.com/xml/ns/jax-ws/ri/runtime">
+	<endpoint name="SwiftMessageService"
+		implementation="com.yss.webServices.service.serviceImp.SwiftMsgServiceImp"
+		url-pattern="/swiftWS">
+	</endpoint>
+
+	<!-- 20120418 added by liubo.Story #2439 End -->
+	<endpoint name="WSforYssCISS"
+		implementation="com.yss.ciss.ws.service.serviceImp.WSforYssCISS"
+		url-pattern="/cissWS">
+	</endpoint>
+	<!-- Story #2439 End -->
+	
+	<!-- 2012-10-24 add by huangqirong Story #3227-->
+	<endpoint name="TestToolService"
+		implementation="com.yss.webServices.service.serviceImp.TestToolServiceImp"
+		url-pattern="/ServiceTestTool">		 
+	</endpoint>
+	<!-- End -->
+	
+	<!-- start add by huangqirong 2013-05-09 Story #3871 QDII清核联动 需求的Webservice -->
+	<endpoint name="AccountClinkageService"
+		implementation="com.yss.webServices.AccountClinkage.services.DealOper"
+		url-pattern="/ServiceAccountClinkage">
+	</endpoint>
+	
+	 <!--  add dongqingsong  2013-06-17 story #3753  [webservice中行托管系统和QDII数据交换] -->
+	<endpoint name="BCData"
+		implementation="com.yss.webServices.service.BCDataDeal.BCDataDeal"
+		url-pattern="/BCDataService">
+	</endpoint>
+  <!--  add dongqingsong 2013-06-17 story #3753  [webservice中行托管系统和QDII数据交换] -->
+
+	
+	
+</endpoints>

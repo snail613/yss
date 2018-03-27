@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+  <description>Spring Quick Start</description>
+  <bean id="shareconvert" class="com.yss.main.etfoperation.ShareConvertInfoSetAdmin" scope="prototype">
+    <property name="listView1Headers">
+      <value>投资组合代码	投资组合名称	份额折算日	份额折算比例;R	份额折算信息描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FPortCode	FPortName	FConvertDate	FConvertScale;#,##0.###############	FDESC	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>etfoperation</value>
+    </property>
+    <property name="funName">
+      <value>shareconvert</value>
+    </property>
+    <property name="refName">
+      <value>000ETFS</value>
+    </property>
+  </bean>
+  
+  <bean id="etfparamset" class="com.yss.main.etfoperation.ETFParamSetAdmin" scope="prototype">
+    <property name="listView1Headers">
+    <!-- edit by songjie 2013.05.07 STORY 3869 需求上海-(国泰基金)QDIIV4.0(紧急)20130418001 添加清算编号 -->
+      <value>投资组合代码	投资组合名称	一级市场代码	二级市场代码	基准比例	ETF席位	补票方式	资金代码	现金差额结转	现金替代款结转	应付替代款结转	应付替代款结转账户代码	应付替代款结转账户名称	几日开始补票	几个交易日内补票完成	最长几个交易日内补票完成	清算编号	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+    <!-- edit by songjie 2013.05.07 STORY 3869 需求上海-(国泰基金)QDIIV4.0(紧急)20130418001 添加FClearNum -->
+      <value>FPortCode	FPortName	FOneGradeMktCode	FTwoGradeMktCode	FNormScale;###	FETFSeat	FSupplyModeName	FCapitalCode	FCashBalance	FCashReplace	FDealReplace	FCashAccCode	FCashAccName	FBeginSupply	FDealDayNum	FLastestDealDayNum	FClearNum	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>etfoperation</value>
+    </property>
+    <property name="funName">
+      <value>etfparamset</value>
+    </property>
+    <property name="refName">
+      <value>000ETFP</value>
+    </property>
+  </bean> 
+  <bean id="etfaccbook" class="com.yss.main.etfoperation.etfaccbook.CtlETFAccBook" scope="prototype"></bean>
+
+<!-- add...shashijie 2013-5-14 STORY 3713 需求北京-(博时基金)QDIIV4.0(高)20130307001 -->
+<bean id="etferportbook" class="com.yss.main.etfoperation.etfaccbook.ETFReport.ETFReportBook" scope="prototype"></bean>
+<bean id="etferportbookinvestor" class="com.yss.main.etfoperation.etfaccbook.ETFReport.ETFReportBookInvestor" scope="prototype"></bean>
+<!-- end...shashijie 2013-5-14 STORY 3713 需求北京-(博时基金)QDIIV4.0(高)20130307001-->
+
+  <bean id="etfratebatchcreate" class="com.yss.main.etfoperation.ETFRateBatch" scope="prototype">
+    <property name="listView1Headers">
+      <value>组合代码	组合名称	台账类型	申赎日期	汇率确认日	换汇汇率	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FPortCode	FPortName	FBookTypeName	FBuyDate	FExRateDate	FExRateValue;#,##0.###############	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>etfoperation</value>
+    </property>
+    <property name="funName">
+      <value>etfratebatchcreate</value>
+    </property>
+    <property name="refName">
+      <value>000ETFR</value>
+    </property>
+  </bean>
+  <!-- add by zhangjun 2011-11-26 STORY 1434 ETF券商信息设置 -->
+  <bean id="etfbroker" class="com.yss.main.etfoperation.ETFBrokerBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>席位会员	券商名称	机构代码	开户行名称	账户名称	银行账户	资金代码</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FSeatCode	FBROKERNAME	FAGENCYCODE	FBANKACCNAME	FACCOUNTNAME	FBANKACCOUNTNO	FACCOUNTNO</value>
+    </property>
+    <property name="moduleName">
+      <value>etfoperation</value>
+    </property>
+    <property name="funName">
+      <value>ETFBrokerInfo</value>
+    </property>
+    <property name="refName">
+      <value>000ETFBroker</value>
+    </property>    
+  </bean>
+  <!-- end -->
+  <bean id="etfdeliverydate" class="com.yss.main.etfoperation.ETFUnDeliveryDate" scope="prototype">
+  	<property name="listView1Headers">
+  		<value>组合代码	组合名称	节假日群代码	节假日群名称	非交收日	描述	制作人	制作时间	审核人	审核时间</value>
+  	</property>
+  	<property name="listView1ShowCols">
+  		<value>FPortCode	FPortName	FHolidayCode	FHolidayName	FUnSettleDate	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+  	</property>
+  	<property name="moduleName">
+      <value>etfoperation</value>
+    </property>
+    <property name="funName">
+      <value>etfdeliverydate</value>
+    </property>
+    <property name="refName">
+      <value>000ETFU</value>
+    </property>
+  </bean>
+</beans>
+

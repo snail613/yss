@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+	<bean id="region" class="com.yss.main.basesetting.RegionBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>地域代码	地域名称	地域描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FRegionCode	FRegionName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	  <property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>region</value>
+	  </property>
+          <property name="refName">
+             <value >00000A</value>
+          </property>
+	</bean>
+	<bean id="country" class="com.yss.main.basesetting.CountryBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>国家代码	国家名称	国家中文名称	国家简称	国家域名缩写	电话代码	时差	地域代码	地域名称	国家描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FCountryCode	FCountryName	FCOUNTRYCHINESENAME	FCountryShortName	FInterDomain	FPhoneCode	FDiffTime	FRegionCode	FRegionName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	  <property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>country</value>
+	  </property>
+          <property name="refName">
+             <value >000009</value>
+          </property>
+	</bean>
+	<bean id="area" class="com.yss.main.basesetting.AreaBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>地区代码	地区名称	地域代码	地域名称	国家代码	国家名称	地区描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FAreaCode	FAreaName	FRegionCode	FRegionName	FCountryCode	FCountryName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+
+	  <property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>area</value>
+	  </property>
+          <property name="refName">
+             <value >00000B</value>
+          </property>
+	</bean>
+ 	<bean id="exchange" class="com.yss.main.basesetting.ExchangeBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>交易所代码	交易所名称	地域代码	地域名称	国家代码	国家名称	地区代码	地区名称	节假日代码	节假日名称	结算模式	结转天数	结转天数类型	交易所描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FExchangeCode	FExchangeName	FRegionCode	FRegionName	FCountryCode	FCountryName	FAreaCode	FAreaName	FHolidaysCode	FHolidaysName	FDVPIndValue	FSettleDays	FSettleDayTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>exchange</value>
+	  </property>
+          <property name="refName">
+             <value>00000D</value>
+          </property>
+	</bean>
+ 	<bean id="language" class="com.yss.main.basesetting.LanguageBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>语言代码	语言名称	语言符号	语言描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FLangCode	FLangName	FLangSymbol	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>language</value>
+	  </property>
+          <property name="refName">
+             <value >00000C</value>
+          </property>
+	</bean>
+	<bean id="holidays" class="com.yss.main.basesetting.HolidaysBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>节假日群代码	节假日群名称	节假日群描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FHolidaysCode	FHolidaysName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>holidays</value>
+	  </property>
+          <property name="refName">
+             <value >00000U</value>
+          </property>
+	</bean>
+	<bean id="holidayschild" class="com.yss.main.basesetting.HolidaysChildBean" scope="prototype">
+	</bean>
+	<bean id="analysis" class="com.yss.main.basesetting.AnalysisBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>分析代码	分析名称	参数	分析描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FAnalysisCode	FAnalysisName	FParams	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+		<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>analysis</value>
+	  </property>
+          <property name="refName">
+             <value >00000K</value>
+          </property>
+	</bean>
+	<bean id="category" class="com.yss.main.basesetting.CategoryBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>品种类型代码	品种类型名称	品种类型描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FCatCode	FCatName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+		<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>category</value>
+	  </property>
+          <property name="refName">
+             <value>00000Y</value>
+          </property>
+	</bean>
+	<bean id="subcategory" class="com.yss.main.basesetting.SubCategoryBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>品种子类型代码	品种子类型名称	品种父类型代码	品种父类型名称	品种子类型描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FSubCatCode	FSubCatName	FCatCode	FCatName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+		<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>subcategory</value>
+	  </property>
+          <property name="refName">
+             <value >00000Z</value>
+          </property>
+	</bean>
+   <bean id="accounttype" class="com.yss.main.basesetting.AccountTypeBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>账户类型代码	账户类型名称	账户类型描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FAccTypeCode	FAccTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>accounttype</value>
+	  </property>
+          <property name="refName">
+             <value >000010</value>
+          </property>
+	</bean>
+	<bean id="subaccounttype" class="com.yss.main.basesetting.SubAccountTypeBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>账户子类型代码	账户子类型名称	账户父类型代码	账户父类型名称	账户子类型描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FSubAccTypeCode	FSubAccTypeName	FAccTypeCode	FAccTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+		<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>subaccounttype</value>
+	  </property>
+          <property name="refName">
+             <value>000012</value>
+          </property>
+	</bean>
+	<bean id="tradetype" class="com.yss.main.basesetting.TradeTypeBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>交易代码	交易名称	业务类型	资金方向	数量方向	交易描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FTradeTypeCode	FTradeTypeName	Fservicetype	FCashIndValue	FAmountIndValue	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>tradetype</value>
+	  </property>
+          <property name="refName">
+             <value>00000O</value>
+          </property>
+	</bean>
+
+
+    <bean id="transfertype" class="com.yss.main.basesetting.TransferTypeBean" scope="prototype">
+        <property name="listView1Headers">
+             <value>调拨类型代码	调拨类型名称	描述	制作人	制作时间	审核人	审核时间</value>
+        </property>
+         <property name="listView1ShowCols">
+             <value>FTsfTypeCode	FTsfTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+        </property>
+	<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>transfertype</value>
+	  </property>
+          <property name="refName">
+             <value >000089</value>
+          </property>
+   </bean>
+    <bean id="subtransfer" class="com.yss.main.basesetting.SubTransferTypeBean" scope="prototype">
+         <property name="listView1Headers">
+              <value>调拨子类型代码	调拨子类型名称	调拨类型代码	调拨类型名称	描述	制作人	制作时间	审核人	审核时间</value>
+
+         </property>
+         <property name="listView1ShowCols">
+              <value>FSubTsfTypeCode	FSubTsfTypeName	FTsfTypeCode	FTsfTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+         </property>
+		<property name="moduleName">
+	     <value>base</value>
+	  </property>
+	  <property name="funName">
+	     <value>subtransfer </value>
+	  </property>
+          <property name="refName">
+             <value>0000085</value>
+          </property>
+   </bean>
+   <!-- ADD BY yeshenghong 20120227-->
+  	<bean id="actstfrela" class="com.yss.main.basesetting.AccountTransferRelationBean" scope="prototype">
+  		<property name="listView1Headers">
+            <value>编号	核算类型	核算子类型	必输项	调拨子类型	科目类型	数据类型</value>
+        </property>
+          <property name="listView1ShowCols">
+             <value>FRelaNum	FAccountingType	FAccountSubType	FReqItem	FSubTsfTypeName	FSubjectTypeName	FDataStyleName</value>
+          </property>
+          <property name="moduleName">
+	          <value>base</value>
+	       </property>
+	       <property name="funName">
+	          <value>actstfrela </value>
+	       </property>
+          <property name="refName">
+             <value>000888</value>
+          </property>
+  	</bean>
+  	<!-- end --> 
+
+<!-- shashijie 2013-01-28 STORY 3513 运营费用增加费用品种类型 -->
+   <bean id="investpaycat" class="com.yss.main.basesetting.InvestPayCatBean" scope="prototype">
+   	   <property name="listView1Headers">
+            <value>运营收支品种代码	运营收支品种名称	资产类型	运营品种类型	对应GCS交易用途	费用品种类型	描述</value><!-- modify huangqirong 2012-04-13 story #2326 -->
+        </property>
+          <property name="listView1ShowCols">
+             <value>FIVPayCatCode	FIVPayCatName	FPayTypeValue	FFeeTypeName	FTradeUsageCode	Ffeetype2	FDesc</value><!-- modify huangqirong 2012-04-13 story #2326 -->
+          </property>
+          <property name="moduleName">
+	          <value>base</value>
+	       </property>
+	       <property name="funName">
+	          <value>investpaycat </value>
+	       </property>
+          <property name="refName">
+             <value>0000080</value>
+          </property>
+   </bean>
+<!-- end shashijie 2013-01-28 STORY 3513 --> 
+   
+   <bean id="calcinsmetic" class="com.yss.main.basesetting.CalcInsMeticBean" scope="prototype">
+     <property name="listView1Headers">
+       <value>利息算法代码	利息算法名称	利息算法类型	公式	计息算法	描述	制作人	制作时间	审核人	审核时间</value>
+     </property>
+     <property name="listView1ShowCols">
+       <value>FCIMCode	FCIMName	FCIMTypeValue	FFormula	FSPICode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+     <property name="moduleName">
+       <value>base</value>
+     </property>
+     <property name="funName">
+       <value>calcinsmetic</value>
+     </property>
+     <property name="refName">
+       <value>00000E</value>
+     </property>
+   </bean>
+   <!--MS00337    监控中也添加那个区分出流通受限证券及维护该证券锁定日期的功能 xuqiji 2009 04 03-->
+   <bean id="limitedsecurity" class="com.yss.main.basesetting.LimitedSecurityBean" scope="prototype">
+     <property name="listView1Headers">
+       <value>证券代码	证券名称	证券品种	证券品种名称	品种子类型	品种子类型名称	自定义品种	自定义品种名称	锁定期起始日	锁定期截止日	描述	制作人	制作时间	审核人	审核时间</value>
+     </property>
+     <property name="listView1ShowCols">
+       <value>FSecurityCode	FSecurityName	FCatCode	FCatName	FSubCatCode	FSubCatName	FCusCatCode	FCusCatName	FLockStartDate	FLockEndDate	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+     <property name="moduleName">
+       <value>base</value>
+     </property>
+     <property name="funName">
+       <value>limitedsecurity</value>
+     </property>
+     <property name="refName">
+       <value>005001</value>
+     </property>
+   </bean>
+   <!--MS00337    监控中也添加那个区分出流通受限证券及维护该证券锁定日期的功能 xuqiji 2009 04 03-->
+   <bean id="businessset" class="com.yss.main.basesetting.BusinessSetBean" scope="prototype">
+    <property name="moduleName">
+       <value>base</value>
+     </property>
+     <property name="funName">
+       <value>businessset</value>
+     </property>
+     <property name="refName">
+       <value>000326</value>
+     </property>
+   </bean>
+
+   <bean id="transfertypeset" class="com.yss.main.basesetting.TransferTypeSetBean" scope="prototype">
+   <property name="moduleName">
+       <value>base</value>
+     </property>
+     <property name="funName">
+       <value>businessset</value>
+     </property>
+     <property name="refName">
+       <value>000326</value>
+     </property>
+   </bean>
+   
+   <!--begin add by wangzuochun 2010.04.14 MS01081    系统增加通过通用导入导出来导词汇、菜单条、功能调用、权限等功能  -->
+   
+   <bean id="menubar" class="com.yss.main.funsetting.MenubarBean" scope="prototype">
+   <property name="listView1Headers">
+       <value>菜单条代码	菜单条名称	菜单条组代码	调用代码	权限类型	操作类型	菜单条描述</value>
+     </property>
+     <property name="listView1ShowCols">
+       <value>FBarCode	FBarName	FBarGroupCode	FRefInvokeCode	FRightType	FOperTypeCode	FDesc</value>
+     </property>
+          <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>menubarSet</value>
+	  </property>
+          <property name="refName">
+             <value>menubar</value>
+          </property>
+   </bean>
+   
+   <bean id="voctype" class="com.yss.main.funsetting.VocabularyTypeBean" scope="prototype">
+      <property name="listView1ShowCols">
+                  <value>FVocTypeCode	FVocTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+      <property name="listView1Headers">
+          <value>词汇类型代码	词汇类型名称	描述	制作人	制作时间	审核人	审核时间</value>
+     </property>
+	  <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>vocabularyType</value>
+	  </property>
+          <property name="refName">
+             <value>voctype</value>
+          </property>
+   </bean>
+   <bean id="refinvoke" class="com.yss.main.funsetting.RefInvokeBean" scope="prototype">
+	  <property name="listView1ShowCols">
+	     <value>FRefInvokeCode	FRefInvokeName	FDllName	FClassName	FMethodName	FParams	FDesc</value>
+	  </property>
+	  <property name="listView1Headers">
+	     <value>窗体调用代码	窗体调用名称	调用Dll名称	调用类名	调用的方法名	参数	描 述</value>
+	  </property>
+       <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>refInvoke</value>
+	  </property>
+          <property name="refName">
+             <value>refinvoke</value>
+          </property>
+	 </bean>
+	 <bean id="menu" class="com.yss.main.funsetting.MenuBean" scope="prototype">
+     <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>menuSet</value>
+	  </property>
+          <property name="refName">
+             <value>menu</value>
+          </property>
+   </bean>
+   
+   <bean id="righttype" class="com.yss.main.syssetting.RightTypeBean" scope="prototype">
+      <property name="refName">
+             <value>righttype</value>
+      </property>
+   </bean>
+   
+   <bean id="operation" class="com.yss.main.syssetting.OperationTypeBean" scope="prototype">
+      <property name="refName">
+             <value>operation</value>
+      </property>
+   </bean>
+  <!--end add by wangzuochun 2010.04.14 MS01081    系统增加通过通用导入导出来导词汇、菜单条、功能调用、权限等功能  -->
+	
+	<!--add by qiuxufeng 20100917 -->
+	<bean id="eletransfer" class="com.yss.main.syssetting.EleTransferBean" scope="prototype">
+		<property name="listView1Headers">
+			<value>托管行简称	划款类型	划款代码	报文类型	制作人	审核人	制作时间	审核时间	描述</value>
+		</property>
+		<property name="listView1ShowCols">
+  			<value>FTgR	FHKType	FHKcode	FBwType	FCreator	FCheckUser	FCreateTime	FCheckTime	FDesc</value>
+  		</property>
+  		<property name="moduleName">
+  			<value>report</value>
+  		</property>
+  		<property name="funName">
+    		<value>Eletransfer</value>
+    	</property>
+    	<property name="refName">
+      		<value>0000114</value>
+    	</property>
+	</bean>
+	<!-- end -->
+	<!-- ADD BY qiuxufeng 20100928-->
+  	<bean id="reconciliation" class="com.yss.main.basesetting.ReconciliationSetBean" scope="prototype">
+  	</bean>
+  	<!-- end --> 
+</beans>

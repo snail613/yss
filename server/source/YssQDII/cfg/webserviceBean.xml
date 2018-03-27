@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd">
+  <description>Spring Quick Start</description>
+  <!-- add by huangqirong 2013-05-09 Story #3871 这里的Bean作为WebService单独一个文件存放 
+  		需求北京-[建设银行]QDII系统[高]20130419001 -->
+  		
+  		
+  <!-- 查询债券应收利息（联动）  1 -->
+  <bean id="AL044IT00" class="com.yss.webServices.AccountClinkage.services.BondLD" scope="prototype"/>   
+  <!-- 获取现金差额和现金替代款（批量）5  -->
+  <bean id="AL044IT04" class="com.yss.webServices.AccountClinkage.services.CashReplaceDiffPL" scope="prototype"/>
+  <!-- 获取现金差额和现金替代款（联机)  -->
+  <bean id="AL044IT05" class="com.yss.webServices.AccountClinkage.services.CashReplaceDiffLJ" scope="prototype"/>
+  
+  <!--  划款类型查询  联动   7 -->
+  <bean id="AL044IT10" class="com.yss.webServices.AccountClinkage.services.CommandLD" scope="prototype"/>
+  <!-- 资金流水查询  联动  9-->
+  <bean id="AL044IT12" class="com.yss.webServices.AccountClinkage.services.FundLD" scope="prototype"/>
+  <!-- 资金账户余额查询   联动  10-->
+  <bean id="AL044IT13" class="com.yss.webServices.AccountClinkage.services.CashAcountBalaceLD" scope="prototype"/>  
+  
+  <!-- 科目性质发生额数据接口   (批量) (2) -->
+  <bean id="AL044IT01" class="com.yss.webServices.AccountClinkage.services.SubjectPL" scope="prototype"/>
+  
+  <!--Ta交易数据接口     批量(3)- add dongqingsong  story 3871 -->
+  <bean id="AL044IT02" class="com.yss.webServices.AccountClinkage.services.TaDataInterfaceBatch" scope="prototype"/> 
+  
+  <!--Ta交易数据接口     联机(4)- add dongqingsong  story 3871 -->
+  <bean id="AL044IT03" class="com.yss.webServices.AccountClinkage.services.TaDataInterfaceLink" scope="prototype"/> 
+  
+  <!--科目性质发生额数据接口     联机(6)- add dongqingsong  story 3871 -->
+  <bean id="AL044IT07" class="com.yss.webServices.AccountClinkage.services.SubjectLJ" scope="prototype"/> 
+  
+  <!--资金账户信息查询  联动(8)- add dongqingsong  story 3871 -->
+  <bean id="AL044IT11" class="com.yss.webServices.AccountClinkage.services.CashAccountInfo" scope="prototype"/> 
+  
+  <!--场内交易数据接口 联动(11)- add dongqingsong  story 3871 -->
+  <bean id="AL044IT14" class="com.yss.webServices.AccountClinkage.services.ExchangeDate" scope="prototype"/> 
+  
+   <!--文件批处理  联动(12)- add dongqingsong  story 3871 -->
+  <bean id="AL044IT15" class="com.yss.webServices.AccountClinkage.services.BatchFileDeal" scope="prototype"/>
+</beans>

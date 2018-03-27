@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+	<bean id="taselnet" class="com.yss.main.taoperation.TaSelNetBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>销售网点代码	销售网点名称	销售网点类型名称	描述</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FSellNetCode	FSellNetName	FVocName	FDesc</value>
+	 </property>
+	  <property name="moduleName">
+      <value>taoperation</value>
+    </property>
+    <property name="funName">
+      <value>taselnet</value>
+    </property>
+    <property name="refName">
+      <value>000225</value>
+    </property>
+   </bean>
+
+	<bean id="taportcls" class="com.yss.main.taoperation.TaPortClsBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>组合分级代码	组合分级名称	组合代码	上级代码	分级级别	组合名称	描述</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FPortClsCode	FPortClsName	FPortCode	FParrentcode	fPortClsRank	FPortName	FDesc</value>
+	 </property>
+	 <property name="moduleName">
+      <value>taoperation</value>
+    </property>
+    <property name="funName">
+      <value>taportcls</value>
+    </property>
+    <property name="refName">
+      <value>000228</value>
+    </property>
+   </bean>
+
+   <bean id="tacashacclink" class="com.yss.main.taoperation.TaCashAccLinkBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>销售网点代码	销售网点名称	组合分级代码	组合分级名称	组合代码	组合名称	销售类型代码	销售类型名称	货币	货币名称	现金账户	现金账户名称	描述	启用日期</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FSellNetCode	FSellNetName	FPortClsCode	FPortClsName	FPortCode	FPortName	FSellTypeCode	FSellTypeName	FCuryCode	FCuryName	FCashAccCode	FCashAccName	FDesc	FStartDate</value>
+	 </property>
+	<property name="moduleName">
+      <value>taoperation</value>
+    </property>
+    <property name="funName">
+      <value>tacashacclink</value>
+    </property>
+    <property name="refName">
+      <value>000231</value>
+    </property>
+   </bean>
+
+   	<bean id="tacashsettle" class="com.yss.main.taoperation.TACashSettleBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>销售网点代码	销售网点名称	组合分级代码	组合分级名称	组合代码	组合名称	销售类型代码	销售类型名称	货币代码	货币名称	结算延迟天数	确认延迟天数	结算日期类型	启动日期</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FSellNetCode	FSellNetName	FPortClsCode	FPortClsName	FPortCode	FPortName	FSellTypeCode	FSellTypeName	FCuryCode	FCuryName	FSettleDays	FConfirmDays	FSettleDayTypeName	FStartDate</value>
+	 </property>
+	 <property name="moduleName">
+      <value>taoperation</value>
+    </property>
+    <property name="funName">
+      <value>tacashsettle</value>
+    </property>
+    <property name="refName">
+      <value>000227</value>
+    </property>
+   </bean>
+
+   	<bean id="taselltype" class="com.yss.main.taoperation.TASellTypeBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>销售类型代码	销售类型名称	资金方向	数量方向	描述	创建人	创建时间	审核人	审核时间</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FSellTypeCode	FSellTypeName	FCashIndName	FAmountIndName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+	 </property>
+		<property name="moduleName">
+			<value>taoperation</value>
+		</property>
+		<property name="funName">
+			<value>taselltype</value>
+		</property>
+		<property name="refName">
+			<value>000226</value>
+		</property>
+   </bean>
+
+   	<bean id="taporttype" class="com.yss.main.taoperation.TAPortTypeBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>组合类型代码	组合类型名称	描述	创建人	创建时间	审核人	审核时间</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FPortTypeCode	FPortTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+	 </property>
+	 <property name="moduleName">
+      <value>taoperation</value>
+    </property>
+    <property name="funName">
+      <value>taporttype</value>
+    </property>
+    <property name="refName">
+      <value>000224</value>
+    </property>
+   </bean>
+
+<!-- liubo 2013-06-03 STORY #3759 银华杠杆分级基金 -->
+<!-- 对销售金额和基准金额两个字段进行设置，不以科学计数法进行显示 -->
+    	<bean id="tatrade" class="com.yss.main.taoperation.TaTradeBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>编号	交易日期	组合名称	销售网点名称	销售类型名称	销售货币	销售金额;R	基准金额;R	销售数量;R	销售价格	损益平准金	未实现损益平准金	拆分比例	分析代码代码1	分析代码代码2	分析代码代码3	现金帐户名称	确认日期	结算日期	描述	创建人	创建时间	审核人	审核时间</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FNum	FTradeDate	FPortName	FSellNetName	FSellTypeName	FCuryCode	FSellMoney;#,##0.####	FBeMarkMoney;#,##0.####	FSellAmount;#,##0.####	FSellPrice	FIncomeBal	FIncomeNotBal	FSPLITRATIO	FAnalysisCode1	FAnalysisCode2	FAnalysisCode3	FCashAccName	FConfimDate	FSettleDate	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+	 </property>
+	 <property name="moduleName">
+      <value>taoperation</value>
+    </property>
+    <property name="funName">
+      <value>tatrade</value>
+    </property>
+    <property name="refName">
+      <value>000229</value>
+    </property>
+   </bean>
+<!--end liubo 2013-06-03 STORY #3759 银华杠杆分级基金 -->
+
+       	<bean id="tafeelink" class="com.yss.main.taoperation.TAFeeLink" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>销售网点代码	组合分级代码	组合代码	销售类型代码	货币代码	启用日期	费用代码1	费用代码2	费用代码3	费用代码4	费用代码5	费用代码6	描述	创建人	创建时间	审核人	审核时间	费用类型</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FSellNetCode	FPortClsCode	FPortCode	FSellTypeCode	FCuryCode	FStartDate	FFeeCode1	FFeeCode2	FFeeCode3	FFeeCode4	FFeeCode5	FFeeCode6	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime	FFeeType</value>
+	 </property>
+	 <property name="moduleName">
+      <value>taoperation</value>
+    </property>
+    <property name="funName">
+      <value>tafeelink</value>
+    </property>
+    <property name="refName">
+      <value>000230</value>
+    </property>
+   </bean>
+	<bean id="taassign" class="com.yss.main.taoperation.TAAssign" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>分盘日期	组合代码	组合名称	分级代码	分级名称	分析代码1	分析代码2	分析代码3	计算方式	分盘比例;R	描述	创建人	创建时间	复核人	复核时间</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FAssignDate	FPortCode	FPortName	FPortClsCode	FPortClsName	FAnalysisCode1	FAnalysisCode2	FAnalysisCode3	FvocName	FAssginScale;#,##0.####	FDesc	FCreatorName	FCreateTime	FCheckUserName	FCheckTime</value>
+	 </property>
+	 <property name="moduleName">
+      <value>taoperation</value>
+    </property>
+    <property name="funName">
+      <value>taassign</value>
+    </property>
+    <property name="refName">
+      <value>000236</value>
+    </property>
+   </bean>
+   <bean id="fundright" class="com.yss.main.taoperation.TAFundRightBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>除权日期	结算日期	权益类型	权益金额	权益份额	单位权益金额	现金账户代码	现金账户名称	组合代码	组合名称	组合分级代码	组合分级名称	创建人	创建时间	审核人	审核时间</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FRightDate	FSettleDate	FRightTypeName	FRightMoney	FRightAmount	FRightUnitMoney	FCashAccount	FCashAccName	FPortCode	FPortName	FPortClsCode	FPortClsName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+	 </property>
+	 <property name="moduleName">
+      <value>taoperation</value>
+    </property>
+    <property name="funName">
+      <value>fundright</value>
+    </property>
+    <property name="refName">
+      <value>000327</value>
+    </property>
+   </bean>
+   
+<!-- shashijie 2011-10-17 STORY #1589 多CLASS 基金核算需求 -->
+<bean id="funddegree" class="com.yss.main.taoperation.TAFundDegreeBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>组合代码	组合分级代码	销售货币	基金份额成本	创建人,修改人	创建,修改时间	复核人	复核时间</value>
+	</property>
+ 	<property name="listView1ShowCols">
+		<value>FPortCode	FPortClsCode	FCuryCode	FDegreeCost	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+	</property>
+	<property name="moduleName">
+		<value>taoperation</value>
+	</property>
+	<property name="funName">
+		<value>funddegree</value>
+	</property>
+	<property name="refName">
+		<value>0002261</value>
+	</property>
+</bean>
+<!-- end -->
+
+
+<!-- 20130513 added by liubo.Story #3759.需求北京-[银华基金]QDIIV4[中]20130326001.杠杆分级份额折算设置 --> 
+<bean id="leverconv" class="com.yss.main.taoperation.LeverConversionBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>组合代码	组合名称	折算基准日	折算日	场内基础份额;R	场外基础份额;R	创建人,修改人	创建,修改时间	复核人	复核时间</value>
+	</property>
+ 	<property name="listView1ShowCols">
+		<value>FPortCode	FPortName	FBaseDate	FConversionDate	FFloorShare;#,##0.####	FOtcShare;#,##0.####	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+	</property>
+	<property name="moduleName">
+		<value>taoperation</value>
+	</property>
+	<property name="funName">
+		<value>leverconv</value>
+	</property>
+	<property name="refName">
+		<value>0003759</value>
+	</property>
+</bean>
+<!-- end -->
+
+
+
+</beans>

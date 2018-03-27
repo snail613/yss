@@ -1,0 +1,393 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+ 
+	<description>Spring Quick Start</description>
+	<bean id="vchtpl" class="com.yss.main.voucher.VchTplBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>模板代码	模板名称	原币	原币描述	组合链接代码	组合链接名称	数据源代码	数据源名称	属性代码	属性名	日期	日期描述	凭证交易方式	模式	描述	创建人	创建时间	复核人	复核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FVchTplCode	FVchTplName	FSrcCury	FSrcCuryName	FLinkCode	FLinkName	FDsCode	FVchDsName	FAttrCode	FAttrName	FDateField	FDateFieldName	FVchTWay	FModeValue	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	  <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>vchtpl</value>
+	  </property>
+          <property name="refName">
+             <value >000206</value>
+          </property>
+	</bean>	
+	<bean id="assistantsetting" class="com.yss.main.voucher.VchAssistantSettingBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>套账代码	证券品种	证券品种名称	货币代码	货币名称	辅助核算项目代码	交易所	描述	创建人	创建时间	复核人	复核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FBookSetCode	FCatCode	FCatName	FCuryCode	FCuryName	FAuxiAccID	FExchange	FDESC	FCreator	FCREATETIME	FCHECKUSER	FCHECKTIME</value>
+      </property>
+	  <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>vchAssistantSetting</value>
+	  </property>
+          <property name="refName">
+             <value >006000</value>
+          </property>
+	</bean>
+   <bean id ="bookset" class="com.yss.main.voucher.VchBookSetBean" scope="prototype">
+      <property name = "listView1Headers">
+         <value>套账代码	套账名称	位币代码	货币名称	描述	创建人	创建时间	复核人	复核时间</value>
+      </property>
+      <property name = "listView1ShowCols">
+         <value>FBookSetCode	FBookSetName	FCuryCode	FCuryName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+      <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>vchbookset</value>
+	  </property>
+          <property name="refName">
+             <value >000207</value>
+          </property>
+   </bean>
+
+   <bean id ="portsetlink" class="com.yss.main.voucher.VchPortSetLinkBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>链接代码	链接名称	描述	创建人	创建时间	复核人	复核时间</value>
+      </property>
+      <property name = "listView1ShowCols">
+         <value>FLinkCode	FLinkName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+         </property>
+       <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>vchportsetlink</value>
+	  </property>
+          <property name="refName">
+             <value >000210</value>
+          </property>
+   </bean>
+
+     <bean id ="entity" class="com.yss.main.voucher.VchEntityBean" scope="prototype">
+     <property name = "listView1Headers">
+     <value>模板代码	分录代码	分录名称	摘要描述	科目描述	金额描述	数量描述	本位币金额	条件描述	辅助核算描述	描述</value>
+     </property>
+     <property name = "listView1ShowCols">
+     <value>FVchTplCode	FEntityCode	FEntityName	FResumeDesc	FSubjectCode	FMoneyDesc	FAmountDesc	FSetMoneyDesc	FCondDesc	FAssistantDesc	FDesc</value>
+     </property>
+     <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>entity</value>
+	  </property>
+          <property name="refName">
+             <value >000211</value>
+          </property>
+   </bean>
+
+
+    <bean id ="entitycond" class="com.yss.main.voucher.VchEntityCondBean" scope="prototype">
+     <property name = "listView1Headers">
+        <value>条件字段	条件字段描述	关系	符号	值来源	值</value>
+     </property>
+     <property name = "listView1ShowCols"><!-- edit by zhouwei 20120315 修改了条件的字段从FSignValue到Fsign -->
+        <value>FFieldName	FFieldNameValue	FConRelaValue	FSign	FValueSourceValue	FValue</value>
+     </property>
+     <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>entity</value>
+	  </property>
+          <property name="refName">
+             <value >000211</value>
+          </property>
+   </bean>
+
+   <bean id ="entityresume" class="com.yss.main.voucher.VchEntityResumeBean" scope="prototype">
+     <property name = "listView1Headers">
+        <value>摘要字段	摘要字段描述	字典代码	字典名称	摘要内容	值类型</value>
+     </property>
+     <property name = "listView1ShowCols">
+        <value>FResumeField	FResumeFieldValue	FResumeDict	FResumeDictValue	FResumeConent	FValueTypeValue</value>
+     </property>
+     <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>entity</value>
+	  </property>
+          <property name="refName">
+             <value >000211</value>
+          </property>
+   </bean>
+
+
+   <bean id ="entitysubject" class="com.yss.main.voucher.VchEntitySubjectBean" scope="prototype">
+     <property name = "listView1Headers">
+        <value>科目字段	科目字段描述	字典代码	字典名称	科目内容	值类型</value>
+     </property>
+     <property name = "listView1ShowCols">
+        <value>FSubjectField	FSubjectFieldValue	FSubjectDict	FSubjectDictValue	FSubjectConent	FValueTypeValue</value>
+     </property>
+     <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>entity</value>
+	  </property>
+          <property name="refName">
+             <value >000211</value>
+          </property>
+   </bean>
+
+
+      <bean id ="entityma" class="com.yss.main.voucher.VchEntityMABean" scope="prototype">
+     <property name = "listView1Headers">
+        <value>字段	字段描述	运算符	字典代码	字典名称	金额/数量	值类型</value>
+     </property>
+     <property name = "listView1ShowCols">
+        <value>FMAField	FMAFieldValue	FOperSignValue	FMADict	FMADictValue	FMAConent	FValueTypeValue</value>
+     </property>
+     <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>entity</value>
+	  </property>
+          <property name="refName">
+             <value >000211</value>
+          </property>
+   </bean>
+
+  <bean id ="assistant" class="com.yss.main.voucher.VchAssistantBean" scope="prototype">
+      <property name = "listView1Headers">
+        <value>字段	字段描述	字典代码	字典名称	辅助核算内容	值类型</value>
+     </property>
+     <property name = "listView1ShowCols">
+        <value>FAssistantField	FAssistantFieldName	FAssistantDict	FAssistantDictName	FAssistantConent	FValueTypeValue</value>
+     </property>
+   </bean>
+
+   <bean id ="vchdsvchres" class="com.yss.main.voucher.VchDsVchResBean" scope="prototype">
+      <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>vchdsvchres</value>
+	  </property>
+          <property name="refName">
+             <value >000208</value>
+          </property>
+   </bean>
+   <bean id ="vchdsvchressub" class="com.yss.main.voucher.VchDsVchResSubBean" scope="prototype">
+      <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>vchdsvchressub</value>
+	  </property>
+          <property name="refName">
+             <value >000208</value>
+          </property>
+   </bean>
+   <bean id="vchattr" class="com.yss.main.voucher.VchAttrBean" scope="prototype">
+      <property name = "listView1Headers">
+        <value>凭证属性代码	凭证属性名称	凭证标识	描述	创建人	创建时间	复核人	复核时间</value>
+     </property>
+     <property name = "listView1ShowCols">
+        <value>FAttrCode	FAttrName	FVchInd	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+     <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	  <!-- edit by songjie 2011.10.17 BUG 2783 QDV4招商基金2011年09月15日01_B -->
+	     <value>vchattr</value>
+	  </property>
+          <property name="refName">
+             <value>000212</value>
+          </property>
+   </bean>
+    <bean id="codesubjectdict" class="com.yss.main.voucher.VchCodeSubjectDict" scope="prototype">
+     <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	  <!-- edit by songjie 2011.10.17 BUG 2783 QDV4招商基金2011年09月15日01_B -->
+	     <value>SubjectDict</value>
+	  </property>
+          <property name="refName">
+             <value>000213</value>
+          </property>
+   </bean>
+   <bean id="voucherdsset" class="com.yss.main.voucher.VchDataSourceBean" scope="prototype">
+      <property name = "listView1Headers">
+        <value>凭证数据源代码	凭证数据源名称	属性代码	属性名称	描述	创建人	创建时间	复核人	复核时间</value>
+     </property>
+     <property name = "listView1ShowCols">
+        <value>FVchDsCode	FVchDsName	FAttrCode	FAttrName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+     <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>setvchds</value>
+	  </property>
+          <property name="refName">
+             <value>000214</value>
+          </property>
+   </bean>
+   <bean id="vchdsfield" class="com.yss.main.voucher.VchDsTabFieldBean" scope="prototype">
+      <property name="listView1Headers">
+		<value>字段名称	函数	别名</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FFieldName	FVFunction	FAliasName</value>
+     </property>
+   </bean>
+
+
+   <bean id ="vchbuilder" class="com.yss.main.operdeal.voucher.BaseVchBuilder" scope="prototype">
+   </bean>
+
+   <bean id ="vchchecker" class="com.yss.main.operdeal.voucher.BaseVchChecker" scope="prototype">
+   </bean>
+
+   <bean id ="vchoutacc" class="com.yss.main.operdeal.voucher.BaseVchOutAcc" scope="prototype">
+   </bean>
+
+   <bean id ="vchoutmdb" class="com.yss.main.operdeal.voucher.BaseVchOutMdb" scope="prototype">
+   </bean>
+
+   <bean id ="inter" class="com.yss.main.voucher.VchInterBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>模板代码	模板名称	原币	原币描述	组合链接代码	组合链接名称	数据源代码	数据源名称	属性代码	属性名	日期	日期描述	凭证交易方式	模式	描述	创建人	创建时间	复核人	复核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FVchTplCode	FVchTplName	FSrcCury	FSrcCuryName	FLinkCode	FLinkName	FDsCode	FVchDsName	FAttrCode	FAttrName	FDateField	FDateFieldName	FVchTWay	FModeValue	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+   </bean>
+
+  <bean id ="manager" class="com.yss.main.voucher.VchManagerBean" scope="prototype">
+      <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>voucherbuild</value>
+	  </property>
+          <property name="refName">
+             <value >000215</value>
+      </property>
+   </bean>
+
+   <bean id ="vchdata" class="com.yss.main.voucher.VchDataBean" scope="prototype">
+      <property name = "listView1Headers">
+        <value>凭证编号	模版代码	模版名称	凭证日期	组合代码	组合名称	套账代码	套账名称	货币代码	货币名称	汇率	创建人	创建时间	复核人	复核时间</value>
+     </property>
+     <property name = "listView1ShowCols">
+        <value>FVchNum	FVchTplCode	FVchTplName	FVchDate	FPortCode	FPortName	FBookSetCode	FBookSetName	FCuryCode	FCuryName	FCuryRate	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+      <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	  <!-- edit by songjie 2011.10.17 BUG 2783 QDV4招商基金2011年09月15日01_B -->
+	     <value>vchdata</value>
+	  </property>
+          <property name="refName">
+             <value >000216</value>
+      </property>
+   </bean>
+
+   <bean id ="vchdataentity" class="com.yss.main.voucher.VchDataEntityBean" scope="prototype">
+      <property name = "listView1Headers">
+        <value>摘要	会计科目	数量	单价	借贷方向	本位币金额	原币金额</value>
+     </property>
+     <property name = "listView1ShowCols">
+        <value>FResume	FSubjectCode	FAmount	FPrice	FDCWayName	FSetBal	FBal</value>
+     </property>
+   </bean>
+
+   <bean id ="vchsubattr" class="com.yss.main.voucher.VchSubAttrBean" scope="prototype">
+      <property name = "listView1Headers">
+        <value>科目属性代码	科目属性名称	科目类别	描述</value>
+     </property>
+     <property name = "listView1ShowCols">
+        <value>FSubAttrCode	FSubAttrName	FSubTypeName	FDesc</value>
+     </property>
+   </bean>
+
+   <bean id ="vchbuildlink" class="com.yss.main.voucher.VchBuildLinkBean" scope="prototype">
+      <property name = "listView1Headers">
+        <value>属性代码	属性名称	描述</value>
+     </property>
+     <property name = "listView1ShowCols">
+        <value>FAttrCode	FAttrName	FDesc</value>
+     </property>
+   </bean>
+
+   <bean id ="vchproject" class="com.yss.main.voucher.VchProjectBean" scope="prototype">
+      <property name = "listView1Headers">
+        <value>生成方案代码	生成方案名称	执行序号代码	执行生成	执行审核	执行导入	描述</value>
+     </property>
+     <property name = "listView1ShowCols">
+     <!--  edit by songjie 20110615 BUG 2081 QDV4赢时胜(测试)2011年6月13日03_B 设置执行序号代码格式为整数型 -->
+        <value>FProjectCode	FProjectName	FExeOrderCode;#,##0	FExBuildName	FExCheckName	FExInsertName	FDesc</value>
+     </property>
+     <!-- add by jiangshichao 2010.06.29 -->
+     <property name="refName">
+             <value>000506</value>
+     </property>
+     <property name="moduleName">
+	     <value>voucher</value>
+	  </property>
+	  <property name="funName">
+	     <value>vchproject</value>
+	  </property>
+   </bean>
+
+   <bean id="ctlvchex" class="com.yss.main.operdeal.voucher.CtlVchExcuteBean" scope="prototype">
+   </bean>
+
+	<bean id="balance" class="com.yss.main.operdeal.voucher.vchcheck.VchChkBalance" scope="prototype">
+   </bean>
+
+   <bean id="cury" class="com.yss.main.operdeal.voucher.vchcheck.VchChkCury" scope="prototype">
+   </bean>
+
+   <bean id="laccluy" class="com.yss.main.operdeal.voucher.vchcheck.VchChkLaccCuy" scope="prototype">
+   </bean>
+
+   <bean id="subjectex" class="com.yss.main.operdeal.voucher.vchcheck.VchChkSubjectEx" scope="prototype">
+   </bean>
+
+   <bean id="detail" class="com.yss.main.operdeal.voucher.vchcheck.VchChkDetail" scope="prototype">
+   </bean>
+   
+   <!--add by qiuxufeng 20101216 326 QDV4工银2010年11月23日01_A 凭证导出检查一张凭证是否有多币种-->
+   <bean id="curytoacc" class="com.yss.main.operdeal.voucher.vchcheck.VchChkCuryToAcc" scope="prototype">
+   </bean>
+   <!--end-->
+   
+   <!--add by qiuxufeng 20110117 390 QDV4赢时胜（上海）2010年12月08日02_A 检查凭证字典对应关系是否设置-->
+   <bean id="dicset" class="com.yss.main.operdeal.voucher.vchcheck.VchChkDicSet" scope="prototype"/>
+   <!--end-->
+
+   <!--add by liubo 20120401 2192 科目辅助核算项检查-->
+   <bean id="auxiacc" class="com.yss.main.operdeal.voucher.vchcheck.VchChkAuxiAcc" scope="prototype"/>
+   <!--end-->
+   
+   <!-- add by jsc 20120525 批量检查 start-->
+   <bean id="subandcur" class="com.yss.main.operdeal.voucher.vchcheck.VchChkBatch" scope="prototype"/>
+   <!--end-->
+</beans>

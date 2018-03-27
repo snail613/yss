@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+	<bean id="cashtransfer" class="com.yss.main.cashmanage.TransferBean" scope="prototype">
+      <property name="listView1Headers">
+   	   <value>调拨编号	调拨日期	调拨时间	业务日期	调拨类型	调拨子类型	投资品种代码	投资品种名称	交易记录	调拨描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+      	    <value>FNum	FTransferDate	FTransferTime	FTransDate	FTsfTypeName	FSubTsfTypeName	FSecurityCode	FSecurityName	FTradeNum	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+
+	      <property name="moduleName">
+	     <value>cashmanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>cashtransfer</value>
+	  </property>
+          <property name="refName">
+             <value >000090</value>
+          </property>
+
+	  <property name="listView3Headers">
+		<value>调拨编号	调拨子编号	调拨日期	现金帐户代码	现金帐户名称	调拨方向	调拨金额;R	投资组合	分析配置1	分析配置2	分析配置3	基础汇率;R	组合汇率;R	制作人	制作时间	审核人	审核时间</value>
+      </property>
+
+	    <property name="listView3ShowCols">
+			<value>FNum	FSubNum	FTransferDate	FCashAccCode	FCashAccName	FInOutName	FMoney;#,##0.####	FPortName	FAnalysisName1	FAnalysisName2	FAnalysisName3	FBaseCuryRate	FPortCuryRate	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+		</property>
+	</bean>
+	<!-- story 1911 by zhouwei 20111228 QDV4招商基金2011年11月22日01_A -->
+	<bean id="transtocommand" class="com.yss.main.cashmanage.TransToCommandBean" scope="prototype">
+      <property name="listView1Headers">
+   	   <value>调拨编号	调拨日期	调拨时间	业务日期	调拨类型	调拨子类型	投资品种代码	投资品种名称	交易记录	调拨描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+      	    <value>FNum	FTransferDate	FTransferTime	FTransDate	FTsfTypeName	FSubTsfTypeName	FSecurityCode	FSecurityName	FTradeNum	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+
+	      <property name="moduleName">
+	     <value>cashmanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>cashtransfer</value>
+	  </property>
+          <property name="refName">
+             <value >000090</value>
+          </property>
+
+	  <property name="listView3Headers">
+		<value>调拨编号	调拨子编号	调拨日期	现金帐户代码	现金帐户名称	调拨方向	调拨金额;R	投资组合	分析配置1	分析配置2	分析配置3	基础汇率;R	组合汇率;R	制作人	制作时间	审核人	审核时间</value>
+      </property>
+
+	    <property name="listView3ShowCols">
+			<value>FNum	FSubNum	FTransferDate	FCashAccCode	FCashAccName	FInOutName	FMoney;#,##0.####	FPortName	FAnalysisName1	FAnalysisName2	FAnalysisName3	FBaseCuryRate	FPortCuryRate	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+		</property>
+	</bean>
+	<bean id="commanduse" class="com.yss.main.cashmanage.CommandUseBean" scope="prototype">
+      <property name="listView1Headers">
+   	   <value>序号	划款用途	制作人	制作日期</value>
+      </property>
+      <property name="listView1ShowCols">
+      	    <value>FNum	FCOMMANDUSE	FCREATOR	FCREATETIME</value>
+     </property>
+
+	 <property name="moduleName">
+	     <value>cashmanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>commanduse</value>
+	  </property>
+      <property name="refName">
+             <value >000933</value>
+      </property>	 
+	</bean>
+	<!-- end -->
+	
+   <bean id="savingoutacc" class="com.yss.main.cashmanage.SavingOutAccBean" scope="prototype">
+      <property name="listView1Headers">
+   	   <value>自动编号	现金帐户代码	现金帐户名称	组合名称	所属分类	所属分类名称	流出金额;R	投资经理	品种类型	分析配置3	描述信息	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+      	<value>FNum	FCashAccCode	FCashAccName	FPortName 	FAttrClsCode	FAttrClsName	FOutMoney;#,##0.####	FAnalysisName1	FAnalysisName2	FAnalysisName3	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+     <property name="moduleName">
+	     <value>cashmanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>saving</value>
+	  </property>
+          <property name="refName">
+             <value>000116</value>
+          </property>
+	</bean>
+   <bean id="saving" class="com.yss.main.cashmanage.SavingBean" scope="prototype">
+    <property name="listView1Headers">
+   	   <value>自动编号	现金帐户代码	现金帐户名称	组合名称	业务期限	业务类型	存入金额;R	基础汇率;R	组合汇率;R	业务日期	业务时间	到期日期	投资经理	品种类型	分析配置3	所属分类	所属分类名称	描述信息	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+      	<value>FNum	FCashAccCode	FCashAccName	FPortName	FDepDurCode	csh_savingtype	FInMoney;#,##0.####	FBaseCuryRate;#,##0.############	FPortCuryRate;#,##0.############	FSavingDate	FSavingTime	FMatureDate	FAnalysisName1	FAnalysisName2	FAnalysisName3	FAttrClsCode	FAttrClsName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+      <property name="moduleName">
+        <value>cashmanage</value>
+      </property>
+      <property name="funName">
+        <value>saving</value>
+      </property>
+     <property name="refName">
+       <value>000116</value>
+     </property>
+   </bean>
+
+	<bean id="savingmature" class="com.yss.main.cashmanage.SavingMatureBean" scope="prototype">
+	</bean>
+
+	<bean id="cashtransferset" class="com.yss.main.cashmanage.TransferSetBean" scope="prototype">
+	</bean>
+    <bean id="command" class="com.yss.main.cashmanage.CommandBean" scope="prototype">
+      <property name="listView1Headers">
+   	   <!--begin MS01628    关于招商基金需求之电子指令功能    zhouxiang 2010.10.14-->
+   	   <value>发送状态	编号	指令日期	指令时间	指令序号	到帐日期	到帐时间	付款人名称	付款货币	收款人名称	收款货币	付款金额	收款金额	参考汇率	划款用途	描述	创建人	创建时间	审核人	审核时间	指令类型	划款类型代码	划款电子描述	划款类型名称	报文类型	删除标志	报文发送序号	业务流水号	处理结果	返回的备注	经办人	银行市场交易号	指令发送日期	划款指令状态	入账人	对GCS指令处理状态</value><!-- modify huangqirong 2012-04-13 story #2326 -->
+      </property>
+      <property name="listView1ShowCols">
+      <!--edit by huhuichao 2013-07-10 story 4129 划款指令界面优化处理-->
+      <!--edit by songjie 211.06.21 QDV4赢时胜上海2011年6月21日01_B 划款指令列表指令序号显示由小数类型修改为整数类型-->
+      	<value>FSendState	FNum	FCommandDate	FCommandTime	FOrder;#,##0	FAccountDate	FAccountTime	FPayerName	FPayCury	FRecerName	FRecCury	FPayMoney	FRecMoney	FRefRate	FCashUsage	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime	Fzltype	fhktypecode	FHkRemarkN	Fhktype	fbwtype	fdelbz	fsn	seq_no	result	remark	checker_code	fyhsn	FsenderDate	STATUS	orderchecker_code	FGCSState</value><!-- modify huangqirong 2012-04-13 story #2326 -->
+     	<!--end MS01628    关于招商基金需求之电子指令功能    zhouxiang 2010.10.14-->
+     	<!--end huhuichao 2013-07-10 story 4129 划款指令界面优化处理-->
+     </property>
+     <property name="moduleName">
+	     <value>cashmanage</value>
+	  </property>
+	  <property name="funName">
+	     <!-- edited by zhouxiang MS1628 关于招商基金需求之电子指令功能  2010.10.23 -->
+	     <value>frmcommand</value>
+	  </property>
+          <property name="refName">
+             <value>005101</value>
+          </property>
+	</bean>
+	
+	<!--add by liuxiaojun 20130725 story 4094 划款指令增加自定义划款方式       start -->
+	<bean id="commandtype" class="com.yss.main.cashmanage.CommandTypeBean" scope="prototype">
+      <property name="listView1ShowCols">
+      	<value>FTranType	FSellWay	FAlgFormula	FAlgDesc</value>
+     </property>
+     <property name="moduleName">
+	     <value>cashmanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>frmcommand</value>
+	  </property>
+          <property name="refName">
+             <value>005101</value>
+          </property>
+	</bean>
+	<!--add by liuxiaojun 20130725 story 4094 划款指令增加自定义划款方式       end -->
+	
+	
+	<!-- story 1645 by zhouwei 20111215 划款指令模板链接界面 QDII工银2011年9月13日10_A -->
+	<bean id="commandmodrela" class="com.yss.main.cashmanage.CommandModRelaBean" scope="prototype">
+	  <property name="listView1Headers">
+		<value>关联编号	关联名称	模板编号	模板名称	组合编号	收款人	付款人	外汇交收	划款类型	描述</value>
+      </property>
+      <property name="listView1ShowCols"><!-- add by zhaoxianlin 20120808 BUG 5242 QDV4赢时胜(测试)2012年08月06日01_B -->
+        <value>FMODULERELACODE	FMODULERELANAME	FREPFORMATCODE	FCOMMMONDNAME	FPORTCODE	freceivername	fpayername	fexstatename	fhkcode	FDesc</value>
+     </property>
+      <property name="funName">
+	     <value>commandmodrela</value>
+	  </property>
+      <property name="refName">
+         <value >000900</value>
+      </property>
+	</bean>
+	<!-- end -->
+	<!-- story 1645 by zhouwei 20111216 划款指令模板界面 QDII工银2011年9月13日10_A  modify by zhangjun 2012-05-23 -->
+	<bean id="commandmodule" class="com.yss.main.cashmanage.CommandModuleBean" scope="prototype">
+	  <property name="listView1Headers">
+		<value>模板编号	模板名称	描述</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FCommmondCODE	FCommmondNAME	FDesc</value>
+     </property>
+      <property name="funName">
+	     <value>commandmodule</value>
+	  </property>
+      <property name="refName">
+         <value >000901</value>
+      </property>
+	</bean>
+	<!-- end -->
+	<bean id="principalext" class="com.yss.main.cashmanage.PrincipalExtBean" scope="prototype">
+      <property name="listView1Headers">
+   	   <value>编号	定存编号	流出账户代码	流出账户名称	流入账户代码	流入账户名称	流出金额	组合代码	组合名称	提取日期	分析代码1	分析名称1	分析代码2	分析名称2	分析代码3	分析名称3	描述信息	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+      	<value>FNum	FCONSAVINGNUM	FOutCashAccountCode	FOutCashAccName	FInCashAccountCode	FInCashAccName	FOutMoney;#,##0.####	FPortCode	FPortName	FExtDate	FAnalysisCode1	FAnalysisName1	FAnalysisCode2	FAnalysisName2	FAnalysisCode3	FAnalysisName3	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+   </bean>
+
+</beans>

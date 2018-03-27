@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+
+
+<bean id="tradesettle" class="com.yss.main.settlement.TradeSettleBean" scope="prototype">
+   	<property name="listView1Headers">
+          <value>证券代码	交易证券	组合代码	投资组合	券商代码	交易券商	投资经理代码	投资经理	交易方式代码	交易方式	现金帐户代码	现金帐户	所属分类代码	所属分类	成交日期	成交时间	结算方式	结算日期	结算时间	组合汇率;R	基础汇率;R	分配因子;R	交易数量;R	交易价格;R	交易金额;R	单位成本;R	应计利息;R	投资总成本;R	订单编号	描述说明	制作人	制作时间	审核人	审核时间</value>
+      </property>
+
+	  <property name="moduleName">
+	     <value>settlecenter</value>
+	  </property>
+	  <property name="funName">
+	     <value>tradesettle</value>
+	  </property>
+          <property name="refName">
+             <value >000091</value>
+          </property>
+      <property name="listView1ShowCols">
+        <value>FSecurityCode	FSecurityName	FPortCode	FPortName	FBrokerCode	FBrokerName	FInvMgrCode	FInvMgrName	FTradeTypeCode	FTradeTypeName	FCashAccCode	FCashAccName	FAttrClsCode	FAttrClsName	FBargainDate	FBargainTime	FAutoSettle	FSettleDate	FSettleTime	FPortCuryRate;#,##0.############	FBaseCuryRate;#,##0.############	FAllotFactor;#,##0.####	FTradeAmount;#,##0.####	FTradePrice;#,##0.####	FTradeMoney;#,##0.####	FUnitCost;#,##0.############	FAccruedInterest;#,##0.####	FTotalCost;#,##0.####	FOrderNum	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	</bean>
+<bean id="tatradesettle" class="com.yss.main.settlement.TATradeSettleBean" scope="prototype">
+</bean>
+</beans>

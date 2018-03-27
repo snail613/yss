@@ -1,0 +1,1306 @@
+<?xml version="1.0" encoding="GBK"?>
+<convertRule>
+  <!--上海过户库-->
+  <SHGHconvertRule>
+    <Rule securityCode="6*****"><!--临时表中的证券代码格式-->
+      <result resultType="GP KZZGP"><!--可转债股票 经过证券类型判断之后的返回值-->
+        <convertedSecCode>6*****</convertedSecCode><!--转换后的证券代码即内部代码的格式-->
+        <businessSign>KZZGP</businessSign><!--转换后的证券代码对应的业务标志-->
+        <secSign>GP</secSign><!--转换后的证券代码对应的证券标志-->
+      </result>
+      <result resultType="GP SH_ETF"><!--股票 ETF基金赎回-->
+        <convertedSecCode>6*****</convertedSecCode>
+        <businessSign>SH_ETF</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP SG_ETF"><!--股票 ETF基金申购-->
+        <convertedSecCode>6*****</convertedSecCode>
+        <businessSign>SG_ETF</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MR_ZS"><!--指数股票买入-->
+        <convertedSecCode>6*****</convertedSecCode>
+        <businessSign>MR_ZS</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MC_ZS"><!--指数股票卖出-->
+        <convertedSecCode>6*****</convertedSecCode>
+        <businessSign>MC_ZS</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MR_ZB"><!--指标股票买入-->
+        <convertedSecCode>6*****</convertedSecCode>
+        <businessSign>MR_ZB</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MC_ZB"><!--指标股票卖出-->
+        <convertedSecCode>6*****</convertedSecCode>
+        <businessSign>MC_ZB</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MR"><!--普通股买入-->
+        <convertedSecCode>6*****</convertedSecCode>
+        <businessSign>MR</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MC"><!--普通股卖出-->
+        <convertedSecCode>6*****</convertedSecCode>
+        <businessSign>MC</businessSign>
+        <secSign>GP</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="11****">
+      <result resultType="ZQ KZZGP"><!--可转债债券-->
+        <convertedSecCode>11****</convertedSecCode>
+        <businessSign>KZZGP</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_KZZ"><!--债券 可转债卖出-->
+        <convertedSecCode>11****</convertedSecCode>
+        <businessSign>MC_KZZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MR_KZZ"><!--债券 可转债买入-->
+        <convertedSecCode>11****</convertedSecCode>
+        <businessSign>MR_KZZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+	<Rule securityCode="10****">
+      <result resultType="ZQ KZZGP"><!--可转债债券-->
+        <convertedSecCode>10****</convertedSecCode>
+        <businessSign>KZZGP</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_KZZ"><!--债券 可转债卖出-->
+        <convertedSecCode>10****</convertedSecCode>
+        <businessSign>MC_KZZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MR_KZZ"><!--债券 可转债买入-->
+        <convertedSecCode>10****</convertedSecCode>
+        <businessSign>MR_KZZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="0*****">
+      <result resultType="ZQ MR_GZ"><!--国债买入-->
+        <convertedSecCode>0*****</convertedSecCode>
+        <businessSign>MR_GZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_GZ"><!--国债卖出-->
+        <convertedSecCode>0*****</convertedSecCode>
+        <businessSign>MC_GZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+	<Rule securityCode="130***">
+      <result resultType="ZQ MR_DFZFZ"><!--国债买入-->
+        <convertedSecCode>130***</convertedSecCode>
+        <businessSign>MR_DFZFZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_DFZFZ"><!--国债卖出-->
+        <convertedSecCode>130***</convertedSecCode>
+        <businessSign>MC_DFZFZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="126***">
+      <result resultType="ZQ MR_FLKZZ"><!--分离可转债买入-->
+        <convertedSecCode>126***</convertedSecCode>
+        <businessSign>MR_FLKZZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_FLKZZ"><!--分离可转债卖出-->
+        <convertedSecCode>126***</convertedSecCode>
+        <businessSign>MC_FLKZZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="1*****">
+      <result resultType="ZQ MR_QYZQ"><!--企业债买入-->
+        <convertedSecCode>1*****</convertedSecCode>
+        <businessSign>MR_QYZQ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_QYZQ"><!--企业债卖出-->
+        <convertedSecCode>1*****</convertedSecCode>
+        <businessSign>MC_QYZQ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="122***">
+      <result resultType="ZQ MR_QYZQ_GS"><!--公司债买入-->
+        <convertedSecCode>122***</convertedSecCode>
+        <businessSign>MR_QYZQ_GS</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_QYZQ_GS"><!--公司债卖出-->
+        <convertedSecCode>122***</convertedSecCode>
+        <businessSign>MC_QYZQ_GS</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="121***">
+      <result resultType="ZQ MR_ZCZQ"><!--资产证券化产品买入-->
+        <convertedSecCode>121***</convertedSecCode>
+        <businessSign>MR_ZCZQ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_ZCZQ"><!--资产证券化产品卖出-->
+        <convertedSecCode>121***</convertedSecCode>
+        <businessSign>MC_ZCZQ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="580***">
+      <result resultType="QZ MR_RGQZ"><!--认购权证买入-->
+        <convertedSecCode>580***</convertedSecCode>
+        <businessSign>MR_RGQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+      <result resultType="QZ MC_RGQZ"><!--认购权证卖出-->
+        <convertedSecCode>580***</convertedSecCode>
+        <businessSign>MC_RGQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+      <result resultType="QZ MR_RZQZ"><!--认沽权证买入-->
+        <convertedSecCode>580***</convertedSecCode>
+        <businessSign>MR_RZQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+      <result resultType="QZ MC_RZQZ"><!--认沽权证卖出-->
+        <convertedSecCode>580***</convertedSecCode>
+        <businessSign>MC_RZQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="582***">
+      <result resultType="QZ XQ_RGQZ"><!--认购权证行权-->
+        <convertedSecCode>582***</convertedSecCode>
+        <businessSign>XQ_RGQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+      <result resultType="QZ XQ_RZQZ"><!--认沽权证行权-->
+        <convertedSecCode>582***</convertedSecCode>
+        <businessSign>XQ_RZQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="5*****">
+      <result resultType="JJ MR_FBS"><!--买入封闭式基金-->
+        <convertedSecCode>5*****</convertedSecCode>
+        <businessSign>MR_FBS</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ MC_FBS"><!--卖出封闭式基金-->
+        <convertedSecCode>5*****</convertedSecCode>
+        <businessSign>MC_FBS</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="510050">
+      <result resultType="JJ SG_ETF"><!--ETF申购-->
+        <convertedSecCode>510050</convertedSecCode>
+        <businessSign>SG_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ SH_ETF"><!--ETF赎回-->
+        <convertedSecCode>510050</convertedSecCode>
+        <businessSign>SH_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="510180">
+      <result resultType="JJ SG_ETF"><!--ETF申购-->
+        <convertedSecCode>510180</convertedSecCode>
+        <businessSign>SG_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ SH_ETF"><!--ETF赎回-->
+        <convertedSecCode>510180</convertedSecCode>
+        <businessSign>SH_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="510880">
+      <result resultType="JJ SG_ETF"><!--ETF申购-->
+        <convertedSecCode>510880</convertedSecCode>
+        <businessSign>SG_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ SH_ETF"><!--ETF赎回-->
+        <convertedSecCode>510880</convertedSecCode>
+        <businessSign>SH_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="510052">
+      <result resultType="JJ XJTD_SG"><!--ETF申购的现金替代-->
+        <convertedSecCode>510052</convertedSecCode>
+        <businessSign>XJTD_SG</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ XJTD_SH"><!--ETF赎回的现金替代-->
+        <convertedSecCode>510052</convertedSecCode>
+        <businessSign>XJTD_SH</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="510182">
+      <result resultType="JJ XJTD_SG"><!--ETF申购的现金替代-->
+        <convertedSecCode>510182</convertedSecCode>
+        <businessSign>XJTD_SG</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ XJTD_SH"><!--ETF赎回的现金替代-->
+        <convertedSecCode>510182</convertedSecCode>
+        <businessSign>XJTD_SH</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="510882">
+      <result resultType="JJ XJTD_SG"><!--ETF申购的现金替代-->
+        <convertedSecCode>510882</convertedSecCode>
+        <businessSign>XJTD_SG</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ XJTD_SH"><!--ETF赎回的现金替代-->
+        <convertedSecCode>510882</convertedSecCode>
+        <businessSign>XJTD_SH</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="51****">
+      <result resultType="JJ MR_ETF"><!--ETF买入-->
+        <convertedSecCode>51****</convertedSecCode>
+        <businessSign>MR_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ MC_ETF"><!--ETF卖出-->
+        <convertedSecCode>51****</convertedSecCode>
+        <businessSign>MC_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="202***">
+      <result resultType="HG MRHG_QYZQ"><!--企业债融券回购-->
+        <convertedSecCode>202***</convertedSecCode>
+        <businessSign>MRHG_QYZQ</businessSign>
+        <secSign>HG</secSign>
+      </result>
+      <result resultType="HG MCHG_QYZQ"><!--企业债融资回购-->
+        <convertedSecCode>202***</convertedSecCode>
+        <businessSign>MCHG_QYZQ</businessSign>
+        <secSign>HG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="203***">
+      <result resultType="HG MDMRHG"><!--买断式融券回购-->
+        <convertedSecCode>203***</convertedSecCode>
+        <businessSign>MDMRHG</businessSign>
+        <secSign>HG</secSign>
+      </result>
+      <result resultType="HG MDMCHG"><!--买断式融资回购-->
+        <convertedSecCode>203***</convertedSecCode>
+        <businessSign>MDMCHG</businessSign>
+        <secSign>HG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="201***">
+      <result resultType="HG MCHG"><!--融资回购-->
+        <convertedSecCode>201***</convertedSecCode>
+        <businessSign>MCHG</businessSign>
+        <secSign>HG</secSign>
+      </result>
+      <result resultType="HG MRHG"><!--融券回购-->
+        <convertedSecCode>201***</convertedSecCode>
+        <businessSign>MRHG</businessSign>
+        <secSign>HG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="204***">
+      <result resultType="HG MCHG"><!--融资回购-->
+        <convertedSecCode>204***</convertedSecCode>
+        <businessSign>MCHG</businessSign>
+        <secSign>HG</secSign>
+      </result>
+      <result resultType="HG MRHG"><!--融券回购-->
+        <convertedSecCode>204***</convertedSecCode>
+        <businessSign>MRHG</businessSign>
+        <secSign>HG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="204***">
+      <result resultType="HG MCHG"><!--融资回购-->
+        <convertedSecCode>204***</convertedSecCode>
+        <businessSign>MCHG</businessSign>
+        <secSign>HG</secSign>
+      </result>
+      <result resultType="HG MRHG"><!--融券回购-->
+        <convertedSecCode>204***</convertedSecCode>
+        <businessSign>MRHG</businessSign>
+        <secSign>HG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="70****">
+      <result resultType="QY PG"><!--权益 配股-->
+        <convertedSecCode>600***</convertedSecCode>
+        <businessSign>PG</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PGJK_ZS"><!--权益 配股缴款—指数股-->
+        <convertedSecCode>600***</convertedSecCode>
+        <businessSign>PGJK_ZS</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PGJK_ZB"><!--权益 配股缴款-指标股-->
+        <convertedSecCode>600***</convertedSecCode>
+        <businessSign>PGJK_ZB</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PGJK"><!--权益 配股缴款 普通-->
+        <convertedSecCode>600***</convertedSecCode>
+        <businessSign>PGJK</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="XG ZQ_PSZF"><!--新股 配售增发中签-->
+        <convertedSecCode>600***</convertedSecCode>
+        <businessSign>ZQ_PSZF</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="76****">
+      <result resultType="QY PG"><!--权益 配股-->
+        <convertedSecCode>601***</convertedSecCode>
+        <businessSign>PG</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PGJK_ZS"><!--权益 配股缴款—指数股-->
+        <convertedSecCode>601***</convertedSecCode>
+        <businessSign>PGJK_ZS</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PGJK_ZB"><!--权益 配股缴款—指标股-->
+        <convertedSecCode>601***</convertedSecCode>
+        <businessSign>PGJK_ZB</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PGJK"><!--权益 配股缴款 普通-->
+        <convertedSecCode>601***</convertedSecCode>
+        <businessSign>PGJK</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="XG ZQ_PSZF"><!--新股 配售增发中签-->
+        <convertedSecCode>601***</convertedSecCode>
+        <businessSign>ZQ_PSZF</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="740***">
+      <result resultType="XG SG"><!--新股 申购-->
+        <convertedSecCode>600***</convertedSecCode>
+        <businessSign>SG</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG FK"><!--新股 申购返款-->
+        <convertedSecCode>600***</convertedSecCode>
+        <businessSign>FK</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="734***">
+      <result resultType="XG SG"><!--新股 申购-->
+        <convertedSecCode>603***</convertedSecCode>
+        <businessSign>SG</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG FK"><!--新股 申购返款-->
+        <convertedSecCode>603***</convertedSecCode>
+        <businessSign>FK</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="790***">
+      <result resultType="XG SG"><!--新股申购-->
+        <convertedSecCode>601***</convertedSecCode>
+        <businessSign>SG</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG FK"><!--新股 申购返款-->
+        <convertedSecCode>601***</convertedSecCode>
+        <businessSign>FK</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="731***">
+      <result resultType="XG XGZF"><!--新股 增发-->
+        <convertedSecCode>600***</convertedSecCode>
+        <businessSign>XGZF</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="781***">
+      <result resultType="XG XGZF"><!--新股 增发-->
+        <convertedSecCode>601***</convertedSecCode>
+        <businessSign>XGZF</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="730***">
+      <result resultType="XG ZQ"><!--新股 中签-->
+        <convertedSecCode>600***</convertedSecCode>
+        <businessSign>ZQ</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="780***">
+      <result resultType="XG ZQ"><!--新股 中签-->
+        <convertedSecCode>601***</convertedSecCode>
+        <businessSign>ZQ</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="732***">
+      <result resultType="XG ZQ"><!--新股 中签-->
+        <convertedSecCode>603***</convertedSecCode>
+        <businessSign>ZQ</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="737***">
+      <result resultType="XG ZQ_SZ"><!--新股 市值中签-->
+        <convertedSecCode>600***</convertedSecCode>
+        <businessSign>ZQ_SZ</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="739***">
+      <result resultType="XG ZQ_SZ"><!--新股 市值中签-->
+        <convertedSecCode>002***</convertedSecCode>
+        <businessSign>ZQ_SZ</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="743***">
+      <result resultType="XZ SG_KZZ"><!--新债 可转债申购-->
+        <convertedSecCode>110***</convertedSecCode>
+        <businessSign>SG_KZZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+      <result resultType="XZ FK_KZZ"><!--新债 可转债返款-->
+        <convertedSecCode>110***</convertedSecCode>
+        <businessSign>FK_KZZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="793***">
+      <result resultType="XZ SG_KZZ"><!--新债 可转债申购-->
+        <convertedSecCode>113***</convertedSecCode>
+        <businessSign>SG_KZZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+      <result resultType="XZ FK_KZZ"><!--新债 可转债返款-->
+        <convertedSecCode>113***</convertedSecCode>
+        <businessSign>FK_KZZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="704***"><!--新债 可转债新债的老股东配售-->
+      <convertedSecCode>110***</convertedSecCode>
+      <businessSign>KZZXZ</businessSign>
+      <secSign>XZ</secSign>
+    </Rule>
+    <Rule securityCode="764***"><!--新债 可转债新债的老股东配售-->
+      <convertedSecCode>113***</convertedSecCode>
+      <businessSign>KZZXZ</businessSign>
+      <secSign>XZ</secSign>
+    </Rule>
+    <Rule securityCode="733***"><!--新债 可转债中签-->
+      <convertedSecCode>110***</convertedSecCode>
+      <businessSign>ZQ_KZZ</businessSign>
+      <secSign>XZ</secSign>
+    </Rule>
+    <Rule securityCode="783***"><!--新债 可转债中签-->
+      <convertedSecCode>113***</convertedSecCode>
+      <businessSign>ZQ_KZZ</businessSign>
+      <secSign>XZ</secSign>
+    </Rule>
+    <Rule securityCode="7519**">
+	  <!-- edit by songjie 2012.04.27 BUG 4431 QDV4赢时胜(测试)2012年04月27日02_B SG_QYZQ 改为 ZQ_QYZQ -->
+	  <result resultType="XZ ZQ_QYZQ"><!--新债 企业债申购-->
+        <convertedSecCode>122***</convertedSecCode>
+        <businessSign>ZQ_QYZQ</businessSign>
+        <secSign>XZ</secSign>
+	  </result>
+	  <result resultType="XZ SG_DFZFZ"><!--新债 国债申购-->
+        <convertedSecCode>130***</convertedSecCode>
+        <businessSign>SG_DFZFZ</businessSign>
+        <secSign>XZ</secSign>
+	  </result>
+    </Rule>
+    <!-- B股数据转换 -->
+	<Rule securityCode="900***">
+		<result resultType="B_GP MR">
+			<convertedSecCode>900***</convertedSecCode>
+			<businessSign>MR</businessSign>
+			<secSign>B_GP</secSign>
+		</result>
+		<result resultType="B_GP MC">
+			<convertedSecCode>900***</convertedSecCode>
+			<businessSign>MC</businessSign>
+			<secSign>B_GP</secSign>
+		</result>
+	</Rule>	
+  </SHGHconvertRule>
+  <!--上海过户库-->
+
+  <!--深圳回报库-->
+  <SZHBconvertRule>
+    <Rule securityCode="00****">
+      <result resultType="XG SG"><!--新股  新股申购-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>SG</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="GP SH_ETF"><!--股票  ETF基金赎回-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>SH_ETF</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP SG_ETF"><!--股票  ETF基金申购-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>SG_ETF</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP XJTD_SG"><!--股票  ETF基金申购现金给付-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>XJTD_SG</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP XJTD_SH"><!--股票  ETF基金赎回现金给付-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>XJTD_SH</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MR_ZS"><!--股票  指数股票买入-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>MR_ZS</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MC_ZS"><!--股票  指数股票卖出-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>MC_ZS</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MR_ZB"><!--股票  指标股票买入-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>MR_ZB</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MC_ZB"><!--股票  指标股票卖出-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>MC_ZB</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MR"><!--股票  普通股票买入-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>MR</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MC"><!--股票  普通股票卖出-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>MC</businessSign>
+        <secSign>GP</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="30****">
+      <result resultType="XG SG"><!--新股  新股申购-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>SG</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="GP SH_ETF"><!--股票  ETF基金赎回-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>SH_ETF</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP SG_ETF"><!--股票  ETF基金申购-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>SG_ETF</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP XJTD_SG"><!--股票  ETF基金申购现金给付-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>XJTD_SG</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP XJTD_SH"><!--股票  ETF基金赎回现金给付-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>XJTD_SH</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MR_ZS"><!--股票  指数股票买入-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>MR_ZS</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MC_ZS"><!--股票  指数股票卖出-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>MC_ZS</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MR_ZB"><!--股票  指标股票买入-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>MR_ZB</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MC_ZB"><!--股票  指标股票卖出-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>MC_ZB</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MR"><!--股票  普通股票买入-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>MR</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP MC"><!--股票  普通股票卖出-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>MC</businessSign>
+        <secSign>GP</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="07****">
+      <result resultType="XZ SG_KZZ"><!--新债  可转债申购-->
+        <convertedSecCode>125***</convertedSecCode>
+        <businessSign>SG_KZZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+      <result resultType="XG ZQ_PSZF"><!--新股  配售增发中签-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>ZQ_PSZF</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG XGZF"><!--新股  新股增发-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>SG</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="37****">
+      <result resultType="XZ SG_KZZ"><!--新债  可转债申购-->
+        <convertedSecCode>125***</convertedSecCode>
+        <businessSign>SG_KZZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+      <result resultType="XG ZQ_PSZF"><!--新股  配售增发中签-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>ZQ_PSZF</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG XGZF"><!--新股  新股增发-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>SG</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="08****">
+      <result resultType="XZ KZZXZ"><!--新债  可转债中签-->
+        <convertedSecCode>125***</convertedSecCode>
+        <businessSign>KZZXZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+      <result resultType="QY PGJK_ZS"><!--权益 配股缴款  指数股-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>PGJK_ZS</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PGJK_ZB"><!--权益 配股缴款  指标股-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>PGJK_ZB</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PGJK"><!--权益 配股缴款  普通-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>PGJK</businessSign>
+        <secSign>QY</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="38****">
+      <result resultType="XZ KZZXZ"><!--新债  可转债中签-->
+        <convertedSecCode>125***</convertedSecCode>
+        <businessSign>KZZXZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+      <result resultType="QY PGJK_ZS"><!--权益 配股缴款  指数股-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>PGJK_ZS</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PGJK_ZB"><!--权益 配股缴款  指标股-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>PGJK_ZB</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PGJK"><!--权益 配股缴款  普通-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>PGJK</businessSign>
+        <secSign>QY</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="10****">
+      <result resultType="ZQ MR_GZ"><!--债券  国债买入-->
+        <convertedSecCode>10****</convertedSecCode>
+        <businessSign>MR_GZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_GZ"><!--债券  国债卖出-->
+        <convertedSecCode>10****</convertedSecCode>
+        <businessSign>MC_GZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="115***">
+      <result resultType="ZQ MR_FLKZZ"><!--债券  分离式可转债买入-->
+        <convertedSecCode>11****</convertedSecCode>
+        <businessSign>MR_FLKZZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_FLKZZ"><!--债券  分离式可转债卖出-->
+        <convertedSecCode>11****</convertedSecCode>
+        <businessSign>MC_FLKZZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="112***">
+      <result resultType="ZQ MR_QYZQ_GS"><!--债券  公司债买入-->
+        <convertedSecCode>11****</convertedSecCode>
+        <businessSign>MR_QYZQ_GS</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_QYZQ_GS"><!--债券  公司债卖出-->
+        <convertedSecCode>11****</convertedSecCode>
+        <businessSign>MC_QYZQ_GS</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="11****">
+      <result resultType="ZQ MR_QYZQ"><!--债券  企业债买入-->
+        <convertedSecCode>11****</convertedSecCode>
+        <businessSign>MR_QYZQ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_QYZQ"><!--债券  企业债卖出-->
+        <convertedSecCode>11****</convertedSecCode>
+        <businessSign>MC_QYZQ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="12****">
+      <result resultType="ZQ MR_KZZ"><!--债券  可转债买入-->
+        <convertedSecCode>12****</convertedSecCode>
+        <businessSign>MR_KZZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_KZZ"><!--债券  可转债卖出-->
+        <convertedSecCode>12****</convertedSecCode>
+        <businessSign>MC_KZZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="109***">
+      <result resultType="ZQ MR_DFZFZ"><!--债券  地方政府债买入-->
+        <convertedSecCode>109***</convertedSecCode>
+        <businessSign>MR_DFZFZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="ZQ MC_DFZFZ"><!--债券  地方政府债卖出-->
+        <convertedSecCode>109***</convertedSecCode>
+        <businessSign>MC_DFZFZ</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="1016**">
+      <result resultType="XZ SG_DFZFZ"><!--新债  地方政府债申购-->
+        <convertedSecCode>109***</convertedSecCode>
+        <businessSign>SG_DFZFZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="1017**">
+      <result resultType="XZ SG_DFZFZ"><!--新债  地方政府债申购-->
+        <convertedSecCode>109***</convertedSecCode>
+        <businessSign>SG_DFZFZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="13****">
+      <result resultType="HG MRHG"><!--回购  融券回购-->
+        <convertedSecCode>13****</convertedSecCode>
+        <businessSign>MRHG</businessSign>
+        <secSign>HG</secSign>
+      </result>
+      <result resultType="HG MCHG"><!--回购  融资回购-->
+        <convertedSecCode>13****</convertedSecCode>
+        <businessSign>MCHG</businessSign>
+        <secSign>HG</secSign>
+      </result>
+      <result resultType="HG MRHGDQ"><!--回购  融券回购到期-->
+        <convertedSecCode>13****</convertedSecCode>
+        <businessSign>MRHGDQ</businessSign>
+        <secSign>HG</secSign>
+      </result>
+      <result resultType="HG MCHGDQ"><!--回购  融资回购到期-->
+        <convertedSecCode>13****</convertedSecCode>
+        <businessSign>MCHGDQ</businessSign>
+        <secSign>HG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="16****">
+      <result resultType="JJ MR_LOF"><!--基金  LOF基金买入-->
+        <convertedSecCode>16****</convertedSecCode>
+        <businessSign>MR_LOF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ MC_LOF"><!--基金  LOF基金卖出-->
+        <convertedSecCode>16****</convertedSecCode>
+        <businessSign>MC_LOF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="1599**">
+      <result resultType="JJ SG_ETF"><!--基金  ETF申购-->
+        <convertedSecCode>15****</convertedSecCode>
+        <businessSign>SG_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ SH_ETF"><!--基金  ETF赎回-->
+        <convertedSecCode>15****</convertedSecCode>
+        <businessSign>SH_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ MR_ETF"><!--基金  ETF基金买入-->
+        <convertedSecCode>15****</convertedSecCode>
+        <businessSign>MR_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ MC_ETF"><!--基金  ETF基金卖出-->
+        <convertedSecCode>15****</convertedSecCode>
+        <businessSign>MC_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="15****">
+      <result resultType="JJ MR_LOF"><!--基金  LOF基金买入-->
+        <convertedSecCode>15****</convertedSecCode>
+        <businessSign>MR_LOF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ MC_LOF"><!--基金  LOF基金卖出-->
+        <convertedSecCode>15****</convertedSecCode>
+        <businessSign>MC_LOF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="18****">
+      <result resultType="JJ MR_FBS"><!--基金  封闭式基金买入-->
+        <convertedSecCode>18****</convertedSecCode>
+        <businessSign>MR_FBS</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ MC_FBS"><!--基金  封闭式基金卖出-->
+        <convertedSecCode>18****</convertedSecCode>
+        <businessSign>MC_FBS</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ RG_FBS"><!--基金  封闭式基金认购-->
+        <convertedSecCode>18****</convertedSecCode>
+        <businessSign>RG_FBS</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="03****">
+      <result resultType="QZ MR_RGQZ"><!--权证  买入认购权证-->
+        <convertedSecCode>03****</convertedSecCode>
+        <businessSign>MR_RGQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+      <result resultType="QZ MC_RGQZ"><!--基金  卖出认购权证-->
+        <convertedSecCode>03****</convertedSecCode>
+        <businessSign>MC_RGQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+      <result resultType="QZ MR_RZQZ"><!--基金  买入认沽权证-->
+        <convertedSecCode>03****</convertedSecCode>
+        <businessSign>MR_RZQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+      <result resultType="QZ MC_RZQZ"><!--基金  卖出认沽权证-->
+        <convertedSecCode>03****</convertedSecCode>
+        <businessSign>MC_RZQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+    </Rule>
+    <!-- B股业务 -->
+	<Rule securityCode="20****">
+		<result resultType="B_GP MR">
+			<convertedSecCode>20****</convertedSecCode>
+			<businessSign>MR</businessSign>
+			<secSign>B_GP</secSign>
+		</result>
+		<result resultType="B_GP MC">
+			<convertedSecCode>20****</convertedSecCode>
+			<businessSign>MC</businessSign>
+			<secSign>B_GP</secSign>
+		</result>
+	</Rule>
+  </SZHBconvertRule>
+  <!--深圳回报库-->
+  <!--上海证券变动库-->
+  <SHZQBDconvertRule>
+    <Rule securityCode="">
+      <result resultType="QY PX_GP"><!--分发派息-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>PX_GP</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY XJDJ"><!--现金对价-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>XJDJ</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY DZ_PX"><!--分红派息到账-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>DZ_PX</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY DZ_XJDJ"><!--现金对价到帐-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>DZ_XJDJ</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY GFDJ_ZS"><!--指数股份对价-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>GFDJ_ZS</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY GFDJ"><!--股份对价-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>GFDJ</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY SG_ZS"><!--指数送股-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>SG_ZS</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY SG"><!--送股-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>SG</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PX_ZQ"><!--债券-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>PX_ZQ</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY QZ"><!--权证送配-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>QZ</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="XG XGLT"><!--新股转上市流通-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>XGLT</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG XGLT_ZS"><!--新股转上市流通-指数-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>XGLT_ZS</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG XGLT_ZB"><!--新股转上市流通-指标-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>XGLT_ZB</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XZ XZLT"><!--新债转上市流通-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>XZLT</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+    </Rule>
+  </SHZQBDconvertRule>
+  <!--上海证券变动库-->
+  <!--深圳股份库-->
+  <SZGFconvertRule>
+    <Rule securityCode="10****">
+      <result resultType="QY PX"><!--债券派息-->
+        <convertedSecCode>10****</convertedSecCode>
+        <businessSign>PX</businessSign>
+        <secSign>QY</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="11****">
+      <result resultType="QY PX"><!--债券派息-->
+        <convertedSecCode>11****</convertedSecCode>
+        <businessSign>PX</businessSign>
+        <secSign>QY</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="12****">
+      <result resultType="QY PX"><!--债券派息-->
+        <convertedSecCode>12****</convertedSecCode>
+        <businessSign>PX</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="ZQ KZZGP"><!--可转债债转股-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>KZZGP</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="15****">
+      <result resultType="QY PX_GP"><!--股票-->
+        <convertedSecCode>15****</convertedSecCode>
+        <businessSign>PX_GP</businessSign>
+        <secSign>QY</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="18****">
+      <result resultType="QY PX_GP"><!--股票-->
+        <convertedSecCode>18****</convertedSecCode>
+        <businessSign>PX_GP</businessSign>
+        <secSign>QY</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="">
+      <result resultType="QY PX_GP"><!--股票-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>PX_GP</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY XJDJ"><!--现金对价-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>XJDJ</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY SG_ZS"><!--指数股票送股-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>SG_ZS</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY SG"><!--送股-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>SG</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY GFDJ_ZS"><!--指数股份对价-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>GFDJ_ZS</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY GFDJ"><!--股份对价-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>GFDJ</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY QZ"><!--权证送配-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>QZ</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="QY PG"><!--配股-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>PG</businessSign>
+        <secSign>QY</secSign>
+      </result>
+      <result resultType="GP KZZGP"><!--可转债债转股-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>KZZGP</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP YYSG_ZS"><!--指数要约收购-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>YYSG_ZS</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP YYSG_ZB"><!--指标要约收购-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>YYSG_ZB</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="GP YYSG"><!--要约收购-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>YYSG</businessSign>
+        <secSign>GP</secSign>
+      </result>
+      <result resultType="ZQ KZZHS"><!--可转债回售-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>KZZHS</businessSign>
+        <secSign>ZQ</secSign>
+      </result>
+      <result resultType="JJ XJCE"><!--ETF申赎现金差额-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>XJCE</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="JJ ETFTK"><!--ETF现金退款-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>ETFTK</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="QZ XQ_RZQZ"><!--认沽权证行权-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>XQ_RZQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+      <result resultType="QZ XQ_RGQZ"><!--认购权证行权-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>XQ_RGQZ</businessSign>
+        <secSign>QZ</secSign>
+      </result>
+    </Rule>
+  </SZGFconvertRule>
+  <!--深圳股份库-->
+  <!--深圳发行库-->
+  <SZFXconvertRule>
+    <Rule securityCode="115***">
+      <result resultType="XZ ZQ_FLKZZ"><!--可分离债中签-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>ZQ_FLKZZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="11****">
+      <result resultType="XZ ZQ_QYZQ"><!--企业债中签-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>ZQ_QYZQ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="1599**">
+      <result resultType="JJ RG_ETF"><!--ETF基金认购-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>RG_ETF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="07****">
+      <result resultType="XG XGZF_ZS"><!--指数新股增发-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>XGZF_ZS</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG XGZF"><!--新股增发-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>XGZF</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    <Rule securityCode="37****"><!--创业板股票-->
+      <result resultType="XG XGZF_ZS"><!--指数新股增发 创业板-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>XGZF_ZS</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG XGZF"><!--新股增发-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>XGZF</businessSign>
+        <secSign>XG</secSign>
+      </result>
+    </Rule>
+    
+    <Rule securityCode="">
+      <result resultType="JJ RG_LOF"><!--LOF基金认购-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>RG_LOF</businessSign>
+        <secSign>JJ</secSign>
+      </result>
+      <result resultType="XG KPSL"><!--可配售许可数据-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>KPSL</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG ZQ_ZS"><!--指数新股中签-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>ZQ_ZS</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG ZQ"><!--新股中签-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>ZQ</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG ZQ_SZ"><!--市值配售上海中签-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>ZQ_SZ</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG ZQ_SZ_ZS"><!--指数市值配售上海中签-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>ZQ_SZ_ZS</businessSign>
+        <secSign>XG</secSign>
+      </result>
+
+      <!--创业板股票-->
+      <result resultType="XG ZQ 3"><!--新股中签 创业板股票-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>ZQ</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG ZQ_ZS 3"><!--指数新股中签-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>ZQ_ZS</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG ZQ_SZ 3"><!--市值配售上海中签-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>ZQ_SZ</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      <result resultType="XG ZQ_SZ_ZS 3"><!--指数市值配售上海中签-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>ZQ_SZ_ZS</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      
+
+      <result resultType="XG FK"><!--新股返款-->
+        <convertedSecCode>00****</convertedSecCode>
+        <businessSign>FK</businessSign>
+        <secSign>XG</secSign>
+      </result>
+       <result resultType="XG FK 3"><!--新股返款 创业板股票-->
+        <convertedSecCode>30****</convertedSecCode>
+        <businessSign>FK</businessSign>
+        <secSign>XG</secSign>
+      </result>
+      
+      <result resultType="XZ ZQ_KZZ"><!--可转债中签-->
+        <convertedSecCode></convertedSecCode>
+        <businessSign>ZQ_KZZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+      <result resultType="XZ FK_FLKZZ"><!--可分离债返款-->
+        <convertedSecCode>125***</convertedSecCode>
+        <businessSign>FK_FLKZZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+      <result resultType="XZ FK_FLKZZ"><!--企业债返款-->
+        <convertedSecCode>125***</convertedSecCode>
+        <businessSign>FK_QYZQ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+      <result resultType="XZ FK_KZZ"><!--可转债中签返款-->
+        <convertedSecCode>125***</convertedSecCode>
+        <businessSign>FK_KZZ</businessSign>
+        <secSign>XZ</secSign>
+      </result>
+    </Rule>
+  </SZFXconvertRule>
+  <!--深圳发行库-->
+</convertRule>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<products><!-- 所有定义产品所属插件的父节点 -->
+	<product id = '4.0'><!-- 单个产品的父节点 -->
+		<plug-mapping>
+			<plug-id>port</plug-id><!-- 获取组合信息 webService地址定位 -->
+			<plug-url>http://192.168.16.144:8080/YssQDII/services/PortInfo</plug-url><!-- 客户端获取web service服务的地址 -->
+		</plug-mapping>
+		<plug-mapping>
+			<plug-id>plugin</plug-id><!-- 执行预警插件的webService地址定位 -->
+			<plug-url>http://192.168.16.144:8080/YssQDII/services/ProducePlugin</plug-url><!-- 客户端获取web service服务的地址 -->
+		</plug-mapping>
+	</product>
+</products>

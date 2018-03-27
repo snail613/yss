@@ -1,0 +1,758 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<pln:plugs-app xmlns:pln="http://www.ysstech.com/warn-plugin" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.ysstech.com/warn-plugin warn-plugin.xsd ">
+   <pln:plug id="001">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>现金计息前检查TA交易数据已结算</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>现金计息前检查TA交易数据已结算</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time> </pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">警告</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>taSettle</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+<!-- shashijie 2012-12-25 STORY 3254 增加预警指标 -->
+<pln:plug id="totleMoney">  <!-- 单个预警插件定义的节点 -->
+  <pln:plug-name>检查交易数据结算金额=成交金额+利息+-费用</pln:plug-name>
+  <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+  <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+  <pln:plug-desc>证券(场内)买卖交易数据的成交金额+-费用后，要等于该笔交易的实际结算金额</pln:plug-desc><!-- 插件说明 -->	
+  <pln:plug-threshold-items><!-- 阀值项目集合 -->
+    <pln:item id=" "> </pln:item>
+  </pln:plug-threshold-items>
+  <pln:plug-conditions><!-- 条件符号 -->
+    <pln:condition id=" "> </pln:condition>
+  </pln:plug-conditions>
+  <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+  <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+  <pln:plug-warning-time> </pln:plug-warning-time><!-- 执行时间--> 
+  <pln:plug-logic>and</pln:plug-logic>
+  <pln:plug-result-types><!-- 结果类型 -->
+    <pln:type id="normal">正常</pln:type>
+    <pln:type id="warn">警告</pln:type>
+  </pln:plug-result-types>
+  <pln:plug-result-show>list</pln:plug-result-show>
+  <pln:plug-url-mapping>totleMoney</pln:plug-url-mapping>
+  <pln:plug-property>估值处理</pln:plug-property>
+  <pln:plug-include-product>4.0</pln:plug-include-product>
+</pln:plug>
+<!-- end shashijie 2012-12-25 STORY 3254-->
+<!-- zhaoxianlin 2013-03-08 STORY #3484 证券停牌提示  增加预警指标 -->
+<pln:plug id="checkDelist">  <!-- 单个预警插件定义的节点 -->
+  <pln:plug-name>检查证券行情与上一日对比是否相同</pln:plug-name>
+  <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+  <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+  <pln:plug-desc>检查证券行情与上一日对比是否相同</pln:plug-desc><!-- 插件说明 -->	
+  <pln:plug-threshold-items><!-- 阀值项目集合 -->
+    <pln:item id=" "> </pln:item>
+  </pln:plug-threshold-items>
+  <pln:plug-conditions><!-- 条件符号 -->
+    <pln:condition id=" "> </pln:condition>
+  </pln:plug-conditions>
+  <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+  <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+  <pln:plug-warning-time> </pln:plug-warning-time><!-- 执行时间--> 
+  <pln:plug-logic>and</pln:plug-logic>
+  <pln:plug-result-types><!-- 结果类型 -->
+    <pln:type id="normal">正常</pln:type>
+    <pln:type id="warn">警告</pln:type>
+  </pln:plug-result-types>
+  <pln:plug-result-show>list</pln:plug-result-show>
+  <pln:plug-url-mapping>checkDelist</pln:plug-url-mapping>
+  <pln:plug-property>估值处理</pln:plug-property>
+  <pln:plug-include-product>4.0</pln:plug-include-product>
+</pln:plug>
+<!-- end zhaoxianlin 2013-03-08 STORY #3484 证券停牌提示  增加预警指标-->
+  
+  <!-- add by songjie 2013.40.28 STORY #3895 需求深圳-(南方基金)QDII估值系统V4.0(紧急)20130425001 start -->
+  <pln:plug id="checkYesNavScale">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>停牌证券当日市值 / 前一估值日的资产净值  >= 0.25%</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>停牌证券当日市值 / 前一估值日的资产净值 >= 0.25%</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time> </pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">警告</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  <!-- add by songjie 2013.40.28 STORY #3895 需求深圳-(南方基金)QDII估值系统V4.0(紧急)20130425001 end -->
+  
+  <pln:plug id="002">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>交易日无 TA数据提醒</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>交易日TA数据未读取给出提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->   
+    <pln:plug-warning-time> </pln:plug-warning-time><!-- 执行时间-->  
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">警告</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>taTrade</pln:plug-url-mapping>
+    <pln:plug-property>TA业务</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+
+   <pln:plug id="CheckSecurityIsNull">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>证券是否卖空</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>发生证券卖空时提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckDelayTrade">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>今日延迟结算的交易记录</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>检查日有延迟结算记录时提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckUnliquidated">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>结算日期已到未结算的交易记录</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>如有交易记录的结算日期为检查日，但未结算的时提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+   <pln:plug id="CheckTradeSettleDate">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>检查是否存在交易日期大于结算日期的业务资料</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>如有交易记录的交易日期大于结算日期时，给予提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckFixInterestInsDate">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>债券N日内派息/兑付/调息提醒</pln:plug-name>
+    <pln:plug-type id="check" name = "业务提醒"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>有债券即将付息或兑付时，给予提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id="InsStartDate">提前N日提醒</pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id="InsDate">提前</pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule> </pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckOptionsRightValue">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>股票期权行权价值检查</pln:plug-name>
+    <pln:plug-type id="check" name = "业务提醒"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>股票期权有行权价值时，给予提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>证券行情</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckSecurityMkt">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>持仓证券是否已连续N个交易日无行情</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>持仓证券连续N个交易日无行情时，给予提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>证券行情</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+   <pln:plug id="CheckCheckValidityMarket">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>检查除权证券行情是否有效</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>如某证券在检查日期除权，则检查其行情数据是否有效，无效时给予提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>证券行情</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+   
+  <pln:plug id="CheckSecurityInfo">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>检查持仓证券的证券信息是否有效</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>持仓证券的证券信息设置无效时提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>终止</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckCashStock">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>现金库存中的账户信息是否有效</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>有库存的现金帐户，现金帐户信息设置无效时提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>终止</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+   <pln:plug id="CheckFuturesBailAccount">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>检查期货估值保证金结算账户是否设置</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>检查期货估值保证金结算账户是否设置，并且设置的账户是否和变动保证金账户一致</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>终止</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckExRate">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>是否有估值日的汇率</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>汇率数据检查；无检查日的汇率数据时提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckTradeRate">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>检查交易证券的汇率与汇率表中汇率是否一致</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>交易数据中所记录汇率，与汇率数据中不一致时提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>终止</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckCashTransferExRate">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>检查资金调拨中的汇率和当日汇率是否相同</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>资金调拨中所记录汇率，与汇率数据中不一致时提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>终止</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckSecurityMTVMethod">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>检查持仓证券是否有对应的估值方法</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>持仓证券无对应估值方法时提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>终止</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <pln:plug id="CheckMTVMethod">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>检查估值方法是否有效</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>在用的估值方法，在估值方法设置无效时提示</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>终止</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  
+  <!-- add by liubo 2013.05.16 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 start -->
+  <!-- 【杠杆分级A类份额当期收益率检查监控】预警指标配置 -->
+  <pln:plug id="CheckCurrentYieldRate">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>杠杆分级A类份额当期收益率检查</pln:plug-name>
+    <pln:plug-type id="check" name = "业务提醒"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>杠杆分级A类份额当期收益率检查</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id="presetDate">阀值</pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id="presetDate">[预设日期];[间隔月数]</pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule> </pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>终止</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">失败</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  <!-- add by liubo 2013.05.16 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 end -->
+  
+  <!-- add by liubo 2013.05.17 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 start -->
+  <!-- 【杠杆分级A类份额下期收益率提前录入提醒】预警指标配置 -->
+  <pln:plug id="CheckNexYieldtDataEntry">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>杠杆分级A类份额下期收益率提前录入提醒</pln:plug-name>
+    <pln:plug-type id="check" name = "业务提醒"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>杠杆分级A类份额下期收益率提前录入提醒</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id="NexYield">阀值</pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id="NexYield">[预设日期];[间隔月数];[提前天数]</pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule> </pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  <!-- add by liubo 2013.05.17 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 end -->
+  
+  <!-- add by liubo 2013.05.20 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 start -->
+  <!--	【杠杆分级定期折算提醒】预警指标配置 -->
+  <pln:plug id="CheckDiscountRegularIntervals">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>杠杆分级定期折算提醒</pln:plug-name>
+    <pln:plug-type id="check" name = "业务提醒"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>杠杆分级定期折算提醒</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id="RegularIntervals">阀值</pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id="RegularIntervals">[节假日代码];[提醒日期首日间隔];[折算日间隔]</pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule> </pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  <!-- add by liubo 2013.05.20 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 end -->
+  
+  <!-- add by liubo 2013.05.21 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 start -->
+  <!-- 【定期折算日无折算相关数据，则禁止资产估值】预警指标配置 -->
+  <pln:plug id="CheckHaveDiscountData">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>定期折算日无折算相关数据，则禁止资产估值</pln:plug-name>
+    <pln:plug-type id="check" name = "业务检查"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>定期折算日无折算相关数据，则禁止资产估值</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id=" "> </pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id=" "> </pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule>none</pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>终止</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">失败</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>估值处理</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  <!-- add by liubo 2013.05.21 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 end -->
+  
+  <!-- add by liubo 2013.05.21 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 start -->
+  <!-- 【单位净值超出阀值区间时提醒】预警指标配置 -->
+  <pln:plug id="CheckThresholdRange">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>单位净值超出阀值区间时提醒</pln:plug-name>
+    <pln:plug-type id="check" name = "业务提醒"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>单位净值超出阀值区间时提醒</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id="ThresholdRange">阀值</pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id="ThresholdRange">[下限1];[下限2];[上限1];[上限2]</pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule> </pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time> </pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  <!-- add by liubo 2013.05.21 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 end -->
+  
+  <!-- add by liubo 2013.05.22 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 start -->
+  <!-- 【杠杆分级达到上拆点、下拆点后第N个工作日内，必须做份额折算】预警指标配置 -->
+  <pln:plug id="CheckforcedConversion">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>杠杆分级达到上拆点、下拆点后第N个工作日内</pln:plug-name>
+    <pln:plug-type id="check" name = "业务提醒"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>杠杆分级达到上拆点、下拆点后第N个工作日内，必须做份额折算</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id="ForcedConversion">阀值</pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id="ForcedConversion">[节假日代码];[上拆点];[下拆点];[工作日天数]</pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule> </pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>终止</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终估值前</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">失败</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  <!-- add by liubo 2013.05.22 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 end -->
+
+  
+  <!-- add by liubo 2013.07.02 STORY #4065 需求上海-[开发部]QDIIV4[低]20130609003 start -->
+  <!-- 【新股转流通录入提醒】预警指标配置 -->
+  <pln:plug id="CheckTurnToCirculationInfo">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>新股转流通录入提醒</pln:plug-name>
+    <pln:plug-type id="check" name = "业务提醒"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>新股转流通录入提醒</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id="ThresholdRange">阀值</pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id="ThresholdRange">截止日前N日</pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule> </pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time> </pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  <!-- add by liubo 2013.07.02 STORY #4065 需求上海-[开发部]QDIIV4[低]20130609003 end -->
+  
+  <!-- add by liubo 2013.07.12 STORY #4106 需求深圳-(南方基金)QDII估值系统V4.0(高)20130621001 start -->
+  <!-- 【基金日净值增长率与市场指数差异比较】预警指标配置 -->
+  <pln:plug id="CheckRatesComparing">  <!-- 单个预警插件定义的节点 -->
+    <pln:plug-name>基金日净值增长率与市场指数差异比较</pln:plug-name>
+    <pln:plug-type id="check" name = "业务提醒"/><!-- 插件类型 -->	
+    <pln:plug-range id="port" name = "组合"/><!-- 插件适用对象 -->	
+    <pln:plug-desc>基金日净值增长率与市场指数差异比较</pln:plug-desc><!-- 插件说明 -->	
+    <pln:plug-threshold-items><!-- 阀值项目集合 -->
+      <pln:item id="CompareDiff">阀值</pln:item>
+    </pln:plug-threshold-items>
+    <pln:plug-conditions><!-- 条件符号 -->
+      <pln:condition id="CompareDiff">差异阀值</pln:condition>
+    </pln:plug-conditions>
+    <pln:plug-threshold-rule> </pln:plug-threshold-rule><!-- 阀值规则 -->
+    <pln:plug-warning-type>继续</pln:plug-warning-type><!-- 提醒类型 -->
+    <pln:plug-warning-time>日终报表后</pln:plug-warning-time><!-- 执行时间--> 
+    <pln:plug-logic>and</pln:plug-logic>
+    <pln:plug-result-types><!-- 结果类型 -->
+      <pln:type id="normal">正常</pln:type>
+      <pln:type id="warn">提醒</pln:type>
+    </pln:plug-result-types>
+    <pln:plug-result-show>list</pln:plug-result-show>
+    <pln:plug-url-mapping>valCheck</pln:plug-url-mapping>
+    <pln:plug-property>交易证券</pln:plug-property>
+    <pln:plug-include-product>4.0</pln:plug-include-product>
+  </pln:plug>
+  <!-- add by liubo 2013.07.12 STORY #4106 需求深圳-(南方基金)QDII估值系统V4.0(高)20130621001 end -->
+
+</pln:plugs-app>

@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+	<bean id="securitystorage" class="com.yss.main.storagemanage.SecurityStorageBean" scope="prototype">
+      <property name="listView1Headers">
+   <value>库存日期	证券代码	证券名称	组合代码	组合名称	库存数量;R	冻结数量;R	交易货币代码	交易货币名称	核算成本;R	管理成本;R	估值成本;R	基础汇率;R	组合汇率;R	组合货币核算成本;R	组合货币管理成本;R	组合货币估值成本;R	基础货币核算成本;R	基础货币管理成本;R	基础货币估值成本;R	所属分类	所属分类名称	投资经理代码	投资经理名称	券商代码	券商名称	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FStorageDate	FSecurityCode	FSecurityName	FPortCode	FPortName	FStorageAmount;#,##0.####	FFreezeAmount;#,##0.####	FCuryCode	FCuryName	FStorageCost;#,##0.####	FMStorageCost;#,##0.####	FVStorageCost;#,##0.####	FBaseCuryRate;#,##0.###############	FPortCuryRate;#,##0.###############	FPortCuryCost;#,##0.####	FMPortCuryCost;#,##0.####	FVPortCuryCost;#,##0.####	FBaseCuryCost;#,##0.####	FMBaseCuryCost;#,##0.####	FVBaseCuryCost;#,##0.####	FAttrClsCode	FAttrClsName	FAnalysisCode1	FAnalysisName1	FAnalysisCode2	FAnalysisName2	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+
+  <property name="moduleName">
+	     <value>storagemanage</value>
+  </property> 
+  <property name="funName">
+	     <value>SecurityStorage</value>
+  </property>
+  <property name="refName">
+             <value >00000V</value>
+          </property>
+	</bean>
+
+	<bean id="cashstorage" class="com.yss.main.storagemanage.CashStorageBean" scope="prototype">
+      <property name="listView1Headers">
+          <value>帐户代码	帐户名称	库存日期	帐户余额;R	交易货币代码	交易货币名称	组合代码	组合名称	原币汇率;R	基础汇率;R	库存状态	投资经理代码	投资经理名称	品种代码	品种名称	辅助代码3	辅助名称3	所属分类	所属分类名称	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FCashAccCode	FCashAccName	FStorageDate	FAccBalance;#,##0.####	FCuryCode	FCurrencyName	FPortCode	FPortName	FPortCuryRate;#,##0.###############	FBaseCuryRate;#,##0.###############	FStorageInd	FAnalysisCode1	FAnalysisName1	FAnalysisCode2	FAnalysisName2	FAnalysisCode3	FAnalysisName3	FAttrClsCode	FAttrClsName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+
+	    <property name="moduleName">
+	     <value>storagemanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>CashStorage</value>
+	  </property>
+          <property name="refName">
+             <value >000016</value>
+          </property>
+	</bean>
+    <bean id="investpay" class="com.yss.main.storagemanage.InvestBean" scope="prototype">
+      <property name="listView1Headers">
+          <value>运营收支品种代码	运营收支品种名称	库存日期	帐户余额;R	交易货币代码	交易货币名称	组合代码	组合名称	原币汇率;R	基础汇率;R	库存状态	投资经理代码	投资经理名称	品种代码	品种名称	辅助代码3	辅助名称3	所属分类	所属分类名称	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FIVPayCatCode	FIVPayCatName	FStorageDate	FBal;#,##0.####	FCuryCode	FCurrencyName	FPortCode	FPortName	FPortCuryRate;#,##0.###############	FBaseCuryRate;#,##0.###############	FStorageInd	FAnalysisCode1	FAnalysisName1	FAnalysisCode2	FAnalysisName2	FAnalysisCode3	FAnalysisName3	FAttrClsCode	FAttrClsName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	  <property name="moduleName">
+	     <value>storagemanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>investStorage</value>
+	  </property>
+      <property name="refName">
+             <value >000205</value>
+      </property>
+	</bean>
+
+		<bean id="tastorage" class="com.yss.main.storagemanage.TAStorageBean" scope="prototype">
+      <property name="listView1Headers">
+          <value>组合分级代码	组合分级名称	库存日期	交易货币代码	交易货币名称	组合代码	组合名称	库存数量;R	折算后库存;R	原币成本;R	组合汇率;R	组合货币成本;R	基础汇率;R	基础货币成本;R	组合货币未实现损益平准金;R	组合货币损益平准金;R	基础货币未实现损益平准金;R	基础货币损益平准金;R	原币未实现损益平准金;R	原币损益平准金;R	库存状态	投资经理代码	投资经理名称	品种代码	品种名称	辅助代码3	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FPortClsCode	FPortClsName	FStorageDate	FCuryCode	FCuryName	FPortCode	FPortName	FStorageAmount;#,##0.############	FfjzhzsStorageAmount;#,##0.############	FCost;#,##0.############	FPortCuryRate;#,##0.###############	FPortCuryCost;#,##0.############	FBaseCuryRate;#,##0.###############	FBaseCuryCost;#,##0.############	FPortCuryUnpl;#,##0.############	FPortCuryPl;#,##0.############	FBaseCuryUnpl;#,##0.############	FBaseCuryPl;#,##0.############	FCuryUnpl;#,##0.############	FCuryPl;#,##0.############	FStorageInd	FAnalysisCode1	FInvMgrName	FAnalysisCode2	FCatName	FAnalysisCode3	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+
+	    <property name="moduleName">
+	     <value>storagemanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>TaStorage</value>
+	  </property>
+          <property name="refName">
+             <value >0000186</value>
+          </property>
+	</bean>
+
+	<bean id="cashrecpaybal" class="com.yss.main.storagemanage.CashRecPayBalBean" scope="prototype">
+	</bean>
+   <bean id="secrecpaybal" class="com.yss.main.storagemanage.SecRecPayBalBean" scope="prototype">
+	</bean>
+	
+	<bean id="investpayrecbal" class="com.yss.main.storagemanage.InvestPayRecBean" scope="prototype">
+	<property name="moduleName">
+	     <value>storagemanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>investStorage</value>
+	  </property>
+          <property name="refName">
+             <value >000205</value>
+          </property>
+	</bean>
+     <!--合并太平版本代码 bondinterest-->
+     <bean id="coststorage" class="com.yss.main.storagemanage.CostStorageBean" scope="prototype">
+      <property name="listView1Headers">
+          <value>帐户代码	帐户名称	库存日期	帐户余额;R	组合代码	组合名称	组合汇率;R	基础汇率;R	库存状态	分析代码1	分析代码名称1	分析代码2	分析代码名称2	分析代码3	分析代码名称3	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FCostAccCode	FCostAccName	FStorageDate	FAccBalance;#,##0.####	FPortCode	FPortName	FPortCuryRate;#,##0.###############	FBaseCuryRate;#,##0.###############	FStorageInd	FAnalysisCode1	FAnalysisName1	FAnalysisCode2	FAnalysisName2	FAnalysisCode3	FAnalysisName3	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+
+	    <property name="moduleName">
+	     <value>storagemanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>CostStorage</value>
+	  </property>
+          <property name="refName">
+             <value >00006A</value>
+          </property>
+	</bean>
+      <!--合并太平版本代码 bondinterest-->
+      <bean id="bondinterest" class="com.yss.main.storagemanage.PurBondInterestBean" scope="prototype">
+      	<property name="listView1Headers">
+	   <value>证券代码	证券名称	投资经理代码	投资经理名称	券商代码	券商名称	分析代码3	分析名称3	组合代码	组合名称	组合汇率;R	基础汇率;R	核算成本;R	管理成本;R	估值成本;R	组合货币核算成本;R	组合货币管理成本;R	组合货币估值成本;R	基础货币核算成本;R	基础货币管理成本;R	基础货币估值成本;R	库存日期	所属分类	所属分类名称	制作人	制作时间	审核人	审核时间</value>
+      	</property>
+      	<property name="listView1ShowCols">
+           <value>FSecurityCode	FSecurityName	FAnalysisCode1	FAnalysisName1	FAnalysisCode2	FAnalysisName2	FAnalysisCode3	FAnalysisName3	FPortCode	FPortName	FPortCuryRate;#,##0.###############	FBaseCuryRate;#,##0.###############	FStorageCost;#,##0.####	FMStorageCost;#,##0.####	FVStorageCost;#,##0.####	FPortCuryCost;#,##0.####	FMPortCuryCost;#,##0.####	FVPortCuryCost;#,##0.####	FBaseCuryCost;#,##0.####	FMBaseCuryCost;#,##0.####	FVBaseCuryCost;#,##0.####	FStorageDate	FAttrClsCode	FAttrClsName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     	</property>
+
+  	<property name="moduleName">
+	   <value>storagemanage</value>
+	  </property> 
+	<property name="funName">
+	    <value>BondInterest</value>
+  	</property>
+	<property name="refName">
+       	    <value >00001V</value>
+        </property>
+      </bean>
+      <!--QDV4中保2010年06月18日03_A MS01332 中保管理费计提的需求 合并太平版本代码 by leeyu 20100716 -->
+      <bean id="navbeginperiod" class="com.yss.main.storagemanage.NavBeginPeriodBean" scope="prototype">
+      <property name="listView1Headers">
+          <value>组合代码	组合名称	品种类型代码	品种类型名称	投资经理代码	投资经理名称	净值日期	创建人	创建时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FPortCode	FPortName	FCatCode	FCatName	FInvMgrCode	FInvMgrName	FNavDate	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+
+	    <property name="moduleName">
+	     <value>storagemanage</value>
+	  </property>
+	  <property name="funName">
+	     <value>navbeginperiod</value>
+	  </property>
+          <property name="refName">
+             <value >080011</value>
+          </property>
+      </bean>
+</beans>

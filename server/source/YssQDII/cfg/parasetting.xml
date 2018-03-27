@@ -1,0 +1,1185 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+
+  <description>Spring Quick Start</description>
+  <bean id="linkman" class="com.yss.main.parasetting.LinkManBean" scope="prototype">  </bean>
+  <bean id="manager" class="com.yss.main.parasetting.ManagerBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>管理人代码	管理人名称	管理人简称	办公地址	邮政编码	描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FManagerCode	FManagerName	FManagerShortName	FOfficeAddr	FPostalCode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>manager</value>
+    </property>
+    <property name="refName">
+      <value>00000M</value>
+    </property>
+  </bean>
+  <bean id="trustee" class="com.yss.main.parasetting.TrusteeBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>托管人代码	托管人名称	托管人简称	办公地址	邮政编码	托管人描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FTrusteeCode	FTrusteeName	FTrusteeShortName	FOfficeAddr	FPostalcode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>trustee</value>
+    </property>
+    <property name="refName">
+      <value>00000F</value>
+    </property>
+  </bean>
+  <bean id="investmanager" class="com.yss.main.parasetting.InvestManagerBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>投资经理代码	投资经理名称	投资经理简称	办公电话	移动电话	电子邮件	联系地址	邮政编码	投资经理描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FInvMgrCode	FInvMgrName	FInvMgrShortName	FPhoneCode	FTelephoneCode	FEmail	FLinkAddr	FPostalcode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>investmanager</value>
+    </property>
+    <property name="refName">
+      <value>00000P</value>
+    </property>
+  </bean>
+  
+  <bean id="keeper" class="com.yss.main.parasetting.KeeperBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>保管人代码	保管人名称	保管人简称	办公地址	邮政编码	保管人描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FKeeperCode	FKeeperName	FKeeperShortName	FOfficeAddr	FPostalcode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>keeper</value>
+    </property>
+    <property name="refName">
+      <value>00000G</value>
+    </property>
+  </bean>
+   <!--      add by zhangjun 2012-05-14    招行统计参数  -->
+  <bean id="cmbparabean" class="com.yss.main.parasetting.CMBParaBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>套帐号	资产代码	套帐名称	运营分行	经办人	投资管理人	委托人	受托人	来源分行	一级资产分类	二级资产分类	三级资产分类	投资管理方式	托管账号	托管费率	销售渠道	销售代码	一级运营分类	二级运营分类	成立日期	到期日期</value>   
+    </property>
+    <property name="listView1ShowCols">
+      <value>Fsetcode	FAssetCode	FSetName	FyyfhName	FJBR	Ftzglr	Fwtr	Fstr	FlyfhName	Fzclb1Name	Fzclb2Name	Fzclb3Name	FtzglfsName	FTGZH	Ftgfl	FxsqdName	Fxsdm	FYYLB1Name	FYYLB2Name	Fstartdate	Fenddate</value>
+    </property> 
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>CMBStaPara</value>
+    </property>
+    <property name="refName">
+      <value>0000CMB_PARA</value>
+    </property>
+  </bean>
+  <!-- end -->
+  <bean id="broker" class="com.yss.main.parasetting.BrokerBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>券商代码	券商名称	券商简称	办公地址	邮政编码	券商描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FBrokerCode	FBrokerName	FBrokerShortName	FOfficeAddr	FPostalcode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>brokerSet</value>
+    </property>
+    <property name="refName">
+      <value>00000Q</value>
+    </property>
+  </bean>
+  <bean id="tradeseat" class="com.yss.main.parasetting.TradeSeatBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>席位代码	席位名称	席位类型	席位号	交易所代码	交易所名称	券商代码	券商名称	席位描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FSeatCode	FSeatName	FSeatTypeValue	FSeatNum	FExchangeCode	FExchangeName	FBrokerCode	FBrokerName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>tradeSeat</value>
+    </property>
+    <property name="refName">
+      <value>00000H</value>
+    </property>
+  </bean>
+  <bean id="warrantor" class="com.yss.main.parasetting.WarrantorBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>担保人代码	担保人名称	担保人简称	办公地址	邮政编码	担保人描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FWarrantorCode	FWarrantorName	FWarrantorShortName	FOfficeAddr	FPostalcode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>warrantor</value>
+    </property>
+    <property name="refName">
+      <value>00000I</value>
+    </property>
+  </bean>
+  <!-- add by guyichuan 20110608 STORY #897 -->
+  <bean id="assetgroup" class="com.yss.main.syssetting.AssetGroupBean" scope="prototype"></bean>
+  
+  <!--  modify  by zhangfa 20101019    去掉启用日期   -->
+  <bean id="portfolio" class="com.yss.main.parasetting.PortfolioBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>组合代码	组合名称	组合简称	资产代码	组合群代码	组合群名称	组合货币代码	组合货币名称	组合类型	核算方法	是否禁用	开始日期	终止日期	库存初始日期	组合描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FPortCode	FPortName	FPortShortName	FAssetCode	FAssetGroupCode	FAssetGroupName	FPortCury	FCurrencyName	FPortTypeValue	FCostingValue	FEnabledValue	FInceptionDate	FExpirationDate	FStorageInitDate	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>portfolio</value>
+    </property>
+    <property name="refName">
+      <value>00000R</value>
+    </property>
+  </bean>
+  <!-- end  去掉启用日期  -->
+  <bean id="portfoliosub" class="com.yss.main.parasetting.PortfolioSubBean" scope="prototype">  </bean>
+  <bean id="operportfolio" class="com.yss.main.parasetting.OperPortfolioAdmin" scope="prototype">
+    <property name="listView1Headers">
+      <value>操作组合代码	操作组合名称	操作组合描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FOperPortCode	FOperPortName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>portfolio</value>
+    </property>
+    <property name="refName">
+      <value>0000040</value>
+    </property>
+  </bean>
+  <bean id="assignee" class="com.yss.main.parasetting.AssigneeBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>受托人代码	受托人名称	受托人简称	办公地址	邮政编码	受托人描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FAssigneeCode	FAssigneeName	FAssigneeShortName	FOfficeAddr	FPostalcode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>assignee</value>
+    </property>
+    <property name="refName">
+      <value>00000N</value>
+    </property>
+  </bean>
+  <bean id="sector" class="com.yss.main.parasetting.SectorBean" scope="prototype">
+    <property name="listView1Headers">
+    <!-- shashijie 2012-3-26 BUG 3963 板块设置刷新问题 -->
+    <!-- edit by licai 20101211  BUG #533 板块设置隐藏启用日期后，存在问题-->
+      <value>板块代码	板块名称	板块类型	板块中文名称	板块描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+     <!-- edit by licai 20101211  BUG #533 板块设置隐藏启用日期后，存在问题-->
+      <value>FSectorCode	FSectorName	FSectorTypeValue	FSECTORCHINESENAME	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <!-- end -->
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>sector</value>
+    </property>
+    <property name="refName">
+      <value>00000S</value>
+    </property>
+  </bean>
+  <bean id="sectorclass" class="com.yss.main.parasetting.SectorClassBean" scope="prototype">
+  	<property name="listView1Headers">
+       <value>板块分类代码	板块分类名称	行业板块代码	板块分类描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+       <value>FSECCLSCODE	FSECCLSNAME	FSectorCode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>	
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>sectorclass</value>
+    </property>
+    <property name="refName">
+      <value>000109</value>
+    </property>
+  </bean>
+  <bean id="security" class="com.yss.main.parasetting.SecurityBean" scope="prototype">
+    <!--xuqiji 20090420 MS00363    维护证券信息后显示证券信息数据要求同时显示ISIN码  添加ISIN代码-->
+    <property name="listView1Headers">
+      <value>证券代码	证券名称	ISIN代码	启用日期	品种代码	品种名称	品种明细代码	品种明细名称	交易所代码	交易所名称	地域代码	地域名称	国家代码	国家名称	地区代码	地区名称	上市代码	交易货币代码	交易货币名称	行业板块代码	行业板块名称	板块分类代码	板块分类名称	结算日期类型	延迟结算延迟天数	报价因子;R	总股本;R	流动股本;R	每手数量;R	股票面值	发行人代码	发行人名称	自定义子品种代码	自定义子品种名称	节假日群代码	节假日群名称	外部代码	组合群代码	组合群名称	证券描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <!--xuqiji 20090420 MS00363    维护证券信息后显示证券信息数据要求同时显示ISIN码 添加FISINCode-->
+    <property name="listView1ShowCols">
+      <value>FSecurityCode	FSecurityName	FISINCode	FStartDate	FCatCode	FCatName	FSubCatCode	FSubCatName	FExchangeCode	FExchangeName	FRegionCode	FRegionName	FCountryCode	FCountryName	FAreaCode	FAreaName	FMarketCode	FTradeCury	FCurrencyName	FSectorCode	FSectorName	FSYNTHETICCODE	FSYNTHETICNAME	FSettleDayTypeValue	FSettleDays	FFactor;#,##0.####	FTotalShare;#,##0.####	FCurrentShare;#,##0.####	FHandAmount;#,##0.####	FFaceAmount	FIssueCorpCode	FIssueCorpName	FCusCatCode	FCusCatName	FHolidaysCode	FHolidaysName	FExternalCode	FAssetGroupCode	FAssetGroupName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>infor</value>
+    </property>
+    <property name="refName">
+      <value>00000T</value>
+    </property>
+  </bean>
+  <bean id="customcategory" class="com.yss.main.parasetting.CustomCategoryBean" scope="prototype">  </bean>
+  <bean id="rounding" class="com.yss.main.parasetting.RoundingBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>舍入代码	舍入名称	舍入符号	舍入范围	舍入位数	舍入方法	舍入描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FRoundCode	FRoundName	FRoundSymbolValue	FRoundRangeValue	FRoundDigit	FRoundWayValue	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>rounding</value>
+    </property>
+    <property name="refName">
+      <value>000011</value>
+    </property>
+  </bean>
+  <bean id="cashaccount" class="com.yss.main.parasetting.CashAccountBean" scope="prototype">
+    <!--begin MS01629    关于招商基金需求之简化查询资产账户步骤    zhouxiang 2010.10.14 -->
+    <property name="listView1Headers">
+      <value>帐户代码	帐户名称	帐户类型代码	帐户类型	帐户子类型代码	帐户子类型	开户银行代码	开户银行	银行帐号	银行账号名称	到期日期	货币代码	币种	组合代码	对应组合	帐户状态	利息来源	计息周期	利息公式代码	利息公式名称	期间代码	期间名称	舍入设置代码	舍入设置	帐户描述	制作人	制作时间	审核人	审核时间	计息方式	期限代码	期限名称	利息税利率代码	利息税利率名称	账户分类	开户日期</value>
+      <!-- 增加 账户分类  开户日期  modified by zhaoxianlin 20121226 STORY #3384 -->
+    </property>
+    <property name="listView1ShowCols">
+      <value>FCashAccCode	FCashAccName	FAccType	FAccTypeName	FSubAccType	FSubAccTypeName	FBankCode	FBankName	FBankAccount	FbankaccName	FMatureDate	FCuryCode	FCurrencyName	FPortCode	FPortName	FStateValue	FInterestOriginValue	FInterestCycleValue	FFormulaCode	FFormulaName	FPeriodCode	FPeriodName	FRoundCode	FRoundName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime	InterestWay	FDepDurCode	FDepDurName	fperexpcode	FPerExpName	FAccSortName	FOpenDate</value>
+      <!-- 增加 FAccSortName	FOpenDate  modified by zhaoxianlin 20121226 STORY #3384 -->
+    </property>
+	<property name="listView3Headers">
+      <value>帐户代码	帐户名称	启用日期	帐户类型代码	帐户类型	帐户子类型代码	帐户子类型	开户银行代码	开户银行	银行帐号	银行账号名称	到期日期	货币代码	币种	组合代码	对应组合	帐户状态	利息来源	计息周期	利息公式代码	利息公式名称	期间代码	期间名称	舍入设置代码	舍入设置	帐户描述	制作人	制作时间	审核人	审核时间	计息方式	期限代码	期限名称	组合群代码;k	组合群名称;v</value>
+    </property>
+    <property name="listView3ShowCols">
+      <value>FCashAccCode	FCashAccName	FStartDate	FAccType	FAccTypeName	FSubAccType	FSubAccTypeName	FBankCode	FBankName	FBankAccount	FbankaccName	FMatureDate	FCuryCode	FCurrencyName	FPortCode	FPortName	FStateValue	FInterestOriginValue	FInterestCycleValue	FFormulaCode	FFormulaName	FPeriodCode	FPeriodName	FRoundCode	FRoundName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime	InterestWay	FDepDurCode	FDepDurName	fassetgroupcode	fassetgroupname</value>
+     <!--end  MS01629    关于招商基金需求之简化查询资产账户步骤    zhouxiang 2010.10.14 -->
+    </property>
+
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>cashaccount</value>
+    </property>
+    <property name="refName">
+      <value>000014</value>
+    </property>
+  </bean>
+  <bean id="qsaccount" class="com.yss.main.parasetting.QSAccountBean" scope="prototype">
+    <!--begin MS2622 yeshenghong 20120517   清算账户 -->
+    <property name="listView1Headers">
+      <value>账户序号	账户简称	货币符号	开户银行	银行帐号</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FAccNum	FAccName	FHbfh	FBank	FAccount</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>qsaccount</value>
+    </property>
+    <property name="refName">
+      <value>000168</value>
+    </property>
+  </bean>
+  <bean id="period" class="com.yss.main.parasetting.PeriodBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>期间代码	期间名称	期间类型	每年天数	每月天数	计算方法	期间描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FPeriodCode	FPeriodName	FPeriodTypeName	FDayOfYear	FDayOfMonth	FDayIndValue	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>period</value>
+    </property>
+    <property name="refName">
+      <value>000019</value>
+    </property>
+  </bean>
+  <bean id="securityissuser" class="com.yss.main.parasetting.SecurityIssuserBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>关联公司代码	关联公司名称	法人代表	币种代码	币种名称	注册资金;R	注册地址	描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+    <!--edit by songjie 2012.02.06 BUG 3706 QDV4赢时胜(测试)2012年01月19日01_B 格式化FRegCapital字段-->
+      <value>FAffCorpCode	FAffCorpName	FArtPerson	FCapitalCury	FCuryName	FRegCapital;#,##0.############	FRegAddr	FDesc	FCreatorName	FCreateTime	FCheckUserName	FCheckTime</value> 
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>securityissuser</value>
+    </property>
+    <property name="refName">
+      <value>000055</value>
+    </property>
+  </bean>
+  <bean id="currency" class="com.yss.main.parasetting.CurrencyBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>币种代码	币种名称	币种符号	是否可兑换	报价因子	报价方向	初始汇率;R	初始日期	初始时间	币种描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FCuryCode	FCuryName	FCurySymbol	FTradeIndValue	FFactor	FInvertIndValue	FInitRate;#,##0.############	FInitDate	FInitTime	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>currency</value>
+    </property>
+    <property name="refName">
+      <value>000018</value>
+    </property>
+  </bean>
+  <bean id="bank" class="com.yss.main.parasetting.BankBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>银行代码	银行名称	银行描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FBankCode	FBankName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>bank</value>
+    </property>
+    <property name="refName">
+      <value>000066</value>
+    </property>
+  </bean>
+  <bean id="customsubcategory" class="com.yss.main.parasetting.CustomSubCategoryBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>自定义品种代码	自定义品种名称	品种代码	品种名称	自定义品种描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FCusCatCode	FCusCatName	FCatCode	FCatName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>customsubcategory</value>
+    </property>
+    <property name="refName">
+      <value>00000J</value>
+    </property>
+  </bean>  
+  <!--  MS01446    add by zhangfa 20100806    QDV4海富通2010年7月9日01_A  FCreator FCheckUser -->
+  <bean id="securitycodechange" class="com.yss.main.parasetting.SecurityCodeChangeBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>业务日期	变更前的证券代码 	变更前的证券名称	变更后的证券代码	变更后的证券名称	描述	 制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FBusinessDate	FSecurityCodeBefore	FSecurityNameBefore	FSecurityCodeAfter	FSecurityNameAfter	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>securitycodechange</value>
+    </property>
+    <property name="refName">
+      <value>666666</value>
+    </property>
+  </bean>
+  <!--  -->
+    <!--      add by zhangfa 20101023    抵押物信息设置   -->
+  <bean id="collaterat" class="com.yss.main.parasetting.CollateralBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>抵押物代码	抵押物名称	抵押物类型	抵押物子类型	存管券商代码	存管券商名称	抵押物警戒值	描述	 制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FCollateralCode	FCollateralName	FCollateralType	FCollateralSubType	FBrokerCode	FBrokerName	FCollateralWarmVaule;#,##0.####	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>collaterat</value>
+    </property>
+    <property name="refName">
+      <value>600000</value>
+    </property>
+  </bean>
+  <!--  -->
+   <!--      add by zhangfa 20101026    证券借贷信息设置   -->
+  <bean id="securitylend" class="com.yss.main.parasetting.SecurityLendBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>证券代码	证券名称	交易券商代码	交易券商名称	计息起始日	期间设置代码	期间名称	舍入设置代码	舍入设置名称	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FSecurityCode	FSecurityName	FBrokerCode	FBrokerName	FStartDateName	FPeriodCode	FPeriodName	FRoundCode	FRoundName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>securitylend</value>
+    </property>
+    <property name="refName">
+      <value>600001</value>
+    </property>
+  </bean>
+  <!--  -->
+  <bean id="fee" class="com.yss.main.parasetting.FeeBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>费用代码	费用名称	费用类型	舍入条件代码	舍入条件名称	比率公式代码	比率公式名称	承担人	核算方式	是否清算金额项	费用描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FFeeCode	FFeeName	FFeeTypeValue	FRoundCode	FRoundName	FPerExpCode	FPerExpName	FAssumeManName	FAccountingWayName	FIsSettleName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>fee</value>
+    </property>
+    <property name="refName">
+      <value>000020</value>
+    </property>
+    <property name="listView3Headers">
+      <value>费用名称	费用金额</value>
+    </property>
+    <property name="listView3ShowCols">
+      <value>FFeeName	FFeeValue</value>
+    </property>
+  </bean>
+  <bean id="feelink" class="com.yss.main.parasetting.FeeLinkBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>费用链接代码	费用链接名称	启用日期	品种代码	品种类型	品种子代码	品种子类型	自定义品种代码	自定义品种	组合代码	对应组合	交易所代码	所属交易所	货币代码	货币名称	交易类型代码	交易类型	券商代码	券商名称	席位代码	席位名称	股东代码	股东名称	费用代码1	费用名称1	费用代码2	费用名称2	费用代码3	费用名称3	费用代码4	费用名称4	费用代码5	费用名称5	费用代码6	费用名称6	费用链接描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FFeeLinkCode	FFeeLinkName	FStartDate	FCatCode	FCatName	FSubCatCode	FSubCatName	FCusCatCode	FCusCatName	FPortCode	FPortName	FExchangeCode	FExchangeName	FCuryCode	FCuryName	FTradeTypeCode	FTradeTypeName	FBrokerCode	FBrokerName	FTradeSeatCode	FTradeSeatName	FStockholderCode	FStockholderName	FFeeCode1	FFeeName1	FFeeCode2	FFeeName2	FFeeCode3	FFeeName3	FFeeCode4	FFeeName4	FFeeCode5	FFeeName5	FFeeCode6	FFeeName6	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>tradefeelink</value>
+    </property>
+    <property name="refName">
+      <value>000022</value>
+    </property>
+  </bean>
+  <!-- add by zhouwei 20120321 固定交易费用设置   modify zhangjun story#2579-->
+  <bean id="fixedfeecfg" class="com.yss.main.parasetting.FixedFeeCfgBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>启用日期	所属类别	交易方式	交易方式名称	组合代码	固定费用	存款业务类型	品种代码	品种名称	调拨子类型	现金账户	描述	制作人	制作时间	审核人	审核时间	滚存业务除外</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FSTARTDATE	FBUSSINESSTYPENAME	FTRADETYPECODE	FTRADETYPENAME	FPORTCODE	FMONEEY;#############0.####	FSAVINGTYPENAME	FCATCODE	fcatname	FSubTsfTypeCode	FCASHACCCODE	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime	FchoException</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>fixedfeecfg</value>
+    </property>
+    <property name="refName">
+      <value>00002fixedfee</value>
+    </property>
+  </bean>
+  
+  <!-- option add by zhangjun 2011.12.02 -->
+  <bean id="insfeeset" class="com.yss.main.parasetting.InsFeeBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>组合代码	组合名称	日期	期间类型	描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FPortCODE	FPortName	FFeeDate	FPeriodTypeName	FDesc	FCREATOR	FCREATETIME	FCHECKUSER	FCHECKTIME</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>insuranceSet</value>
+    </property>
+    <property name="refName">
+      <value>000InsFee</value>
+    </property>
+  </bean>  
+  <!-- option add by zhangjun 2011.12.02 -->
+  
+  <bean id="attributeclass" class="com.yss.main.parasetting.AttriButeClassBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>属性分类代码	属性分类名称	属性分类描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FAttrClsCode	FAttrClsName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>attributeclass</value>
+    </property>
+    <property name="refName">
+      <value>000021</value>
+    </property>
+  </bean>
+  <bean id="fixinterest" class="com.yss.main.parasetting.FixInterestBean" scope="prototype">
+    <property name="listView1Headers">
+         <value>债券代码	债券名称	启用日期	品种类型代码	品种类型	品种子类型代码	品种子类型	自定义品种代码	自定义品种类型	票面金额;R	票面利率;R	发行价格;R	发行日期	计息起始日	计息截止日	兑付日期	付息频率;R	报价方式	计息方法	利息来源	利息公式代码	利息公式名称	期间代码	期间名称	舍入设置代码	舍入设置名称	基础CPI	描述说明	制作人	制作时间	审核人	审核时间	百元派息金额	百元派息金额名称	债券利息税利率代码	债券利息税利率名称</value>
+    </property>
+    <property name="listView1ShowCols">
+         <value>FSecurityCode	FSecurityName	FStartDate	FCatCode	FCatName	FSubCatCode	FSubCatName	FCusCatCode	FCusCatName	FFaceValue;#,##0.####	FFaceRate;#,##0.############	FIssuePrice;#,##0.####	FIssueDate	FInsStartDate	FInsEndDate	FInsCashDate	FInsFrequency;#,##0.####	FQuoteWayValue	FCalcInsWayValue	FInterestOriginValue	FPerExpCode	FFormulaName	FPeriodCode	FPeriodName	FRoundCode	FRoundName	FBASECPI;#,##0.####	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime	FTaskMoneyCode	FTaskMoneyName	fInterTaxperexpcode	fInterTaxperexpName</value>
+    </property>
+	<property name="listView3Headers">
+      <value>债券代码	债券名称	启用日期	品种类型代码	品种类型	品种子类型代码	品种子类型	自定义品种代码	自定义品种类型	票面金额;R	票面利率;R	发行价格;R	发行日期	计息起始日	计息截止日	兑付日期	付息频率;R	报价方式	计息方法	利息来源	利息公式代码	利息公式名称	期间代码	期间名称	舍入设置代码	舍入设置名称	基础CPI	描述说明	制作人	制作时间	审核人	审核时间	组合群代码;k	组合群名称;v</value>
+    </property>
+    <property name="listView3ShowCols">
+      <value>FSecurityCode	FSecurityName	FStartDate	FCatCode	FCatName	FSubCatCode	FSubCatName	FCusCatCode	FCusCatName	FFaceValue;#,##0.####	FFaceRate;#,##0.############	FIssuePrice;#,##0.####	FIssueDate	FInsStartDate	FInsEndDate	FInsCashDate	FInsFrequency;#,##0.####	FQuoteWayValue	FCalcInsWayValue	FInterestOriginValue	FPerExpCode	FFormulaName	FPeriodCode	FPeriodName	FRoundCode	FRoundName	FBASECPI;#,##0.####	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime	fassetgroupcode	fassetgroupname</value>
+    </property>
+
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>fixinterest</value>
+    </property>
+    <property name="refName">
+      <value>000050</value>
+    </property>
+  </bean>
+
+  <bean id="monetaryfund" class="com.yss.main.parasetting.MonetaryFundAdmin" scope="prototype">
+    <property name="listView1Headers">
+      <value>货币基金代码	货币基金名称	结转方式	计息方式	描述说明	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FSecurityCode	FSecurityName	FCloseTypeName	FInterestTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="listView3Headers">
+      <value>货币基金代码	货币基金名称	组合群代码;k	组合群名称	结转方式	计息方式	描述说明	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView3ShowCols">
+      <value>FSecurityCode	FSecurityName	FAssetGroupCode	FAssetGroupName	FCloseTypeName	FInterestTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+    <!-- edit by songjie 2012.09.20 STORY #2188 QDV4赢时胜(上海开发部)2012年2月3日02_A 修改 funName 以对应 菜单条代码 -->
+      <value>monetaryfundset</value>
+    </property>
+    <property name="refName">
+      <value>000060</value>
+    </property>
+  </bean>
+
+  <!-- option add by libo 20090612 -->
+  <bean id="optioncontract" class="com.yss.main.parasetting.OptionContractBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>期权代码	期权名称	品种类型	品种类型名	品种子类型	品种子类型名	期权币种	期权币种名	指数代码	指数名称	期限代码	期限代码名	行权日/到期日	期权交易类别	行权方式	标的价格;R	放大倍数;R	初始保证金;R	交易国家	交易所代码	交易所代码名	保证金类型	保证金比例	每手固定保证金	描述	审核状态	创建人、修改人	创建、修改时间	复核人	复核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FOptionCode	FOptionName	FCatCode	FCatName	FSubCatCode	FSubCatName	FTradeCury	FCuryName	FTSecurityCode	FTSecurityName	FDepDurCode	FDepDurName	FExpiryDate	FTradeTypeName	FExecuteTypeName	FExercisePrice;#,##0.####	FMultiple;#,##0.####	FBeginBail;#,##0.####	FCountryCode	FExchangeCode	FExchangeName	FBailTypeName	FBailScale	FBailFix	FDesc	FCheckState	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>optioncontract</value>
+    </property>
+    <property name="refName">
+      <value>000368</value>
+    </property>
+  </bean>
+  <!-- option add by libo 20090612 -->
+
+  <bean id="exratesource" class="com.yss.main.parasetting.ExRateSourceBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>汇率来源代码	汇率来源名称	汇率来源描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FExRateSrcCode	FExRateSrcName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>exratesource</value>
+    </property>
+    <property name="refName">
+      <value>000023</value>
+    </property>
+  </bean>
+  <bean id="index" class="com.yss.main.parasetting.IndexBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>指数代码	指数名称	交易所代码	交易所名称	备注	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FIndexCode	FIndexName	FExchangeCode	FExchangeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>index</value>
+    </property>
+    <property name="refName">
+      <value>000113</value>
+    </property>
+  </bean>
+  <!-- add by huhuichao 2013-05-14  STORY 3759 qd创新分级基金产品需求-杠杆分级运作期设置-->
+  <bean id="leverctset" class="com.yss.main.parasetting.LeverCTSetBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>组合代码	组合名称	开始日期	截止日期	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FPortCode	FPortName	FStartDay	FEndDay	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>leverctset</value>
+    </property>
+    <property name="refName">
+      <value>111111</value>
+    </property>
+  </bean>
+  <!-- end by huhuichao 2013-05-14  STORY 3759 qd创新分级基金产品需求-杠杆分级运作期设置-->
+  <bean id="performula" class="com.yss.main.parasetting.PerformulaBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>比率公式代码	比率公式名称	链接类型	比率类型	比率公式描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FFormulaCode	FFormulaName	FLinkTypeValue	FPerTypeValue	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>performula</value>
+    </property>
+    <property name="refName">
+      <value>000070</value>
+    </property>
+  </bean>
+  <bean id="marketsource" class="com.yss.main.parasetting.MarketSourceBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>行情来源代码	行情来源名称	描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FMKTSRCCODE	FMKTSRCNAME	FDESC	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>marketsource</value>
+    </property>
+    <property name="refName">
+      <value>000080</value>
+    </property>
+  </bean>
+  <bean id="indexsource" class="com.yss.main.parasetting.DataIndSourceBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>指数来源代码	指数来源名称	描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FIndexSrcCode	FIndexSrcName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>indexsource</value>
+    </property>
+    <property name="refName">
+      <value>000114</value>
+    </property>
+  </bean>
+  <bean id="storagecfg" class="com.yss.main.parasetting.AssetStorageCfgBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>库存类型	分析代码1	分析名称1	分析代码2	分析名称2	分析代码3	分析名称3	描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FStorageTypeValue	FAnalysisCode1	FAnalysisName1	FAnalysisCode2	FAnalysisName2	FAnalysisCode3	FAnalysisName3	FDESC	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>storagecfg</value>
+    </property>
+    <property name="refName">
+      <value>00000X</value>
+    </property>
+  </bean>
+  <bean id="performularela" class="com.yss.main.parasetting.PerformulaRelaBean" scope="prototype">  </bean>
+  <bean id="cashacclink" class="com.yss.main.parasetting.CashAccLinkBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>帐户代码	帐户名称	启用日期	帐户状态	投资经理代码	投资经理	组合代码	投资组合	品种代码	品种类型	品种子类型代码	品种子类型	交易所代码	交易所	券商代码	交易券商	交易类型代码	交易类型	描述说明	制作人	制作时间	审核人	审核时间	货币类型</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FCashAccCode	FCashAccName	FStartDate	FLinkLevelValue	FInvMgrCode	FInvMgrName	FPortCode	FPortName	FCatCode	FCatName	FSubCatCode	FSubCatName	FExchangeCode	FExchangeName	FBrokerCode	FBrokerName	FTradeTypeCode	FTradeTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime	FCuryCode</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>cashacclink</value>
+    </property>
+    <property name="refName">
+      <value>000029</value>
+    </property>
+  </bean>
+  <bean id="depositduration" class="com.yss.main.parasetting.DepositDurationBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>存款期限代码	存款期限名称	期限	期限单位	描述	创建人	创建时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FDepDurCode	FDepDurName	FDuration;#,##0	FDurUnitName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>depositduration</value>
+    </property>
+    <property name="refName">
+      <value>000115</value>
+    </property>
+  </bean>
+  <bean id="depositinterest" class="com.yss.main.parasetting.DepositInterestBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>银行代码	银行名称	货币代码	货币名称	存款期限代码	存款期限名称	利率	启用日期	描述	创建人	创建时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FBankCode	FBankName	FCuryCode	FCuryName	FDepDurCode	FDepDurName	FIntereset	FStartDate	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>depositduration</value>
+    </property>
+    <property name="refName">
+      <value>000115</value>
+    </property>
+  </bean>
+
+<!-- add...shashijie 2013-3-30 STORY 3528 增加投资类型字段-->
+<bean id="mtvmethod" class="com.yss.main.parasetting.MTVMethodBean" scope="prototype">
+  <property name="listView1Headers">
+    <value>估值方法代码	估值方法名称	启用日期	行情来源代码	行情来源名称	估值行情	估值方法	基础汇率来源	组合汇率来源	基础汇率代码	组合汇率代码	描述说明	制作人	制作时间	审核人	审核时间	投资类型</value>
+  </property>
+  <property name="listView1ShowCols">
+    <value>FMTVCode	FMTVName	FStartDate	FMktSrcCode	FMktSrcName	FMktPriceCodeValue	FMTVMethodValue	FBaseRateSrcCode	FPortRateSrcCode	FBaseRateCode	FPortRateCode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime	FinvestmentTypeName</value>
+  </property>
+  <property name="moduleName">
+    <value>set</value>
+  </property>
+  <property name="funName">
+    <value>mtvmethod</value>
+  </property>
+  <property name="refName">
+    <value>000098</value>
+  </property>
+  <property name="parseShowFields1">
+    <value>MTVCode	MTVName	StartDate	MktSrcCode	MktPriceCode	MTVMethod	CatCode	SubCatCode	CusCatCode	SecurityCode	SectorCode	Desc	CheckStateId	OldMTVCode	BaseRateSrcCode	BaseRateCode	PortRateSrcCode	PortRateCode	OldStartDate	IsOnlyColumns	FInvestmentType</value>
+  </property>
+  <property name="builderRowFields1">
+    <value>MTVCode	MTVName	StartDate	MktSrcCode	MktSrcName	MktPriceCode	MTVMethod	CatCode	CatName	SubCatCode	SubCatName	CusCatCode	CusCatName	SecurityCode	SecurityName	SectorCode	SectorName	Desc</value>
+  </property>
+</bean>
+<!-- end...shashijie 2013-3-30 STORY 3528-->
+
+  <bean id="mtvselcondset" class="com.yss.main.parasetting.MTVSelCondSetBean" scope="prototype">
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>mtvmethod</value>
+    </property>
+    <property name="refName">
+      <value>000098</value>
+    </property>
+  </bean>
+  <!--MS00008 add by 宋洁 2009-02-17-->
+  <bean id="submtvmethodlink" class="com.yss.main.parasetting.SubMTVMethodLinkBean" scope="prototype">
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>mtvmethod</value>
+    </property>
+    <property name="refName">
+      <value>000098</value>
+    </property>
+  </bean>
+  <!--MS00008 add by 宋洁 2009-02-17-->
+  <bean id="mtvmethodlink" class="com.yss.main.parasetting.MTVMethodLinkBean" scope="prototype">
+    <property name="parseShowFields1">
+      <value>MTVCode	LinkCode	StartDate	CatCode	SubCatCode	CusCatCode	SecurityCode	ExchangeCode	IsOnlyColumns</value>
+    </property>
+    <property name="builderRowFields1">
+      <value>MTVCode	LinkCode	StartDate</value>
+    </property>
+  </bean>
+  <bean id="sectorlink" class="com.yss.main.parasetting.SectorLinkBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>证券代码	证券名称</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FSecurityCode	FSecurityName</value>
+    </property>
+  </bean>
+  
+  <!--modify by zhangjun 2011-12-09 STORY #1273 支持保险业务中的投连全托管计提管理费和假设费用-->
+  <bean id="investpay" class="com.yss.main.parasetting.InvestPayBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>运营收支品种代码	运营收支品种名称	运营品种类型	组合代码	分级组合	组合名称	现金帐户代码	现金帐户名称	舍入代码	舍入名称	舍入代码2	舍入名称2	比率公式代码	比率公式名称	期间代码	期间名称	固定比率;R	开始日期	结束日期	终止日期	总金额;R	收支来源	计提方式	启用日期	分析代码1	分析代码2	分析代码3	算法公式代码	描述</value>  
+    </property>
+    <property name="listView1ShowCols">
+      <value>FIVPayCatCode	FIVPayCatName	FFeeType	FPortCode	fportclscode	FPortName	FCashAccCode	FCashAccName	FRoundCode	FRoundName	FACROUNDCODE	FACRoundName	FPerExpCode	FPerExpName	FPeriodCode	FPeriodName	FFixRate;#,##0.####	FACBeginDate	FACEndDate	FExpirDate	FACTotalMoney;#,##0.####	FPayOriginName	FAccrueTypeName	FStartDate	FAnalysisCode1	FAnalysisCode2	FAnalysisCode3	FARIEXPCODE	FDesc</value>
+    </property>
+	<property name="listView3Headers">
+      <value>运营收支品种代码	运营收支品种名称	运营品种类型	组合代码	分级组合	组合名称	现金帐户代码	现金帐户名称	舍入代码	舍入名称	舍入代码2	舍入名称2	比率公式代码	比率公式名称	期间代码	期间名称	固定比率;R	开始日期	结束日期	终止日期	总金额;R	收支来源	计提方式	启动日期	分析代码1	分析代码2	分析代码3	算法公式代码	描述	组合群代码;k	组合群名称;v</value>
+    </property>
+    <property name="listView3ShowCols">
+      <value>FIVPayCatCode	FIVPayCatName	FFeeType	FPortCode	fportclscode	FPortName	FCashAccCode	FCashAccName	FRoundCode	FRoundName	FACROUNDCODE	FACRoundName	FPerExpCode	FPerExpName	FPeriodCode	FPeriodName	FFixRate;#,##0.####	FACBeginDate	FACEndDate	FExpirDate	FACTotalMoney;#,##0.####	FPayOriginName	FAccrueTypeName	FStartDate	FAnalysisCode1	FAnalysisCode2	FAnalysisCode3	FARIEXPCODE	FDesc	fassetgroupcode	fassetgroupname</value>
+    </property>
+
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>investpay</value>
+    </property>
+    <property name="refName">
+      <value>000122</value>
+    </property>
+  </bean>
+  <!--QDV4中保2010年06月18日03_A MS01332 中保管理费计提的需求 合并太平版本代码 by leeyu 20100806 -->
+  <bean id="investrela" class="com.yss.main.parasetting.InvestRelaSetBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>运营收支品种代码	运营收支品种名称	组合代码	组合名称	所属分类代码	所属品种名称	固定利率;R	舍入公式代码	利率公式代码	描述</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FIVPayCatCode	FIVPayCatName	FPortCode	FPortName	FCatCode	FAttrClsName	FFixRate;#,##0.######	FRoundCode	FPerExpCode	FDesc</value>
+    </property>
+  </bean>
+  <bean id="creditlevel" class="com.yss.main.parasetting.CreditLevelBean" scope="prototype">  </bean>
+  <bean id="creditleveldict" class="com.yss.main.parasetting.CreditLevelDictBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>信用评级代码	信用评级名称	等级	描述信息</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FCreditLevelCode	FCreditLevelName	FLevel;#,##0	FDesc</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>creditleveldict</value>
+    </property>
+    <property name="refName">
+      <value>000121</value>
+    </property>
+  </bean>
+  <bean id="forward" class="com.yss.main.parasetting.ForwardBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>证券代码	证券名称	期限代码	期限名称	委托汇率	卖出币种	买入币种	价格算法	价格算法名称	描述信息</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FSecurityCode	FSecurityName	FDepDurCode	FDepDurName	FTrustRate	FSaleCury	FBuyCury	FCalcPriceMetic	FCalcPriceMeticName	FDesc</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>forwardmsg</value>
+    </property>
+    <property name="refName">
+      <value>000362</value>
+    </property>
+  </bean>
+  <bean id="indexfutures" class="com.yss.main.parasetting.IndexFuturesBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>证券代码	证券名称	指数代码	指数名称	期限代码	期限名称	放大倍数	保证金类型	保证金类型名称	期货类型	期货类型名称	保证金比例;R	每手固定保证金	初始保证金	描述信息	品种明细代码	品种明细名称</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FSecurityCode	FSecurityName	FIndexCode	FIndexName	FDepDurCode	FDepDurName	FMultiple	FBailType	FBailTypeName	FFUType	FFUTypeName	FBailScale;#,##0.####	FBailFix	FBeginBail	FDesc	FSubCatCode	FSubCatName</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>indexfutures</value>
+    </property>
+    <property name="refName">
+<!-- shashijie 2012-5-29 BUG 4668 -->
+	<value>000363</value>
+<!-- end -->
+    </property>
+    </bean>  
+<!-- shashijie 2012-7-9 STORY 2727 -->
+<bean id="etflinkdvp" class="com.yss.main.parasetting.DVP.ETFDVPSetUp" scope="prototype">
+    <property name="listView1Headers">
+      <value>组合代码	组合名称	交易方式代码	交易方式名称	交易所代码	交易所名称	品种类型代码	品种类型名称	品种子类型代码	品种子类型名称	银行账户代码	银行账户名称	节假日群代码	节假日群名称	延迟天数	启用日期	描述	创建人	创建时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>Fportcode	Fportname	Ftradetypecode	Ftradetypename	Fexchangecode	Fexchangename	Fcategorycode	Fcatname	Fsubcatcode	Fsubcatname	Fcashcode	Fcashaccname	Fholidayscode	Fholidaysname	Fdvpsettleover	Fstartdate	Fdesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>indexfutures</value>
+    </property>
+    <property name="refName">
+      <value>000371</value>
+    </property>
+  </bean>
+<!-- end -->
+  <bean id="receiver" class="com.yss.main.parasetting.ReceiverBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>代码	名称	简称	货币代码	货币名称	办公地址	邮政编码	开户银行	帐号	描述	创建人	创建时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FReceiverCode	FReceiverName	FReceiverShortName	FCuryCode	FCuryName	FOfficeAddr	FPostalCode	FOperBank	FAccountNumber	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+    <!-- edit by songjie 2012.09.20 STORY #2188 QDV4赢时胜(上海开发部)2012年2月3日02_A 修改 funName 以对应 菜单条代码 -->
+      <value>frmreceiver</value>
+    </property>
+    <property name="refName">
+      <value>005100</value>
+    </property>
+  </bean>
+  <bean id="purchase" class="com.yss.main.parasetting.PurchaseBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>证券代码	证券名称	期限代码	期限名称	回购汇率;R	期间设置	期间设置名称	计息起始日类型	描述信息</value><!-- 去掉显示回购类型  QDII4.1赢时胜上海2010年02月25日02_B  by leeyu 20100323 -->
+    </property>
+    <property name="listView1ShowCols">
+      <value>FSecurityCode	FSecurityName	FDepDurCode	FDepDurName	FPurchaseRate;#,##0.####	FPeriodCode	FPeriodName	FInBeginTypeName	FDesc</value><!-- 去掉显示回购类型  QDII4.1赢时胜上海2010年02月25日02_B  by leeyu 20100323 -->
+    </property>
+	<property name="listView3Headers">
+      <value>证券代码	证券名称	期限代码	期限名称	回购汇率;R	回购类型	回购类型名称	期间设置	期间设置名称	计息起始日类型	描述信息	组合群代码;k	组合群名称;v</value>
+    </property>
+    <property name="listView3ShowCols">
+      <value>FSecurityCode	FSecurityName	FDepDurCode	FDepDurName	FPurchaseRate;#,##0.####	FPurchaseType	FPurchaseTypeName	FPeriodCode	FPeriodName	FInBeginTypeName	FDesc	fassetgroupcode	fassetgroupname</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>purchase</value>
+    </property>
+    <property name="refName">
+      <value>000370</value>
+    </property>
+  </bean>
+  <bean id="brokersubbny" class="com.yss.main.parasetting.BrokerSubBnyBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>券商代码	券商名称	交易所代码	交易所名称	BrokerIDType	BrokerID	FClearerIDType	FClearerID	BrokerAccount	备注</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FBrokerCode	FBrokerName	FExchangeCode	FExchangeName	FBrokerIDType	FBrokerID	FClearerIDType	FClearerID	FBrokerAccount	FDesc</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>brokersubbny</value>
+    </property>
+    <property name="refName">
+      <value>0000158</value>
+    </property>
+  </bean>
+  <bean id="stockholder" class="com.yss.main.parasetting.StockholderBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>股东代码	股东名称	交易所代码	交易所名称	股东编号	投资经理代码	投资经理名称	描述	创建人	创建时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FStockholderCode	FStockholderName	FExchangeCode	FExchangeName	FStockholderNum	FINVMGRCODE	FINVMGRNAME	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>stockholder</value>
+    </property>
+    <property name="refName">
+      <value>0000033</value>
+    </property>
+  </bean>
+  <bean id="currencyway" class="com.yss.main.parasetting.CurrencyWayBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>组合代码	组合名称	货币代码	货币名称	基准货币代码	基准货币名称	报价方向	描述	创建人	创建时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FPortCode	FPortName	FCuryCode	FCuryName	FMarkCury	FMarkName	FQuoteWay	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>currencyway</value>
+    </property>
+    <property name="refName">
+      <value>000160</value>
+    </property>
+  </bean>
+  <bean id="groupdatasync" class="com.yss.main.parasetting.GroupDataSyncBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>汇总组合代码	汇总组合名称	明细组合代码	明细组合名称	比例</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FMergePortCode	FMergePortName	FDetailPortCode	FdetailPortName	FScale</value>
+    </property>
+  </bean>
+  <bean id="valuationdays" class="com.yss.main.parasetting.ValuationDaysBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>估值日群代码	估值日群名称	组合代码	组合名称	估值日群描述	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FValuationdaysCode	FValuationdaysName	FPortCode	FPortName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>valuationdays</value>
+    </property>
+    <property name="refName">
+      <value>0000VD</value>
+    </property>
+  </bean>
+  <bean id="valuationdayschild" class="com.yss.main.parasetting.ValuationDaysChildBean" scope="prototype">  </bean>
+   <bean id="bondrateset" class="com.yss.main.parasetting.BondInterTaxBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>利率类型	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>fType	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="parseShowFields1">
+      <value>RateType	BondCategoryCode	ExchangeCode	SecurityCode	CheckStateId	IsOnlyColumns</value>
+    </property>
+    <property name="builderRowFields1">
+      <value>RateCode	RateType	IsOnlyColumns</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>bondrateset</value>
+    </property>
+    <property name="refName">
+      <value>BondRateSet</value>
+    </property>
+  </bean>
+  <bean id="cgt" class="com.yss.main.parasetting.CGTSetBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>组合代码	组合名称	证券代码	证券名称	证券品种	品种明细	税率	舍入代码	舍入名称	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FPortCode	FPortName	FSecurityCode	FSecurityName	FCatCode	FSubCatCode	FRate;#,##0.########	FRoundCode	FRoundName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>cgt</value>
+    </property>
+    <property name="refName">
+      <value>CGTSet</value>
+    </property>
+  </bean>
+  
+  <!-- shashijie 2011-12-26 STORY 1713 -->
+  <bean id="driftrate" class="com.yss.main.parasetting.FixInterest.DriftRateBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>起始日期	利率	整个付息期间均采用新利率</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FStartDate	FRate;#,##0.########	FIsNewRate</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>driftrate</value>
+    </property>
+    <property name="refName">
+      <value>000132</value>
+    </property>
+  </bean>
+  
+  <bean id="interest" class="com.yss.main.parasetting.FixInterest.InterestTime" scope="prototype">
+    <property name="listView1Headers">
+      <value>付息序号	债券代码	债券名称	起始日期	截至日期	派息日期	到账日	除权日	税前票面利率	税后票面利率	每百元实际利息(自动)	每百元实际利息(手动)	偿还本金	剩余本金	制作人	制作时间	审核人	审核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FID;#,##0	FSecurityCode	FSecurityName	FInsStartDate	FInsEndDate	FIssueDate	Fsettledate	FEXRIGHTDATE	FBeforeFaceRate;#,##0.########	FFaceRate;#,##0.########	FMoneyAutomatic;#,##0.########	FMoneyControl;#,##0.########	Fpaymoney;#,##0.########	Fremainmoney;#,##0.########	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>set</value>
+    </property>
+    <property name="funName">
+      <value>interest</value>
+    </property>
+    <property name="refName">
+      <value>000134</value>
+    </property>
+  </bean>
+  
+  <!-- end -->
+  
+</beans>
+
+

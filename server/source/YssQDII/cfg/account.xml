@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+
+	<bean id="auxiliary" class="com.yss.main.account.accsetting.admin.AuxiliaryAdmin" scope="prototype">
+      <property name="listView1Headers">
+         <value>核算项目代码	核算项目名称	核算项目类型	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FAuxCode	FAuxName	FAuxTypeName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	   <property name="moduleName">
+	     <value>account</value>
+	  </property>
+	  <property name="funName">
+	     <value>auxiliary</value>
+	  </property>
+      <property name="refName">
+         <value >Acc_Auxiliary</value>
+      </property>
+	</bean>
+
+	<bean id="tabledict" class="com.yss.main.account.accsetting.admin.TableDictAdmin" scope="prototype">
+      <property name="listView1Headers">
+         <value>代码	名称	描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FAuxCode	FAuxName	FAuxTypeName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	   <property name="moduleName">
+	     <value>account</value>
+	  </property>
+	  <property name="funName">
+	     <value>tabledict</value>
+	  </property>
+      <property name="refName">
+         <value >Acc_TableDict</value>
+      </property>
+	</bean>
+
+	<bean id="auxdetail" class="com.yss.main.account.accsetting.admin.AuxDetailAdmin" scope="prototype">
+      <property name="listView1Headers">
+         <value>代码	名称	描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FAuxCode	FAuxName	FAuxTypeName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+     <property name="listView3Headers">
+         <value>代码	名称	描述</value>
+      </property>
+      <property name="listView3ShowCols">
+         <value>FItemCode	FItemName	FItemDesc</value>
+      </property>
+	   <property name="moduleName">
+	     <value>account</value>
+	  </property>
+	  <property name="funName">
+	     <value>auxdetail</value>
+	  </property>
+      <property name="refName">
+         <value >Acc_AuxDetail</value>
+      </property>
+	</bean>
+
+	<bean id="accountset" class="com.yss.main.account.accsetting.admin.AccountSetAdmin" scope="prototype">
+      <property name="listView1Headers">
+         <value>套账代码	套账名称	套账类型	组合代码	组合名称	启用日期	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FSetCode	FSetName	FTypeName	FPortCode	FPortName	FStartDate	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+     <property name="listView3Headers">
+         <value>套账代码	套账名称</value>
+      </property>
+      <property name="listView3ShowCols">
+         <value>FSetCode	FSetName</value>
+      </property>
+	   <property name="moduleName">
+	     <value>account</value>
+	  </property>
+	  <property name="funName">
+	     <value>AccountSet</value>
+	  </property>
+      <property name="refName">
+         <value >Acc_AccountSet</value>
+      </property>
+	</bean>
+
+	<bean id="accountperiod" class="com.yss.main.account.accsetting.admin.AccountPeriodAdmin" scope="prototype">
+      <property name="listView1Headers">
+         <value>会计期间	起始日期	截止日期	结账状态</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FYear	FPeriod	FStartDate	FEndDate	FCloseState</value>
+      </property>
+     <property name="listView3Headers">
+         <value>代码	名称	描述</value>
+      </property>
+      <property name="listView3ShowCols">
+         <value>FItemCode	FItemName	FItemDesc</value>
+      </property>
+	   <property name="moduleName">
+	     <value>account</value>
+	  </property>
+	  <property name="funName">
+	     <value>AccountSet</value>
+	  </property>
+      <property name="refName">
+         <value >Acc_AccountSet</value>
+      </property>
+	</bean>
+
+	<bean id="auxstruct" class="com.yss.main.account.accsetting.admin.AuxStructAdmin" scope="prototype">
+      <property name="listView1Headers">
+         <value>结构代码	结构名称	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FStructCode	FStructName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+     <property name="listView3Headers">
+         <value>代码	名称	描述</value>
+      </property>
+      <property name="listView3ShowCols">
+         <value>FItemCode	FItemName	FItemDesc</value>
+      </property>
+	   <property name="moduleName">
+	     <value>account</value>
+	  </property>
+	  <property name="funName">
+	     <value>AccountSet</value>
+	  </property>
+      <property name="refName">
+         <value >Acc_AccountSet</value>
+      </property>
+	</bean>
+</beans>

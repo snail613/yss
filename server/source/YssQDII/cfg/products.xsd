@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/product" xmlns:tns="http://www.example.org/product" elementFormDefault="qualified">
+ <element name="oneP">
+        	<complexType>
+        		<sequence>
+        		<element name ="ProductCode" type = "string"/> <!-- 产品代码 -->
+				<element name ="ProductName" type = "string"/> <!-- 产品名称 -->
+				<element name="Version" type = "string"/> <!-- 版本 -->
+				<element name="ProSys" type = "string"/> <!-- 适用系统 -->
+				<element name="ProCustomer" type = "string"/> <!-- 适用客户 -->
+				<element name="ProductDes" type = "string"/> <!-- 产品说明 -->
+        		</sequence>	
+        	</complexType>
+        </element>
+        <element name="multiP">
+        	<complexType>
+        		<sequence>
+        			<element ref ="tns:oneP" maxOccurs = "unbounded"/>
+        		</sequence>
+        	</complexType>
+        </element>
+</schema>

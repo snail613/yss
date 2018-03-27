@@ -1,0 +1,381 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN" "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+<web-app>
+  <display-name>YssQDII</display-name>  
+  <!--add by guolongchao 20110920 STORY 1290 添加日志文件的侦听器  -->
+  <listener>
+  	<listener-class>com.yss.serve.LogtListener</listener-class>
+  </listener>
+  <listener>
+  	<listener-class>
+  		com.sun.xml.ws.transport.http.servlet.WSServletContextListener
+  	</listener-class>
+  </listener>
+  <listener>
+  	<listener-class>
+  		com.yss.webServices.client.swiftClient.TaskContextListener
+  	</listener-class>
+  </listener>
+  <!--story 2188 by zhouwei 20120215 启动装载预警插件的监听器 start -->  
+  <listener>
+  	<listener-class>
+  		com.yss.webServices.listener.BeansLoadingListener
+  	</listener-class>
+  </listener>
+  <listener>
+  	<listener-class>
+  		com.yss.webServices.listener.SessionListner
+  	</listener-class>
+  </listener>
+   <!--story 2188 by zhouwei 20120215 启动装载预警插件的监听器 end -->
+  <servlet>
+    <servlet-name>usercheck</servlet-name>
+    <servlet-class>com.yss.serve.UserCheck</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>rightserver</servlet-name>
+    <servlet-class>com.yss.serve.RightServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>systemsetting</servlet-name>
+    <servlet-class>com.yss.serve.setting.SystemSetting</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>funsetting</servlet-name>
+    <servlet-class>com.yss.serve.setting.FunSetting</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>basesetting</servlet-name>
+    <servlet-class>com.yss.serve.setting.BaseSetting</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>tools</servlet-name>
+    <servlet-class>com.yss.serve.ToolServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>operdata</servlet-name>
+    <servlet-class>com.yss.serve.operdata.OperDataServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>etfoperation</servlet-name>
+    <servlet-class>com.yss.serve.etfoperation.ETFOperationServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>parasetting</servlet-name>
+    <servlet-class>com.yss.serve.setting.ParaSetting</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>datainterface</servlet-name>
+    <servlet-class>com.yss.serve.datainterface.DataInterfaceServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>orderadmin</servlet-name>
+    <servlet-class>com.yss.serve.orderadmin.OrderAdminServer</servlet-class>
+  </servlet>
+   <servlet>
+    <servlet-name>cashmanagertype</servlet-name>
+    <servlet-class>com.yss.serve.cashmanager.CashManagerTypeServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>cashmanager</servlet-name>
+    <servlet-class>com.yss.serve.cashmanager.CashManagerServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>settlement</servlet-name>
+    <servlet-class>com.yss.serve.settlement.SettlementServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>accbook</servlet-name>
+    <servlet-class>com.yss.serve.accbook.AccBookServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>account</servlet-name>
+    <servlet-class>com.yss.serve.AccountServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>report</servlet-name>
+    <servlet-class>com.yss.serve.report.ReportServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>dayfinish</servlet-name>
+    <servlet-class>com.yss.serve.dayfinish.DayFinishServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>storagemanage</servlet-name>
+    <servlet-class>com.yss.serve.storagemanage.StorageManageServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>compliance</servlet-name>
+    <servlet-class>com.yss.serve.compliance.ComplianceServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>cusreport</servlet-name>
+    <servlet-class>com.yss.serve.cusreport.CusReportServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>runstatus</servlet-name>
+    <servlet-class>com.yss.serve.RunStatusServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>voucher</servlet-name>
+    <servlet-class>com.yss.serve.VoucherServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>taoperation</servlet-name>
+    <servlet-class>com.yss.serve.taoperation.TaOperationServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>platform</servlet-name>
+    <servlet-class>com.yss.serve.platform.PlatFormServer</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>commeach</servlet-name>
+    <servlet-class>com.yss.serve.commeach.CommEachServer</servlet-class>
+  </servlet>
+  <!--story 2188 by zhouwei 20120215 配置预警的servlet start -->
+  <servlet>
+    <servlet-name>ewserver</servlet-name>
+    <servlet-class>com.yss.serve.YssEWServer</servlet-class>
+   </servlet>
+  <!--story 2188 by zhouwei 20120215 配置预警的servlet end -->  
+  <!-- 针对WebService的配置 -->
+  <servlet>
+  	<servlet-name>swiftWS</servlet-name>
+  	<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+  </servlet>
+
+  <!-- start add by huangqirong 2013-05-09 story #3871 需求北京-[建设银行]QDII系统[高]20130419001 增加 一个WebService-->
+  <servlet>
+  	<servlet-name>AccountClinkageService</servlet-name>
+  	<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+  </servlet>
+  <!-- end add by huangqirong 2013-05-09 story #3871 需求北京-[建设银行]QDII系统[高]20130419001 增加一个WebService-->
+  <!-- 20120418 added by liubo.Story #2439.设置QDII估值系统的webservice，使托管系统能够调用 -->
+  
+    <!--  add dongqingsong  2013-06-17 story #3753  [webservice中行托管系统和QDII数据交换] -->
+  <servlet>
+  	<servlet-name>BCDataService</servlet-name>
+  	<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+  </servlet>
+  <!--  end dongqingsong  2013-06-17 story #3753  [webservice中行托管系统和QDII数据交换] -->
+  
+
+  <!-- 20120418 added by liubo.Story #2439.设置QDII估值系统的webservice，使托管系统能够调用 -->
+  <servlet>
+  	<servlet-name>cissWS</servlet-name>
+  	<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>
+  </servlet>
+  <!-- Story #2439 End -->
+
+  
+  <!--add by huangqirong 2012-11-01 story #3227-->
+  <servlet>
+  	<servlet-name>ServiceTestTool</servlet-name>
+  	<servlet-class>com.sun.xml.ws.transport.http.servlet.WSServlet</servlet-class>  	
+  </servlet>
+  <servlet>    
+    <servlet-name>TestToolServer</servlet-name>
+    <servlet-class>com.yss.serve.TestToolServer</servlet-class>
+  </servlet>
+  <!-- end -->
+
+  <!-- End JAX-WS Configuration -->
+  <!-- 监视服务机收发消息 -->
+  <servlet>
+  	<servlet-name>monitorWS</servlet-name>
+  	<servlet-class>com.yss.serve.WSMonitorServer</servlet-class>
+  </servlet>
+  <!--story 2188 by zhouwei 20120215 配置预警系统的webservice （axis） start -->     
+  <servlet>
+        <servlet-name>AxisServlet</servlet-name>
+		<display-name>Apache-Axis Servlet</display-name>		
+		<servlet-class>
+		org.apache.axis.transport.http.AxisServlet</servlet-class>
+	</servlet>
+    <servlet>
+        <servlet-name>AdminServlet</servlet-name>
+		<display-name>Axis Admin Servlet</display-name>	
+		<servlet-class>
+		org.apache.axis.transport.http.AdminServlet</servlet-class>
+		<load-on-startup>100</load-on-startup>
+	</servlet>
+  <!--story 2188 by zhouwei 20120215 配置预警系统的webservice （axis） end -->    	
+  <servlet-mapping>
+    <servlet-name>monitorWS</servlet-name>
+    <url-pattern>/monitorWS</url-pattern>
+  </servlet-mapping>
+
+  <servlet-mapping>
+    <servlet-name>swiftWS</servlet-name>
+    <url-pattern>/swiftWS</url-pattern>
+  </servlet-mapping> 
+  
+  <!-- add by huangqirong 2012-10-24 story #3227 -->
+  <servlet-mapping>
+    <servlet-name>ServiceTestTool</servlet-name>
+    <url-pattern>/ServiceTestTool</url-pattern>
+  </servlet-mapping>  
+  <servlet-mapping>
+    <servlet-name>TestToolServer</servlet-name>
+    <url-pattern>/TestToolServer</url-pattern>
+  </servlet-mapping>
+  <!-- end -->
+  <!-- start add by huangqirong 2013-05-09 Story #3871 QDII清核联动 需求的Webservice-->
+  <servlet-mapping>
+    <servlet-name>AccountClinkageService</servlet-name>
+    <url-pattern>/ServiceAccountClinkage</url-pattern>
+  </servlet-mapping> 
+  <!-- end add by huangqirong 2013-05-09 Story #3871 QDII清核联动 需求的Webservice-->
+
+<!-- 20120418 added by liubo.Story #2439.设置QDII估值系统的webservice，使托管系统能够调用 -->
+  <servlet-mapping>
+    <servlet-name>cissWS</servlet-name>
+    <url-pattern>/cissWS</url-pattern>
+  </servlet-mapping>
+  <!-- Story #2439 End -->
+  
+  <!--  add dongqingsong 2013-06-17 story #3753  [webservice中行托管系统和QDII数据交换] -->
+  <servlet-mapping>
+    <servlet-name>BCDataService</servlet-name>
+    <url-pattern>/BCDataService</url-pattern>
+  </servlet-mapping>
+  <!--  add dongqingsong 2013-06-17 story #3753  [webservice中行托管系统和QDII数据交换] -->
+	
+	<!-- Story #4094 liuxiaojun -->	
+  <servlet-mapping>
+    <servlet-name>cashmanagertype</servlet-name>
+    <url-pattern>/cashmanagertype</url-pattern>
+  </servlet-mapping>
+	<!-- Story #4094 End -->
+
+  <servlet-mapping>
+    <servlet-name>cashmanager</servlet-name>
+    <url-pattern>/cashmanager</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>usercheck</servlet-name>
+    <url-pattern>/usercheck</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>rightserver</servlet-name>
+    <url-pattern>/rightserver</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>systemsetting</servlet-name>
+    <url-pattern>/systemsetting</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>funsetting</servlet-name>
+    <url-pattern>/funsetting</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>basesetting</servlet-name>
+    <url-pattern>/basesetting</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>parasetting</servlet-name>
+    <url-pattern>/parasetting</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>tools</servlet-name>
+    <url-pattern>/tools</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>operdata</servlet-name>
+    <url-pattern>/operdata</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>etfoperation</servlet-name>
+    <url-pattern>/etfoperation</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>datainterface</servlet-name>
+    <url-pattern>/datainterface</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>orderadmin</servlet-name>
+    <url-pattern>/orderadmin</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>settlement</servlet-name>
+    <url-pattern>/settlement</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>accbook</servlet-name>
+    <url-pattern>/accbook</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>account</servlet-name>
+    <url-pattern>/account</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>dayfinish</servlet-name>
+    <url-pattern>/dayfinish</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>storagemanage</servlet-name>
+    <url-pattern>/storagemanage</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>report</servlet-name>
+    <url-pattern>/report</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>compliance</servlet-name>
+    <url-pattern>/compliance</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>cusreport</servlet-name>
+    <url-pattern>/cusreport</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>runstatus</servlet-name>
+    <url-pattern>/runstatus</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>voucher</servlet-name>
+    <url-pattern>/voucher</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>taoperation</servlet-name>
+    <url-pattern>/taoperation</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>platform</servlet-name>
+    <url-pattern>/platform</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>commeach</servlet-name>
+    <url-pattern>/commeach</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+  	<servlet-name>ewserver</servlet-name>
+    <url-pattern>/ewserver</url-pattern>
+  </servlet-mapping>
+  <!-- webservicestory 2188 by zhouwei 20120215 配置预警系统的webservice （axis） start -->
+  <servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/servlet/AxisServlet</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>*.jws</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AxisServlet</servlet-name>
+		<url-pattern>/services/*</url-pattern>
+	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>AdminServlet</servlet-name>
+		<url-pattern>/servlet/AdminServlet</url-pattern>
+	</servlet-mapping>
+ <!-- add by huangqirong 2012-10-24 story #3227 -->
+  <servlet-mapping>
+    <servlet-name>TestToolServer</servlet-name>
+    <url-pattern>/servlet/TestToolServer</url-pattern>
+  </servlet-mapping>
+  <!--end-->
+<!-- webservicestory 2188 by zhouwei 20120215 配置预警系统的webservice （axis） end -->
+</web-app>
+

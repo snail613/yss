@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+	<bean id="cashbookdefine" class="com.yss.main.accbook.CashBookDefineBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>定义代码	定义名称	链接配置	定义描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FCBookCode	FCBookName	FBookLink	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	   <property name="moduleName">
+	     <value>accbook</value>
+	  </property>
+	  <property name="funName">
+	     <value>cashbook</value>
+	  </property>
+      <property name="refName">
+         <value >000092</value>
+      </property>
+	</bean>
+	<bean id="securitybookdefine" class="com.yss.main.accbook.SecBookDefineBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>定义代码	定义名称	链接配置	定义描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FSBookCode	FSBookName	FBookLink	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	  <property name="moduleName">
+	     <value>accbook</value>
+	  </property>
+	  <property name="funName">
+	     <value>securitybook</value>
+	  </property>
+      <property name="refName">
+         <value >000093</value>
+      </property>
+	</bean>
+	  <bean id="investbookdefine" class="com.yss.main.accbook.InvestBookDefineBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>定义代码	定义名称	链接配置	定义描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FIBookCode	FIBookName	FBookLink	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+	   <property name="moduleName">
+	     <value>accbook</value>
+	  </property>
+	  <property name="funName">
+	     <value>investbook</value>
+	  </property>
+      <property name="refName">
+         <value >000094</value>
+      </property>
+	</bean>
+	<bean id="acctypetree" class="com.yss.main.accbook.AccTypeTreeBean" scope="prototype">
+	</bean>
+	<bean id="cashaccbook" class="com.yss.main.accbook.CashAccBookBean" scope="prototype">
+	  <property name="reportFields1">
+         <value>KeyCode	KeyName	BankAccount	CuryName	CuryCode	BeginAccBalance;#,##0.00	InPutMoney;#,##0.00	OutPutMoney;#,##0.00	AccBalance;#,##0.00	InUndueMoney;#,##0.00	OutUndueMoney;#,##0.00	UnSettledMoney;#,##0.00	AvailableMoney;#,##0.00	BaseCuryCode	BeginBaseAccBalance;#,##0.00	BaseInPutMoney;#,##0.00	BaseOutPutMoney;#,##0.00	BaseAccBalance;#,##0.00	BaseInUndueMoney;#,##0.00	BaseOutUndueMoney;#,##0.00	BaseUnSettledMoney;#,##0.00	BaseAvailableMoney;#,##0.00</value>
+      </property>
+	  <property name="reportFields2">
+         <value>KeyCode	KeyName	AccType	AccSubType	SettleDate	CuryCode	InPutMoney;#,##0.00	OutPutMoney;#,##0.00	BaseCuryCode	BaseInPutMoney;#,##0.00	BaseOutPutMoney;#,##0.00	ExchangeInDec;#,##0.00	SettleMark	SubNum</value>
+      </property>
+      <property name="reportHeaders1">
+         <value>代码:1:0	名称:1:0	银行帐号:1:0	交易货币:0:9										基础货币:0:8								
+			货币名称	货币代码	期初余额;R	累计流入;R	累计流出;R	期末余额;R	应收金额;R	应付金额;R	未清算金额;R	可用头寸;R	货币代码	期初余额;R	累计流入;R	累计流出;R	期末余额;R	应收金额;R	应付金额;R	未清算金额;R	可用头寸;R</value>
+      </property>
+	  <property name="reportHeaders2">
+         <value>账户代码:1:0	账户名称:1:0	账户类型;L:1:0	账户子类型;L:1:0	日期:1:0	交易货币:0:2			基础货币:0:3				清算标志:1:0	编号
+					货币代码	流入金额;R	流出金额;R	货币代码	流入金额;R	流出金额;R	汇兑损益;R		</value>
+      </property>
+	</bean>
+	<bean id="secaccbook" class="com.yss.main.accbook.SecAccBookBean" scope="prototype">
+	  <property name="reportFields1">
+         <value>KeyCode	KeyName	BeginAmount;#,##0	InPutAmount;#,##0	OutPutAmount;#,##0	Amount;#,##0	UnSettledAmount;#,##0	CuryCode	BeginMBalance;#,##0.00	InPutMMoney;#,##0.00	OutPutMMoney;#,##0.00	MBalance;#,##0.00	MMvMoney;#,##0.00	MUnSettledMoney;#,##0.00	BeginBalance;#,##0.00	InPutMoney;#,##0.00	OutPutMoney;#,##0.00	Balance;#,##0.00	MvMoney;#,##0.00	UnSettledMoney;#,##0.00	BeginVBalance;#,##0.00	InPutVMoney;#,##0.00	OutPutVMoney;#,##0.00	VBalance;#,##0.00	VMvMoney;#,##0.00	VUnSettledMoney;#,##0.00	BaseCuryCode	BeginBaseMBalance;#,##0.00	BaseInPutMMoney;#,##0.00	BaseOutPutMMoney;#,##0.00	BaseMBalance;#,##0.00	BaseMMvMoney;#,##0.00	BaseMUnSettledMoney;#,##0.00	BeginBaseBalance;#,##0.00	BaseInPutMoney;#,##0.00	BaseOutPutMoney;#,##0.00	BaseBalance;#,##0.00	BaseMvMoney;#,##0.00	BaseUnSettledMoney;#,##0.00	BeginBaseVBalance;#,##0.00	BaseInPutVMoney;#,##0.00	BaseOutPutVMoney;#,##0.00	BaseVBalance;#,##0.00	BaseVMvMoney;#,##0.00	BaseVUnSettledMoney;#,##0.00</value>
+      </property>
+	  <property name="reportFields2">
+         <value>KeyCode	KeyName	SettleDate	InPutAmount;#,##0	OutPutAmount;#,##0	CuryCode	InPutTMoney;#,##0.00	OutPutTMoney;#,##0.00	InPutMMoney;#,##0.00	InPutMoney;#,##0.00	InPutVMoney;#,##0.00	BaseCuryCode	BaseInPutTMoney;#,##0.00	BaseOutPutTMoney;#,##0.00	BaseInPutMMoney;#,##0.00	BaseInPutMoney;#,##0.00	BaseInPutVMoney;#,##0.00	ExchangeInDec;#,##0.00	ExchangeMCostInDec;#,##0.00	ExchangeCostInDec;#,##0.00	ExchangeVCostInDec;#,##0.00	SettleMark	SubNum</value>
+      </property>
+      <property name="reportHeaders1">
+         <value>代码:2:0	名称:2:0	数量:0:4					交易货币:0:18																			基础货币:0:18																		
+		期初库存;R:1:0	累计买入;R:1:0	累计卖出;R:1:0	期末库存;R:1:0	未清算数量;R:1:0	货币代码:1:0	管理成本:0:5						核算成本:0:5						估值成本:0:5						货币代码:1:0	管理成本:0:5						核算成本:0:5						估值成本:0:5					
+								期初余额;R	累计买入;R	累计卖出;R	期末余额;R	市值;R	未清算金额;R	期初余额;R	累计买入;R	累计卖出;R	期末余额;R	市值;R	未清算金额;R	期初余额;R	累计买入;R	累计卖出;R	期末余额;R	市值;R	未清算金额;R		期初余额;R	累计买入;R	累计卖出;R	期末余额;R	市值;R	未清算金额;R	期初余额;R	累计买入;R	累计卖出;R	期末余额;R	市值;R	未清算金额;R	期初余额;R	累计买入;R	累计卖出;R	期末余额;R	市值;R	未清算金额;R</value>
+      </property>
+	  <property name="reportHeaders2">
+         <value>证券代码:1:0	证券名称:1:0	日期:1:0	交易数量:0:1		交易货币:0:5						基础货币:0:9										清算标志:1:0	编号
+			买入数量;R	卖出数量;R	货币代码	买入金额;R	卖出金额;R	管理成本;R	核算成本;R	估值成本;R	货币代码	买入金额;R	卖出金额;R	管理成本;R	核算成本;R	估值成本;R	汇兑损益;R	汇兑损益(管理成本);R	汇兑损益(核算成本);R	汇兑损益(估值成本);R		</value>
+      </property>
+	</bean>
+</beans>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+	<bean id="valuationrep" class="com.yss.main.report.ValuationRepBean" scope="prototype">
+	  <property name="reportFields1">
+         <value>ExtendNum	PlusMark	KeyCode	KeyName	CuryCode	ExternalCode	ISINCode	ParAmt;#,##0.00###	MktPrice;#,##0.0000	Fotprice1;#,##0.0000	Fotprice2;#,##0.0000	Fotprice3;#,##0.0000	BaseExchangeRate;#,##0.###############	PortExchangeRate;#,##0.###############	BookCost;#,##0.00	MValue;#,##0.00	AccrInt;#,##0.0000	AccrOut;#,##0.00	GLMValue;#,##0.00	RecMoney;#,##0.00	PayMoney;#,##0.00	BaseBookCost;#,##0.00	BaseMValue;#,##0.00	BaseAccrInt;#,##0.0000	BaseAccrOut;#,##0.00	BaseGLMValue;#,##0.00	BaseGLFX;#,##0.00	BaseGLFXAccrInt;#,##0.00	BaseRecMoney;#,##0.00	BasePayMoney;#,##0.00	PortBookCost;#,##0.00	PortMValue;#,##0.00	PortAccrInt;#,##0.0000	PortAccrOut;#,##0.00	PortGLMValue;#,##0.00	PortGLFX;#,##0.00	PortGLFXAccrInt;#,##0.00	PortRecMoney;#,##0.00	PortPayMoney;#,##0.00</value>
+      </property>
+	  <property name="reportFields2">
+         <value>ExtendNum	PlusMark	KeyCode	KeyName	CuryCode	ExternalCode	ISINCode	SParAmt;#,##0.00###	Space	Space	Space	Space	Space	Space	BookCost;#,##0.00	MValue;#,##0.00	AccrInt;#,##0.0000	AccrOut;#,##0.00	GLMValue;#,##0.00	RecMoney;#,##0.00	PayMoney;#,##0.00	BaseBookCost;#,##0.00	BaseMValue;#,##0.00	BaseAccrInt;#,##0.0000	BaseAccrOut;#,##0.00	BaseGLMValue;#,##0.00	BaseGLFX;#,##0.00	BaseGLFXAccrInt;#,##0.00	BaseRecMoney;#,##0.00	BasePayMoney;#,##0.00	PortBookCost;#,##0.00	PortMValue;#,##0.00	PortAccrInt;#,##0.0000	PortAccrOut;#,##0.00	PortGLMValue;#,##0.00	PortGLFX;#,##0.00	PortGLFXAccrInt;#,##0.00	PortRecMoney;#,##0.00	PortPayMoney;#,##0.00</value>
+      </property>
+	  <property name="reportFields3">
+        <value>ExtendNum	PlusMark	KeyCode	KeyName	CuryCode	ExternalCode	ISINCode	SParAmt;#,##0.00###	Space	Space	Space	Space	Space	Space	Space	Space	Space	Space	Space	Space	Space	CuryCode	BaseMValue;#,##0.00###	Space	Space	Space	Space	Space	Space	Space	CuryCode	PortMValue;#,##0.00###	Space	Space	Space	Space	Space</value>
+      </property>
+      <!-- add by huangqirong 2012-03-01 story #2088 NONFORMAT-->
+      <property name="reportFields4">	  	
+	  	<value>ExtendNum	PlusMark	KeyCode	KeyName	CuryCode	ExternalCode	ISINCode	SParAmt;#,##0.00###	Space	Space	Space	Space	Space	Space	Space	Space	Space	Space	Space	Space	Space	CuryCode	BaseMValue;CUSHOLDDIGIT	Space	Space	Space	Space	Space	Space	Space	CuryCode	PortMValue;#,##0.00###	Space	Space	Space	Space	Space</value>
+      </property>
+      <!-- end -->
+      <property name="reportHeaders1">
+         <value>:1:0	;B:1:0	项目代码:1:0	项目名称:1:0	货币:1:0	外部代码:1:0	Isin代码:1:0	票面值/股数;R:1:0	行情价格;R:1:0	其他行情1;R:1:0	其他行情1;R:1:0	其他行情1;R:1:0	基础汇率;R:1:0	组合汇率;R:1:0	原始货币:0:3				基础货币:0:5						组合货币:0:5
+									成本;R	市值;R	应收利息;R	应付利息;R	浮动盈亏;R	成本;R	市值;R	应收利息;R	应付利息;R	浮动盈亏;R	汇兑损益;R	汇兑损益(利息);R	成本;R	市值;R	应收利息;R	应付利息;R	浮动盈亏;R	汇兑损益;R	汇兑损益(利息);R</value>
+      </property>
+	  <property name="reportHeaders2">
+         <value></value>
+      </property>
+	</bean>
+
+   <bean id="commonrep" class="com.yss.main.report.CommonRepBean" scope="prototype">
+   </bean>
+   <!-- 增加太平资产报表的批量导出功能 合并太平版本代码 by leeyu 20100626 -->
+   <bean id="expclientreport" class="com.yss.main.report.ExpClientReportManage" scope="prototype">
+   </bean>
+   <bean id="guessvalue" class="com.yss.main.report.GuessValue" scope="prototype">
+      	  <property name="moduleName">
+	     <value>dayfinish</value>
+	  </property>
+	  <property name="funName">
+	     <value>GuessValue</value>
+	  </property>
+          <property name="refName">
+             <value >005097</value>
+          </property>
+   </bean>
+
+   <!-- add by guolongchao 20110822 STORY #1203 外汇使用汇总表-->
+   <bean id="whsybean" class="com.yss.main.report.WhsyBean" scope="prototype"></bean>
+
+
+   <bean id="feedetail" class="com.yss.main.report.ICBCFeeDetail" scope="prototype">
+      	  <property name="moduleName">
+	     <value>report</value>
+	  </property>
+	  <property name="funName">
+	     <value>ICBCFeeDetail</value>
+	  </property>
+          <property name="refName">
+             <value >006001</value>
+          </property>
+   </bean>
+   
+   <!--  add by guolongchao 20120106 story #1284  -->
+  <bean id="exportbuild" class="com.yss.main.operdeal.report.ExportBuildDataCommonRep" scope="prototype"></bean>
+   <!--  end  -->
+
+   
+   <!--  20120428 added by liubo.Story #2452  -->
+  <bean id="gvdatamodified" class="com.yss.main.report.GVDataModifyingBean" scope="prototype"></bean>
+   <!--  end  -->
+   
+   <!--  20121106 added by liubo.Story #3144  -->
+  <bean id="wgjrep" class="com.yss.main.report.WGJRepBean" scope="prototype"></bean>
+   <!--  end  -->
+
+<!-- add...shashijie 2013-3-22 STORY 3368 增加处理类-->
+<bean id="expmultireport" class="com.yss.main.report.RepMultiExportManage" scope="prototype"></bean>
+<!-- end...shashijie 2013-3-22 STORY 3368-->
+</beans>

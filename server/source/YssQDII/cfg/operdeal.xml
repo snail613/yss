@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+ 
+  <description>Spring Quick Start</description>
+  <bean id="feedeal" class="com.yss.main.operdeal.BaseFeeDeal" scope="prototype">  </bean>
+  <bean id="tradedeal" class="com.yss.main.operdeal.BaseTradeDeal" scope="prototype">  </bean>
+  <bean id="baseoper" class="com.yss.main.operdeal.BaseOperDeal" scope="prototype">  </bean>
+  <bean id="cashbookoper" class="com.yss.main.operdeal.BaseCashBookOper" scope="prototype">  </bean>
+  <bean id="cashacctree" class="com.yss.main.operdeal.report.accbook.acctree.CashAccTree" scope="prototype">  </bean>
+  <bean id="cashacclinkdeal" class="com.yss.main.operdeal.BaseCashAccLinkDeal" scope="prototype">  </bean>
+  <bean id="securitybookoper" class="com.yss.main.operdeal.BaseSecurityBookOper" scope="prototype">  </bean>
+  <bean id="secacctree" class="com.yss.main.operdeal.report.accbook.acctree.SecAccTree" scope="prototype">  </bean>
+  <bean id="investbookoper" class="com.yss.main.operdeal.report.accbook.acctree.InvestAccTree" scope="prototype">  </bean>
+  <bean id="avgcostcalculate" class="com.yss.main.operdeal.BaseAvgCostCalculate" scope="prototype">  </bean>
+  <bean id="bondincomepaid" class="com.yss.main.operdeal.income.paid.PaidBondIncome" scope="prototype">  </bean>
+  <bean id="investincomepaid" class="com.yss.main.operdeal.income.paid.PaidInvestIncome" scope="prototype">  </bean>
+  <!-- shashijie 2011-09-28 STORY 1561 送股税金 -->
+  <bean id="BounsScot" class="com.yss.main.operdeal.income.paid.BounsScot" scope="prototype"/>
+  <!-- end -->
+  <bean id="accincomepaid" class="com.yss.main.operdeal.income.paid.PaidAccIncome" scope="prototype">  </bean>
+  <bean id="fundincomepaid" class="com.yss.main.operdeal.income.paid.PaidMonetaryFundIncome" scope="prototype">  </bean>
+  <!-- add by zhouxiang  2010.12.17 证券借贷收益支付 查询数据，操作数据类-->
+  <bean id="seclendcomepaid" class="com.yss.main.operdeal.income.paid.PaidSecLendIncome" scope="prototype">  </bean>
+  <bean id="valuationrep" class="com.yss.main.operdeal.report.BaseBuildValuationRep" scope="prototype">  </bean>
+  <bean id="compliancedeal" class="com.yss.main.operdeal.compliance.BaseCompDeal" scope="prototype">  </bean>
+  <bean id="oddeal" class="com.yss.main.operdeal.compliance.CompOddDurationDeal" scope="prototype">  </bean>
+  <bean id="nav" class="com.yss.main.operdeal.compliance.BaseNavValue" scope="prototype">  </bean>
+  <bean id="invcost" class="com.yss.main.operdeal.compliance.BaseInvCostValue" scope="prototype">  </bean>
+  <bean id="commonrep" class="com.yss.main.operdeal.report.BaseBuildCommonRep" scope="prototype">  
+  </bean>
+  <!-- MS01668 add by licai -->
+  <bean id="brokerFeeBean" class="com.yss.main.operdeal.report.reptab.TabBrokerFeeRep" scope="prototype">
+  <property name="reportFields1">
+  <value>Fbrokershortname	FtrademoneyHj	TrademoneyBl	Ftradefee1Hj	FYjBl</value>
+  </property>
+  </bean>
+  <!-- end -->
+  <bean id="curyconvert" class="com.yss.main.operdeal.report.repexp.ExpCuryConvert" scope="prototype">  </bean>
+  <bean id="bond" class="com.yss.main.operdeal.bond.BaseBondOper" scope="prototype">  </bean>
+  <bean id="intrate" class="com.yss.main.operdeal.report.repexp.ExpIntRate" scope="prototype">  </bean>
+  <bean id="detailaccbal" class="com.yss.main.operdeal.report.repexp.ExpDetailAccBal" scope="prototype">  </bean>
+  <bean id="settloraccbal" class="com.yss.main.operdeal.report.repexp.ExpSettlorAccBal" scope="prototype">  </bean>
+  <bean id="yieldstandard" class="com.yss.main.operdeal.report.repexp.ExpYieldStandard" scope="prototype">  </bean>
+  <bean id="sharpratio" class="com.yss.main.operdeal.report.repexp.ExpSharpRatio" scope="prototype">  </bean>
+  <bean id="basestandard" class="com.yss.main.operdeal.report.repexp.ExpBaseStandard" scope="prototype">  </bean>
+  <bean id="basesharpratio" class="com.yss.main.operdeal.report.repexp.ExpBaseSharpRatio" scope="prototype">  </bean>
+  <bean id="riskgene" class="com.yss.main.operdeal.report.repexp.ExpRiskGene" scope="prototype">  </bean>
+  <bean id="riskadjustratio" class="com.yss.main.operdeal.report.repexp.ExpRiskAdjustRatio" scope="prototype">  </bean>
+  <bean id="riskadjustmoney" class="com.yss.main.operdeal.report.repexp.ExpRiskAdjustMoney" scope="prototype">  </bean>
+  <bean id="tradesettle" class="com.yss.main.operdeal.BaseTradeSettlement" scope="prototype">  </bean>
+  <bean id="tabyearavgcost" class="com.yss.main.operdeal.report.reptab.TabYearAvgCost" scope="prototype">  </bean>
+  <bean id="tabperformance" class="com.yss.main.operdeal.report.reptab.TabPerformance" scope="prototype">  </bean>
+  <bean id="TabAssetSec" class="com.yss.main.operdeal.report.reptab.TabAssetSec" scope="prototype">  </bean>
+  <bean id="TabAssetCash" class="com.yss.main.operdeal.report.reptab.TabAssetCash" scope="prototype">  </bean>
+  <bean id="TabYieldSum" class="com.yss.main.operdeal.report.reptab.TabYieldSum" scope="prototype">  </bean>
+  <bean id="TabYieldDetail" class="com.yss.main.operdeal.report.reptab.TabYieldDetail" scope="prototype">  </bean>
+  <bean id="bondoper" class="com.yss.main.operdeal.bond.BaseBondOper" scope="prototype">  </bean>
+  <bean id="BondInsCfgFormula" class="com.yss.main.operdeal.bond.BondInsCfgFormula" scope="prototype">  </bean>
+   <!-- add by yeshenghong 20130518 story 3759 -->
+  <bean id="LeverGradeFundCfg" class="com.yss.main.operdeal.valuation.LeverGradeFundCfg" scope="prototype">  </bean>
+  <!--end add by yeshenghong 20130518 story 3759 -->
+  <bean id="FWPriceCfgExpress" class="com.yss.main.operdeal.derivative.FWPriceCfgExpress" scope="prototype">  </bean>
+  <bean id="tabPBondSumYield" class="com.yss.main.operdeal.report.reptab.TabBondSumYield" scope="prototype">
+    <property name="grpbyFields">
+      <value>FPortCode</value>
+    </property>
+    <property name="tabInd">
+      <value>FI</value>
+    </property>
+  </bean>
+  <bean id="tabIBondSumYield" class="com.yss.main.operdeal.report.reptab.TabBondSumYield" scope="prototype">
+    <property name="grpbyFields">
+      <value>FInvMgrCode</value>
+    </property>
+    <property name="tabInd">
+      <value>FI</value>
+    </property>
+  </bean>
+  <bean id="repfixcomp" class="com.yss.main.operdeal.report.repfix.FixCompResult" scope="prototype">
+    <property name="reportFields1">
+      <value>PortCode	PortName	TemplateCode	TemplateName	CompIndexCode	CompIndexName	CompWay	CompResult	UnPassHint</value>
+    </property>
+    <property name="reportHeaders1">
+      <value>
+        组合代码:1:0	组合名称:1:0	监控模板:0:1		监控指标:0:1	监控方式	监控结果:1:0
+        代码	名称	代码	名称
+</value>
+    </property>
+  </bean>
+  <bean id="consultantFee" class="com.yss.main.operdeal.report.repfix.ConsultantFee" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three</value>
+    </property>
+  </bean>
+  <bean id="cashuserable" class="com.yss.main.operdeal.report.repfix.cashuserable.CashUserable" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven</value>
+    </property>
+  </bean>
+  <!-- add by licai 20101207 BUG #534 现金头寸预测表日期段太长时，日期未起作用 -->
+  <bean id="cashuserable_zy" class="com.yss.main.operdeal.report.repfix.cashuserable.CashUserable_zy" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven</value>
+    </property>
+  </bean>
+  <bean id="rep_userRights" class="com.yss.main.operdeal.report.repfix.repUserRights" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three</value>
+    </property>
+  </bean>
+  <bean id="rep_roleRights" class="com.yss.main.operdeal.report.repfix.repRoleRights" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three</value>
+    </property>
+  </bean>
+  <bean id="allotlx" class="com.yss.main.operdeal.report.repfix.allotinterest.AllotInterest" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five</value>
+    </property>
+  </bean>
+  <bean id="repfixnetvaluea" class="com.yss.main.operdeal.report.netvalueviewpl.FixNetValueResultA" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven</value>
+    </property>
+  </bean>
+  <bean id="cashuserable_jy" class="com.yss.main.operdeal.report.repfix.cashuserable.CashUserableJY" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven	eight</value>
+    </property>
+  </bean>
+  <bean id="balancesheet_usd" class="com.yss.main.operdeal.report.repfix.jsreport.balancesheetusd" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven	eight	seven	eight	nine	ten</value>
+    </property>
+  </bean>
+  <bean id="rightchange" class="com.yss.main.operdeal.report.repfix.jsreport.RightChange" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two</value>
+    </property>
+  </bean>
+  <bean id="income" class="com.yss.main.operdeal.report.repfix.jsreport.IncomeReport" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three</value>
+    </property>
+  </bean>
+  <bean id="repfixnetvalueb" class="com.yss.main.operdeal.report.netvalueviewpl.FixNetValueResultB" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three</value>
+    </property>
+  </bean>
+  <bean id="repfixnetvaluec" class="com.yss.main.operdeal.report.netvalueviewpl.FixNetValueResultC" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three</value>
+    </property>
+  </bean>
+  <bean id="mainfinanceindex" class="com.yss.main.operdeal.report.repfix.MainFinanceIndex" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two</value>
+    </property>
+  </bean>
+  
+  <!-- hongqingbing 2013-10-10 Story 12998 工银瑞信：资产净值表 -->
+  <bean id="fundnav" class="com.yss.main.operdeal.report.repfix.FundNav" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six</value>
+    </property>
+  </bean>
+  
+  <!-- mengweilong 2012-2-20 STORY 1967 QD中国银行2011年11月29日19_A-->
+  <bean id="BOCInsuranceCapitalReserve" class="com.yss.main.operdeal.report.repfix.BOCInsuranceCapitalReserve" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six</value>
+    </property>
+  </bean>
+    <!-- mengweilong 2012-2-23 STORY 1968 QD中国银行2011年11月29日20_A-->
+  <bean id="BOCInsuranceAssetChange" class="com.yss.main.operdeal.report.repfix.BOCInsuranceAssetChange" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven	eight	nine	ten</value>
+    </property>
+  </bean>
+  <!-- mengweilong 2012-3-1 STORY 1950 1951 1952-->
+  <bean id="BOCInsurAssetLiability" class="com.yss.main.operdeal.report.repfix.BOCInsurAssetLiability" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven	eight</value>
+    </property>
+  </bean>
+<!-- add shashijie 2012-1-31 STORY 1713 -->
+<bean id="ParaSecurityDebt" class="com.yss.main.operdeal.report.repfix.ParaSecurityDebt" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six</value>
+    </property>
+  </bean>
+<!-- end shashijie 2012-1-31 STORY 1713-->
+
+<!-- add shashijie 2012-2-28 STORY 1953 -->
+<bean id="profittable" class="com.yss.main.operdeal.report.repfix.Chinabank.ProfitTable" scope="prototype">
+  <property name="reportFields1">
+    <value>one	two	three	four</value>
+  </property>
+</bean>
+<!-- end shashijie 2012-2-28 STORY 1953-->
+
+<!-- add shashijie 2012-3-2 STORY 1959 -->
+<bean id="profitbonus" class="com.yss.main.operdeal.report.repfix.Chinabank.ProfitBonus" scope="prototype">
+  <property name="reportFields1">
+    <value>1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20</value>
+  </property>
+</bean>
+<!-- end shashijie 2012-3-2 STORY 1959-->
+
+<!-- add shashijie 2012-3-3 STORY 1962 -->
+<bean id="listproperty" class="com.yss.main.operdeal.report.repfix.Chinabank.ListProperty" scope="prototype">
+  <property name="reportFields1">
+    <value>1	2	3	4	5	6	7	8	9	10</value>
+  </property>
+</bean>
+<!-- end shashijie 2012-3-3 STORY 1962-->
+
+<!-- add shashijie 2012-4-12 STORY 2472 -->
+<bean id="practiceSecurity" class="com.yss.main.operdeal.report.repfix.Chinabank.PracticeSecurity" scope="prototype">
+  <property name="reportFields1">
+    <value>1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18</value>
+  </property>
+</bean>
+<!-- end shashijie 2012-4-12 STORY 2472-->
+
+<!-- add shashijie 2012-4-23 STORY 2386 -->
+<bean id="NetValueEveryDay" class="com.yss.main.operdeal.report.repfix.Chinabank.NetValueEveryDay" scope="prototype">
+  <property name="reportFields1">
+    <value>1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18</value>
+  </property>
+</bean>
+<!-- end shashijie 2012-4-23 STORY 2386-->
+
+<!-- add shashijie 2012-11-19 STORY 3187 -->
+<bean id="RepOverage" class="com.yss.main.operdeal.report.repfix.RepOverage.RepOverage" scope="prototype">
+  <property name="reportFields1">
+    <value>1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16</value>
+  </property>
+</bean>
+<!-- end shashijie 2012-11-19 STORY 3187-->
+
+<!-- add shashijie 2012-11-21 STORY 3220 -->
+<bean id="FixInterestSect" class="com.yss.main.operdeal.report.repfix.RepOverage.FixInterestSect" scope="prototype">
+  <property name="reportFields1">
+    <value>1	2	3	4	5	6	7	8	9</value>
+  </property>
+</bean>
+<!-- end shashijie 2012-11-21 STORY 3220-->
+
+<!-- add...shashijie 2013-4-10 STORY 3343 国内外头寸预测表-->
+<bean id="DomesticForecast" class="com.yss.main.operdeal.report.repfix.build.DomesticForecast" scope="prototype">
+  <property name="reportFields1">
+    <value>1	2	3	4	5	6	7	8	9</value>
+  </property>
+</bean>
+
+<bean id="DomesticExternal" class="com.yss.main.operdeal.report.repfix.build.DomesticExternal" scope="prototype">
+  <property name="reportFields1">
+    <value>1	2	3	4	5	6	7	8	9	10	11	12	13	14	15	16	17	18	19	20</value>
+  </property>
+</bean>
+<!-- end...shashijie 2013-4-10 STORY 3343-->
+
+  <bean id="gips" class="com.yss.main.operdeal.report.netvalueviewpl.FixGips" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three</value>
+    </property>
+  </bean>
+  <bean id="secbooksumcost" class="com.yss.main.operdeal.report.accbook.secbook.SecBookSumCost" scope="prototype">
+    <property name="reportFields1">
+      <value>KeyCode	KeyName	BeginAmount	InAmount	OutAmount	EndAmount	CuryCode	BeginCost	InCost	OutCost	EndCost	Bal	MarketValue	BaseRate	PortRate	PortBeginCost	PortInCost	PortOutCost	PortEndCost	PortBal	PortMarketValue</value>
+    </property>
+  </bean>
+  <bean id="secbookdetailcost" class="com.yss.main.operdeal.report.accbook.secbook.SecBookDetailCost" scope="prototype">
+    <property name="reportFields1">
+      <value>Order	Index	TradeDate	SecurityCode	SecurityName	TradeType	BargainPrice	SettleMoney	InAmount	OutAmount	EndAmount	CuryCode	InCost	OutCost	EndCost	BaseRate	PortRate	PortInCost	PortOutCost	EndportCost	SettleBaseRate	SettlePortRate	FactSettleMoney	TradeNum</value>
+    </property>
+  </bean>
+  <bean id="cashbooksumcost" class="com.yss.main.operdeal.report.accbook.cashbook.CashBookSumCost" scope="prototype">
+    <property name="reportFields1">
+      <value>Code	Name	CuryCode	InitialMoney	InMoney	OutMoney	FinalMoney	BaseCuryRate	PortCuryRate	PortInitialCost	PortInMoney	PortOutMoney	PortRateFx	PortFinalCost</value>
+    </property>
+  </bean>
+  <bean id="cashbookdetailcost" class="com.yss.main.operdeal.report.accbook.cashbook.CashBookDetailCost" scope="prototype">
+    <property name="reportFields1">
+      <value>Order	Index	TransferDate	TransDate	AccountCode	AccountName	TsfTypeCode	SubTsfTypeCode	CuryCode	InMoney	OutMoney	EndFund	BaseCuryRate	PortCuryRate	PortInMoney	PortOutMoney	PortEndFund	TransNum</value>
+    </property>
+  </bean>
+  <bean id="secbooksumrecpay" class="com.yss.main.operdeal.report.accbook.secbook.SecBookSumRecPay" scope="prototype">
+    <property name="reportFields1">
+      <value>KeyCode	KeyName	CuryCode	BeginMoney	InMoney	OutMoney	EndMoney	BaseCuryRate	PortCuryRate	PortBeginMoney	PortInMoney	PortOutMoney	PortEndMoney	ExchangeInDec	PortMarketValue</value>
+    </property>
+  </bean>
+  <bean id="secbookdetailrecpay" class="com.yss.main.operdeal.report.accbook.secbook.SecBookDetailRecPay" scope="prototype">
+    <property name="reportFields1">
+      <value>Order	Index	TransDate	SecurityCode	SecurityName	TsfTypeCode	SubTsfTypeCode	CuryCode	InMoney	OutMoney	EndMoney	BaseCuryRate	PortCuryRate	PortInMoney	PortOutMoney	PortEndMoney	Num</value>
+    </property>
+  </bean>
+  <bean id="cashbooksumrecpay" class="com.yss.main.operdeal.report.accbook.cashbook.CashBookSumRecPay" scope="prototype">
+    <property name="reportFields1">
+      <value>Code	Name	CuryCode	InitialMoney	InMoney	OutMoney	FinalMoney	BaseCuryRate	PortCuryRate	PortInitialCost	PortInMoney	PortOutMoney	PortFinalCost	PortRateFx	PortMarketValue</value>
+    </property>
+  </bean>
+  <bean id="cashbookdetailrecpay" class="com.yss.main.operdeal.report.accbook.cashbook.CashBookDetailRecPay" scope="prototype">
+    <property name="reportFields1">
+      <value>Order	Index	TransDate	AccountCode	AccountName	TsfTypeCode	SubTsfTypeCode	CuryCode	InMoney	OutMoney	EndMoney	BaseCuryRate	PortCuryRate	PortInMoney	PortOutMoney	PortEndMoney	Num</value>
+    </property>
+  </bean>
+  <bean id="investaccbook" class="com.yss.main.operdeal.report.accbook.InvestAccBook" scope="prototype">
+    <property name="reportFields1">
+      <value>Code	Name	CuryCode	BaseCuryRate	PortCuryRate	InitialMoney	InMoney	OutMoney	FinalMoney	PortInitialMoney	PortInMoney	PortOutMoney	PortRateFx	PortFinalMoney</value>
+    </property>
+  </bean>
+  <bean id="compresult" class="com.yss.main.operdeal.report.compliance.DynamicCfgComp" scope="prototype">
+    <property name="reportFields1">
+      <value>CompDate	PortCode	PortName	IndexCfgCode	IndexCfgName	CompResult</value>
+    </property>
+  </bean>
+  <bean id="cashuserablepj" class="com.yss.main.operdeal.report.repfix.cashuserable.CashUserablePJ" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven	eight	nine	ten	elelen	twelve	threeteen	fourteen</value>
+    </property>
+  </bean>
+  <bean id="cashuserableha" class="com.yss.main.operdeal.report.repfix.cashuserable.CashUserableHA" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven	eight	nine	ten	eleven</value>
+    </property>
+  </bean>
+  <bean id="cashuserable_ha" class="com.yss.main.operdeal.report.repfix.cashuserable.CashUserable_HA" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven	eight	nine	ten	eleven	twelve	third	fouth	end</value>
+    </property>
+  </bean>
+  <bean id="ctlcomp" class="com.yss.main.operdeal.report.compliance.CtlCompliance" scope="prototype">  </bean>
+  <bean id="tabsavingmature" class="com.yss.main.operdeal.report.reptab.TabSavingMature" scope="prototype">  </bean>
+  <bean id="SecsFX" class="com.yss.main.operdeal.valuation.ValSecsFX" scope="prototype">  </bean>
+  <bean id="CashFX" class="com.yss.main.operdeal.valuation.ValCashFX" scope="prototype">  </bean>
+  <bean id="IncomeFX" class="com.yss.main.operdeal.valuation.ValIncomeFX" scope="prototype">  </bean>
+  <bean id="ETFBackCashMV" class="com.yss.main.operdeal.valuation.ValETFBackCashMV" scope="prototype">  </bean>
+  <bean id="InvestFX" class="com.yss.main.operdeal.valuation.ValInvestFX" scope="prototype">  </bean>
+  <bean id="SecsMV" class="com.yss.main.operdeal.valuation.ValSecsMV" scope="prototype">  </bean>
+  <bean id="RateFx" class="com.yss.main.operdeal.valuation.ValForwardFX" scope="prototype">  </bean>
+  <bean id="IndexFutruesMV" class="com.yss.main.operdeal.valuation.ValIndexFutruesMV" scope="prototype">  </bean>
+  <bean id="RightsIssueMV" class="com.yss.main.operdeal.valuation.ValRightsIssueMV" scope="prototype">  </bean>
+  <bean id="ValForwardMV" class="com.yss.main.operdeal.valuation.ValForwardMV" scope="prototype">  </bean>
+  <bean id="SecurityStorage" class="com.yss.main.operdeal.stgstat.StgSecurity" scope="prototype">  </bean>
+  <bean id="IndexFuturesStorage" class="com.yss.main.operdeal.stgstat.StgIndexFutrues" scope="prototype">  </bean>
+  <bean id="CashStorage" class="com.yss.main.operdeal.stgstat.StgCash" scope="prototype">  </bean>
+  <bean id="TAStorage" class="com.yss.main.operdeal.stgstat.StgTAStorage" scope="prototype">  </bean>
+  <bean id="InvestStorage" class="com.yss.main.operdeal.stgstat.StgInvest" scope="prototype">  </bean>
+  <bean id="SecRecPay" class="com.yss.main.operdeal.stgstat.StgSecRecPay" scope="prototype">  </bean>
+  <bean id="CashPayRec" class="com.yss.main.operdeal.stgstat.StgCashRecPay" scope="prototype">  </bean>
+  <bean id="InvestPayRec" class="com.yss.main.operdeal.stgstat.StgInvestRecPay" scope="prototype">  </bean>
+  <bean id="RollAsset" class="com.yss.main.operdeal.stgstat.ZbStgRollAsset" scope="prototype">  </bean>
+  <bean id="statbondinterest" class="com.yss.main.operdeal.income.stat.StatBondInterest" scope="prototype"> 
+   <property name="moduleName">
+	     <value>dayfinish</value>
+	</property>
+	<property name="funName">
+	     <value>incomecalculate</value>
+	</property>
+    <property name="refName">
+           <value >000096</value>
+    </property>
+   </bean>
+  <bean id="stataccinterest" class="com.yss.main.operdeal.income.stat.StatAccInterest" scope="prototype">  
+  <property name="moduleName">
+	     <value>dayfinish</value>
+	</property>
+	<property name="funName">
+	     <value>incomecalculate</value>
+	</property>
+    <property name="refName">
+           <value >000096</value>
+    </property>
+  </bean>
+  <bean id="stataccpurchase" class="com.yss.main.operdeal.income.stat.StatPurchaseIns" scope="prototype">  
+  <property name="moduleName">
+	     <value>dayfinish</value>
+	</property>
+	<property name="funName">
+	     <value>incomecalculate</value>
+	</property>
+    <property name="refName">
+           <value >000096</value>
+    </property>
+  </bean>
+  <bean id="statinvestfee" class="com.yss.main.operdeal.income.stat.StatInvestFee" scope="prototype">  
+  <property name="moduleName">
+	     <value>dayfinish</value>
+	</property>
+	<property name="funName">
+	     <value>incomecalculate</value>
+	</property>
+    <property name="refName">
+           <value >000096</value>
+    </property>
+  </bean>
+  <bean id="statmonetaryfundins" class="com.yss.main.operdeal.income.stat.StatMonetaryFundIns" scope="prototype">  
+  <property name="moduleName">
+	     <value>dayfinish</value>
+	</property>
+	<property name="funName">
+	     <value>incomecalculate</value>
+	</property>
+    <property name="refName">
+           <value >000096</value>
+    </property>
+  </bean>
+  <!-- add by zhangfa 证券借贷业务-收益计提 -->
+  <bean id="statseclendinterest" class="com.yss.main.operdeal.income.stat.StatSecLendInterest" scope="prototype"> 
+  <property name="moduleName">
+	     <value>dayfinish</value>
+	</property>
+	<property name="funName">
+	     <value>incomecalculate</value>
+	</property>
+    <property name="refName">
+           <value >000096</value>
+    </property>
+  </bean>
+  <!-- end -->
+  <!-- add by zhaoxianlin 20121107 STORY #3208  证券借贷业务增加借贷保证金调整 -->
+  <bean id="SecLendBailChg" class="com.yss.main.operdeal.opermanage.SecLendBailChg" scope="prototype"> 
+  </bean>
+  <!-- end -->
+  
+  <bean id="cashnummanager" class="com.yss.tools.NumSortManager" scope="prototype">  </bean>
+  <bean id="TabCashFore" class="com.yss.main.operdeal.report.reptab.TabCashFore" scope="prototype">  </bean>
+  <!-- add by licai 20101207 BUG #534 现金头寸预测表日期段太长时，日期未起作用 -->
+  <bean id="TabCashFore_zy" class="com.yss.main.operdeal.report.reptab.TabCashFore_zy" scope="prototype">  </bean>
+  <bean id="bondinscommon" class="com.yss.main.operdeal.bond.BondInterestCommon" scope="prototype">  </bean>
+  <bean id="BondToCash" class="com.yss.main.operdeal.rightequity.REBondToCash" scope="prototype">  </bean>
+  <bean id="Dividend" class="com.yss.main.operdeal.rightequity.REDivdend" scope="prototype">  </bean>
+  <bean id="RightsIssue" class="com.yss.main.operdeal.rightequity.RERightIssue" scope="prototype">  </bean>
+  <bean id="BonusShare" class="com.yss.main.operdeal.rightequity.REBonusShare" scope="prototype">  </bean>
+  <bean id="CheckCashStock" class="com.yss.main.operdeal.valcheck.CheckCashStock" scope="prototype">  </bean>
+  <bean id="CheckExRate" class="com.yss.main.operdeal.valcheck.CheckExRate" scope="prototype">  </bean>
+  <!--add by xuqiji 20090605 MS00470 -->
+  <bean id="CheckCashTransferExRate" class="com.yss.main.operdeal.valcheck.CheckCashTransferExRate" scope="prototype">  </bean>
+  <!--end-->
+  <!-- add by jiangshichao MS01715 QDV4汇添富2010年09月08日01_A “估值检查”中添加一项“检查当日交易数据是否全部结算” -->
+  <bean id="Checkchecksettlement" class="com.yss.main.operdeal.valcheck.CheckSettlement" scope="prototype"></bean>
+  <!--end-->
+    <!-- add by jsc 20120416 STORY #2406 希望在到帐日执行调度方案时，系统有提示说明当日有权益到账 -->
+  <bean id="CheckEquityReceived" class="com.yss.main.operdeal.valcheck.CheckEquityReceived" scope="prototype">  </bean>
+   <!-- add by guolongchao #1850QDV4嘉实2011年11月09日01_A代码开发      “估值检查”中添加:“检查除权股票行情是否有效” -->
+  <bean id="CheckCheckValidityMarket" class="com.yss.main.operdeal.valcheck.CheckValidityMarket" scope="prototype"></bean>
+  <bean id="CheckMTVMethod" class="com.yss.main.operdeal.valcheck.CheckMTVMethod" scope="prototype">  </bean>
+  <bean id="CheckSecurityInfo" class="com.yss.main.operdeal.valcheck.CheckSecurityInfo" scope="prototype">  </bean>
+  <bean id="CheckSecurityMkt" class="com.yss.main.operdeal.valcheck.CheckSecurityMkt" scope="prototype">  </bean>
+  <bean id="CheckSecurityMTVMethod" class="com.yss.main.operdeal.valcheck.CheckSecurityMTVMethod" scope="prototype">  </bean>
+  <bean id="CheckUnliquidated" class="com.yss.main.operdeal.valcheck.CheckUnliquidated" scope="prototype">  </bean>
+  <bean id="CheckTradeSettleDate" class="com.yss.main.operdeal.valcheck.CheckTradeSettleDate" scope="prototype">  </bean>
+  <bean id="CheckDelayTrade" class="com.yss.main.operdeal.valcheck.CheckDelayTrade" scope="prototype">  </bean>
+  <bean id="CheckSecurityIsNull" class="com.yss.main.operdeal.valcheck.CheckSecurityIsNull" scope="prototype">  </bean>
+  <bean id="CheckFixInterestInsDate" class="com.yss.main.operdeal.valcheck.CheckFixInterestInsDate" scope="prototype">  </bean>
+  <!-- add by songjie 2013.04.28 STORY #3895 需求深圳-(南方基金)QDII估值系统V4.0(紧急)20130425001 start -->
+  <bean id="checkYesNavScale" class="com.yss.main.operdeal.valcheck.CheckYesNavScale" scope="prototype"></bean>
+  <!-- add by songjie 2013.04.28 STORY #3895 需求深圳-(南方基金)QDII估值系统V4.0(紧急)20130425001 end -->
+  <!-- add by liubo 2013.05.16 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 start -->
+  <!-- 【杠杆分级A类份额当期收益率检查监控】预警指标配置 -->
+  <bean id="CheckCurrentYieldRate" class="com.yss.main.operdeal.valcheck.CheckCurrentYieldRate" scope="prototype">  </bean>
+  <!-- 【杠杆分级A类份额下期收益率提前录入提醒】预警指标配置 -->
+  <bean id="CheckNexYieldtDataEntry" class="com.yss.main.operdeal.valcheck.CheckNexYieldtDataEntry" scope="prototype">  </bean>
+  <!--	【杠杆分级定期折算提醒】预警指标配置 -->
+  <bean id="CheckDiscountRegularIntervals" class="com.yss.main.operdeal.valcheck.CheckDiscountRegularIntervals" scope="prototype">  </bean>
+  <!-- 【定期折算日无折算相关数据，则禁止资产估值】预警指标配置 -->
+  <bean id="CheckHaveDiscountData" class="com.yss.main.operdeal.valcheck.CheckHaveDiscountData" scope="prototype">  </bean>
+  <!-- 【单位净值超出阀值区间时提醒】预警指标配置 -->
+  <bean id="CheckThresholdRange" class="com.yss.main.operdeal.valcheck.CheckThresholdRange" scope="prototype">  </bean>
+  <!-- 【杠杆分级达到上拆点、下拆点后第N个工作日内，必须做份额折算】预警指标配置 -->
+  <bean id="CheckforcedConversion" class="com.yss.main.operdeal.valcheck.CheckforcedConversion" scope="prototype">  </bean>
+  <!-- add by liubo 2013.05.22 STORY #3759 需求北京-[银华基金]QDIIV4[中]20130326001 end -->
+
+  <!-- add by liubo 2013.07.02 STORY #4065 需求北京-需求上海-[开发部]QDIIV4[低]20130609003 start -->
+  <bean id="CheckTurnToCirculationInfo" class="com.yss.main.operdeal.valcheck.CheckTurnToCirculationInfo" scope="prototype">  </bean>
+  <!-- add by liubo 2013.07.02 STORY #4065 需求北京-需求上海-[开发部]QDIIV4[低]20130609003 end -->
+  
+  <!-- add by liubo 2013.07.12 STORY #4106 需求深圳-(南方基金)QDII估值系统V4.0(高)20130621001 start -->
+  <bean id="CheckRatesComparing" class="com.yss.main.operdeal.valcheck.CheckRatesComparing" scope="prototype">  </bean>
+  <!-- add by liubo 2013.07.12 STORY #4106 需求深圳-(南方基金)QDII估值系统V4.0(高)20130621001 end -->
+
+  <bean id="TaFeeLinkDeal" class="com.yss.main.operdeal.linkInfo.TAFeeLinkDeal" scope="prototype">  </bean>
+  <bean id="FeeLinkDeal" class="com.yss.main.operdeal.linkInfo.FeeLinkDeal" scope="prototype">  </bean>
+  <bean id="CashLinkDeal" class="com.yss.main.operdeal.linkInfo.CashAccLinkDeal" scope="prototype">  </bean>
+  <bean id="TaCashLinkDeal" class="com.yss.main.operdeal.linkInfo.TACashAccLinkDeal" scope="prototype">  </bean>
+  <bean id="TaCashSettleLinkDeal" class="com.yss.main.operdeal.linkInfo.TaCashSettleLinkDeal" scope="prototype">  </bean>
+  <bean id="CheckTradeRate" class="com.yss.main.operdeal.valcheck.CheckTradeRate" scope="prototype">  </bean>
+  <bean id="TabJYSLDCashFore" class="com.yss.main.operdeal.report.reptab.TabJYSLDCashFore" scope="prototype">  </bean>
+  <bean id="NavCash" class="com.yss.main.operdeal.report.navrep.NavCash" scope="prototype">  </bean>
+  <bean id="CtlNavRep" class="com.yss.main.operdeal.report.navrep.CtlNavRep" scope="prototype">  </bean>
+   <!-- add by huhuichao 2013.9.3 STORY #3899 指定日期资产负债表和期间段利润表 -->
+  <bean id="CalcuBalanceTemp" class="com.yss.main.operdeal.report.navrep.CalcuBalanceTemp" scope="prototype">  </bean>
+  <bean id="CalcuLR" class="com.yss.main.operdeal.report.navrep.CalcuLRTemp" scope="prototype">  </bean>
+   <!-- end by huhuichao 2013.9.3 STORY #3899  -->
+  <bean id="NavInvest" class="com.yss.main.operdeal.report.navrep.NavInvest" scope="prototype">  </bean>
+  
+  <!-- add by zhangjun 2011-12-13 STORY #1273 支持保险业务中的投连全托管计提管理费和假设费用 -->
+  <bean id="ExRateTemp" class="com.yss.main.report.ExRateTemp" scope="prototype"></bean>
+  <!--end-->
+  
+  <!-- 2010.12.23 抵押物净值表 add by zhouxiang -->
+  <bean id="CtlNavMortgage" class="com.yss.main.operdeal.report.navrep.CtlNavMortgageRep" scope="prototype">  </bean>
+  <bean id="NavMortgageSec" class="com.yss.main.operdeal.report.navrep.NavMortgageSec" scope="prototype">  </bean>
+  <bean id="NavMortgageCash" class="com.yss.main.operdeal.report.navrep.NavMortgageCash" scope="prototype">  </bean>
+  
+  <bean id="NavSecurity" class="com.yss.main.operdeal.report.navrep.NavSecurity" scope="prototype">  </bean>
+  <bean id="NavTotal" class="com.yss.main.operdeal.report.navrep.NavTotal" scope="prototype">  </bean>
+  <bean id="valcompareresult" class="com.yss.main.operdeal.report.platform.valcompare.ValCompareResult" scope="prototype">  </bean>
+  <bean id="fixqdimonth" class="com.yss.main.operdeal.report.repfix.FixQDIIMonthResult" scope="prototype">  </bean>
+  <bean id="TabUnrealised" class="com.yss.main.operdeal.report.reptab.TabUnrealised" scope="prototype">  </bean>
+  <bean id="TabUnrealisedFx" class="com.yss.main.operdeal.report.reptab.TabUnrealisedFx" scope="prototype">  </bean>
+  <!--合并太平版本代码 CashDistribute-->
+  <bean id="CashDistribute" class="com.yss.main.operdeal.report.reptab.TabCashDetail" scope="prototype"> </bean>
+  <!--合并太平版本代码 TabUnrealisedSecRec-->
+  <bean id="TabUnrealisedSecRec" class="com.yss.main.operdeal.report.reptab.TabUnrealisedSecRec" scope="prototype"> </bean>
+  <bean id="TabSummary" class="com.yss.main.operdeal.report.reptab.TabSummary" scope="prototype">  </bean>
+  <bean id="TabFundInOut" class="com.yss.main.operdeal.report.reptab.TabFundInOut" scope="prototype">  </bean>
+  <bean id="valrep" class="com.yss.main.operdeal.report.reptab.valrep.CtlValRep" scope="prototype"/>
+  <bean id="cashsaving" class="com.yss.main.operdeal.report.reptab.valrep.CashValRep" scope="prototype"/>
+  <bean id="fixdepositcash" class="com.yss.main.operdeal.report.reptab.valrep.FixDePositCashRep" scope="prototype"/>
+  <bean id="stockval" class="com.yss.main.operdeal.report.reptab.valrep.SecurityValRep" scope="prototype"/>
+  <!--合并太平版本代码 accintval-->
+  <bean id="accintval" class="com.yss.main.operdeal.report.reptab.valrep.AccIntValRep" scope="prototype"/>
+  <bean id="bondbill" class="com.yss.main.operdeal.report.reptab.valrep.BondValRep" scope="prototype"/>
+  <!--合并太平版本代码 BankCurrency-->
+  <bean id="BankCurrency" class="com.yss.main.operdeal.report.reptab.TabBankCurrency" scope="prototype"/>
+  <!--合并太平版本代码 RealisedFx-->
+  <bean id="RealisedFx" class="com.yss.main.operdeal.report.reptab.TabRealisedFx" scope="prototype"/>
+  <!--合并太平版本代码 TabRecpayDetail-->
+  <bean id="TabRecpayDetail" class="com.yss.main.operdeal.report.reptab.TabRecpayDetail" scope="prototype"/>
+  <!--合并太平版本代码 TabUntradeDetail-->
+  <bean id="TabUntradeDetail" class="com.yss.main.operdeal.report.reptab.TabUntradeDetail" scope="prototype"/>
+  <!--中保报表portinfo val添加管理费 by leeyu 20090708-->
+  <bean id="managerfee" class="com.yss.main.operdeal.report.reptab.valrep.ManagerFeeValRep" scope="prototype"/>
+  <!-- 增加太平资产报表的批量导出功能 合并太平版本代码-->
+  <bean id="expclient" class="com.yss.main.operdeal.report.repexp.ExpClientReport" scope="prototype"/>
+  <bean id="FeeCalc" class="com.yss.main.operdeal.invest.InvestCfgFormula" scope="prototype"/>
+  <!-- wuweiqi 20110106 两费计算公式 -->
+  <bean id="ModayFee" class="com.yss.main.operdeal.invest.InvestCfgFormula" scope="prototype"/>
+  <bean id="FeeCaltrus" class="com.yss.main.operdeal.invest.InvestCfgFormula" scope="prototype"/>
+  <!--xuqiji 20090703 MS00481 -->
+  <bean id="TabRealisedValueRep" class="com.yss.main.operdeal.report.reptab.TabRealisedValue" scope="prototype"/>
+  <!--panjunfang 20101023 MS01748 -->
+  <bean id="openfundmanage" class="com.yss.main.operdeal.opermanage.OpenFundManage" scope="prototype"/>
+  <bean id="bailchangemanage" class="com.yss.main.operdeal.opermanage.FutureBailChangeManage" scope="prototype"/>
+  <!--end-->
+  <!--回购的业务处理 -->
+  <bean id="purchasemanage" class="com.yss.main.operdeal.opermanage.OperPurchaseManage" scope="prototype"/>
+  <!--end-->
+  <bean id="optionsmanage" class="com.yss.main.operdeal.opermanage.OptionsControlManage" scope="prototype"/>
+  <bean id="OptionsMV" class="com.yss.main.operdeal.valuation.ValOptionsMV" scope="prototype"/>
+  <bean id="PrepayManage" class="com.yss.main.operdeal.opermanage.OperPrePayManage" scope="prototype"/>
+  <bean id="TAFundDivManage" class="com.yss.main.operdeal.opermanage.OperTAFundDivManage" scope="prototype"/>
+  <!--xuqiji 20100308 权益处理-->
+  <bean id="rightoperManage" class="com.yss.main.operdeal.opermanage.RightsOperControlManger" scope="prototype"/>
+  <bean id="tradeBalanceManage" class="com.yss.main.operdeal.opermanage.TradeDataBalanceManage" scope="prototype"/>
+  <!--end-->
+  <!--MS00538 QDV4海富通2009年06月21日02_AB    外汇交易业务处理-->
+  <bean id="ratetrademanage" class="com.yss.main.operdeal.opermanage.OperRateTradeManage" scope="prototype"/>
+  <!-- end -->
+  <bean id="savingmanage" class="com.yss.main.operdeal.opermanage.OperSavingManage" scope="prototype"/>
+  <bean id="securitymanage" class="com.yss.main.operdeal.opermanage.securitymanage.CtlSecManage" scope="prototype"/>
+  <bean id="CashInsBal" class="com.yss.main.operdeal.opermanage.etf.CashInsBalRPManage" scope="prototype"/>
+  <bean id="ETFBaseOper" class="com.yss.main.operdeal.opermanage.etf.ETFBaseOperManage" scope="prototype"/>
+  <bean id="insBalTrans" class="com.yss.main.operdeal.opermanage.etf.CashInsBalTransManage" scope="prototype"/>
+  <bean id="insteadDues" class="com.yss.main.operdeal.opermanage.etf.CashInsteadDuesManage" scope="prototype"/>
+  <bean id="insRetnable" class="com.yss.main.operdeal.opermanage.etf.CashInsteadManage" scope="prototype"/>
+  <bean id="standingbook" class="com.yss.main.operdeal.opermanage.etf.StandingBookManage" scope="prototype"/>
+  <bean id="supplyorinvest" class="com.yss.main.operdeal.opermanage.etf.ApartETFSupplyAnaDoInvest" scope="prototype"/>
+  <bean id="etfvaluation" class="com.yss.main.operdeal.opermanage.etf.ETFValuationManage" scope="prototype"/>
+  <bean id="pretrademoney" class="com.yss.main.operdeal.opermanage.etf.CashPreDrawTradeMoneyManage" scope="prototype"/>
+  <!-- shashijie 2011-08-22 STORY 1202 -->
+  <bean id="exchangestock" class="com.yss.main.operdeal.opermanage.OperExchangeStock" scope="prototype"/>
+  <!-- end -->
+  <!-- shashijie 2011-08-26 STORY 1327 -->
+  <bean id="extensionsell" class="com.yss.main.operdeal.opermanage.OperExtensionSell" scope="prototype"/>
+  <!-- end -->
+  <!-- shashijie 2011-09-05 STORY 1580 -->
+  <bean id="redemptionfeemoney" class="com.yss.main.operdeal.opermanage.OperRedemptionFeeMoney" scope="prototype"/>
+  <!-- end -->
+  <!-- shashijie 2011-09-27 STORY 1561 送股税金  -->
+  <bean id="bounsShareRate" class="com.yss.main.operdeal.opermanage.OperBounsShareRate" scope="prototype"/>
+  <!-- end -->
+  <!-- add by zhangjun 2011-11-10 STORY #1433 卖空业务处理  -->
+  <bean id="SecurityOverSell" class="com.yss.main.operdeal.opermanage.OperSecurityOverSell" scope="prototype"/>
+  <!-- end -->  
+  
+  <!-- add by huangqirong 2012-05-13 story #2565 联接基金业务处理 -->
+  <bean id="ETFLJBaseOper" class="com.yss.main.operdeal.opermanage.etflink.ETFLinkBaseOperManage" scope="prototype"/>
+  <!-- end -->
+  
+   <!-- add by zhangjun 2012-02-28 STORY #1965 营业税金明细报表  -->
+  <bean id="OperSalesTax" class="com.yss.main.operdeal.opermanage.OperSalesTax" scope="prototype">
+  	<property name="reportFields1">
+      <value>A1	A2	A3</value>
+    </property>
+    </bean>
+  <!-- end -->  
+  
+  <!-- add by zhangjun 2012-03-07 STORY #1965 资产减值损失情况表  -->
+  <bean id="OperAssetDevalue" class="com.yss.main.operdeal.opermanage.OperAssetDevalue" scope="prototype">
+  	<property name="reportFields1">
+      <value>A1	A2	A3</value>
+    </property>
+    </bean>
+  <!-- end --> 
+  
+  <!-- MS00917,分组估值 -->
+  <bean id="CtlDifAdj" class="com.yss.main.operdeal.report.navrep.CtlDifAdj" scope="prototype">  </bean>
+  <!-- ========end=========== -->
+  <!-- MS01038 xuqiji QDV4招商基金2010年3月18日01_A -->
+  <bean id="sgshdiff" class="com.yss.main.operdeal.report.repfix.FundSGSHDifference" scope="prototype">
+      <property name="reportFields1">
+      <value>A1	A2	A3	A4	A5	A6</value>
+    </property>
+  </bean>
+  <bean id="Checksavingmature" class="com.yss.main.operdeal.valcheck.CheckSavingMature" scope="prototype"/>
+  <!-- ========end=========== -->
+  <!--xuqiji 20100424-->
+  <bean id="CheckOptionsRightValue" class="com.yss.main.operdeal.valcheck.CheckOptionsRightValue" scope="prototype">  </bean>
+  <!--end-->
+  <!--xuqiji 20100428 A+H期权调整保证金-->
+  <bean id="opBailChangeManage" class="com.yss.main.operdeal.opermanage.OptionsBailChangeManage" scope="prototype"/>
+  <!-- end -->
+  <!-- MS01030 QDV4工银2010年3月05日02_A 公司行为信息报表 -->
+  <bean id="statscorpaction" class="com.yss.main.operdeal.report.repfix.repCorpActions" scope="prototype">
+    <property name="reportFields1">
+      <value>one	two	three	four	five	six	seven	eight	nine	ten	eleven	twelve	thirteen</value>
+    </property>
+  </bean>
+  <!--xuqiji 20100526 MS01183 -->
+  <bean id="CheckFuturesBailAccount" class="com.yss.main.operdeal.valcheck.CheckFuturesBailAccount" scope="prototype">  </bean>
+  <!--end-->
+  <bean id="updateRetnDate" class="com.yss.main.operdeal.opermanage.etf.UpdateAccountRetnDate" scope="prototype"/>
+  <bean id="clearAccTrans" class="com.yss.main.operdeal.opermanage.etf.ETFClearAccTransManage" scope="prototype"/>
+  <!--  MS01446    add by zhangfa 20100806    QDV4海富通2010年7月9日01_A   -->
+   <bean id="OperSecCodeChange" class="com.yss.main.operdeal.opermanage.OperSecCodeChangeManage" scope="prototype">
+    </bean>   
+  <!-- MS01748 QDV4太平2010年09月16日02_A 太平标准月报18张报表，需要保存，并能批量导出 --> 
+  <!-- 02當日買賣清算 --> 
+  <bean id="TabDaysSettlement" class="com.yss.main.operdeal.report.reptab.TabDaysSettlement" scope="prototype"/>
+  <!-- end -->
+  <!--begin 536汇添富现金头寸预测表需求  2010.11.9 edited by zhouxiang  -->
+  <bean id="tabJYCash" class="com.yss.main.operdeal.report.reptab.TabJyCash" scope="prototype">
+  	</bean>
+  <!-- end --> 
+  <!-- add by jiangshichao 2010.11.03 MS01669 QDV4工银2010年8月25日05_A -->
+  <bean id="positionforecast" class="com.yss.main.operdeal.report.reptab.positionforecast.TabPositionForecast" scope="prototype"/>
+  <!-- end  MS01669 QDV4工银2010年8月25日05_A-->
+  
+  <!-- add by qiuxufeng 2010.11.09 -->
+  <bean id="TabDividend" class = "com.yss.main.operdeal.report.reptab.TabDividend" scope="prototype"/>
+  <bean id="TabManagerFee" class = "com.yss.main.operdeal.report.reptab.TabManagerFee" scope="prototype"/>
+  <bean id="TabPaymentMx" class = "com.yss.main.operdeal.report.reptab.TabPaymentMx" scope="prototype"/>
+  <bean id="TabIncomeMx" class = "com.yss.main.operdeal.report.reptab.TabIncomeMx" scope="prototype"/>
+  <bean id="TabInterestIncome" class = "com.yss.main.operdeal.report.reptab.TabInterestIncome" scope="prototype"/>
+  <!-- end -->
+  
+  <!--  add by jiangshichao 2010.11.17 QDV4工银2010年10月12日01_A 股指期货台账 -->
+  <bean id="indexfuturesbook" class="com.yss.main.operdeal.report.reptab.indexfuturesbook.TabIndexFuturesBook" scope="prototype"/>
+  <!--  end QDV4工银2010年10月12日01_A 股指期货台账 -->
+  
+  <!--  add by fangjiang 2011.01.09 STORY #262 #393 -->
+  <bean id="ForwardExManage" class="com.yss.main.operdeal.opermanage.ForwardExManage" scope="prototype"/>
+  <!--  end  -->
+  <!--  add by fangjiang 2011.05.20 STORY #845 -->
+  <bean id="CapitalGainsTax" class="com.yss.main.operdeal.opermanage.CapitalGainsTax" scope="prototype"/>
+  <!--  end  -->
+  <!-- by guyichuan 20110514 STORY #741 -->
+  <bean id="DividendInvest" class="com.yss.main.operdeal.opermanage.DividendInvest" scope="prototype"></bean>
+  
+  <!--  add by qiuxufeng 20101222 QDV4赢时胜（深圳）2010年09月26日01_A 证券借贷净值表 -->
+  <bean id="SecInNav" class="com.yss.main.operdeal.report.navseclend.NavSecLendIn" scope="prototype"/>
+  <bean id="SecOutNav" class="com.yss.main.operdeal.report.navseclend.NavSecLendOut" scope="prototype"/>
+  <!--  end  -->
+ 
+  <!-- add by lidaolong 2010.02.09 QDV4国泰2010年12月02日01_A -->
+  <bean id="autocashpaying" class="com.yss.main.operdeal.opermanage.OperAutoCashPay" scope="prototype"/>
+  <!-- end -->
+  <bean id="investPay" class="com.yss.main.operdeal.opermanage.OperInvestPay" scope="prototype"/>
+  <!--  add by fangjiang 2011.08.16 STORY #1321 -->
+  <bean id="transferfeemanage" class="com.yss.main.operdeal.opermanage.TransferFeeManage" scope="prototype"/>
+  <!--  end  -->
+  <!-- add by songjie 2012.01.16 STORY 2124QDV4赢时胜(上海开发部)2012年01月12日01_A-->
+  <bean id="autoPayCmsn" class="com.yss.main.operdeal.opermanage.OperAutoPayCmsn" scope="prototype"/>
+  <!-- add by huangqirong2012-03-02 story #1964 -->
+  <bean id="safeacc" class="com.yss.main.operdeal.report.repsafe.SafeAccBean" scope="prototype">
+    <property name="reportFields1">
+      <value>a	b	c	d	f	g	h	i	j	k	l	m	n	o</value>
+    </property>
+  </bean>
+  <!-- end -->  
+   <!-- add by huangqirong2012-03-02 story #2116 -->
+  <bean id="monthmanage" class="com.yss.main.operdeal.report.repfix.MonthManageBean" scope="prototype">
+    <property name="reportFields1">
+      <value>a	b	c	d	e</value>
+    </property>
+  </bean>
+  <!-- end -->
+
+   <!-- add by liubo 2013-06-04 story #3759 杠杆分级折算底稿-->
+  <bean id="sharediscount" class="com.yss.main.operdeal.report.repfix.ShareDiscountRepBean" scope="prototype">
+    <property name="reportFields1">
+      <value>a	b	c	d	e</value>
+    </property>
+  </bean>
+  <!-- end -->
+
+  <!-- ADD by yeshenghong story3489 20130219 -->
+  <bean id="assetpayfee" class="com.yss.main.operdeal.report.repfix.AssetPayFee" scope="prototype">
+  	 <property name="reportFields1">
+      <value>a	b	c	d	e</value>
+    </property>
+  </bean>
+  	<!-- add by hongqingbing 2014-01-07 Story_14490_招商基金_新增基金净值公告报表  -->
+	<bean id="navnotice" class="com.yss.main.operdeal.report.repfix.NavNotice" scope="prototype">
+		<property name="reportFields1">
+		<value>a	b	c	d	e</value>
+		</property>
+	</bean>
+	<!-- end by hongqingbing 2014-01-07 Story_14490_招商基金_新增基金净值公告报表  --> 
+
+  <!-- add by songjie 20130425 STORY #3869 需求上海-(国泰基金)QDIIV4.0(紧急)20130418001 start-->
+  <bean id="etfnongrtstl" class="com.yss.main.operdeal.report.repfix.ETFNonGrtStl" scope="prototype">
+    	<property name="reportFields1">
+  		<value>FDclNum	FSettleDate	FPayType	FReceiveType	FPayerNum	FPayerAccCode	FPayerName	FPayerEcnmType	FReceiverNum	FReceiverAccCode	FReceiverName	FReceiverEcnmType	FCuryCode	FCommandMoney	FBargainDate	FPreSettleDate	FFundCode	FCapitalType	FDesc	FZDCommandMoney	FZDChecked	FSeatMember	FCreater</value>
+  	</property>
+  </bean>
+  <!-- add by songjie 20130425 STORY #3869 需求上海-(国泰基金)QDIIV4.0(紧急)20130418001 end-->
+    <!-- add by huangqirong 2011-12-02 STORY #1789  -->
+  <bean id="buysalebalance" class="com.yss.main.operdeal.report.repfix.FixBuySaleBalance" scope="prototype"/>
+
+  <!-- add by songjie 2012.03.28 STORY #2014 QDV4赢时胜(上海开发部)2011年12月14日01_A -->
+  <bean id="dmsDivIvstDeal" class="com.yss.main.operdeal.opermanage.DmsDivIvstDeal" scope="prototype"/>
+    <!-- add by songjie 2012.11.12 STORY #3214 需求深圳-[易方达基金]QDV4.0[紧急]20121030001 -->
+  <bean id="DVPDeal" class="com.yss.main.operdeal.opermanage.etflink.ETFLinkDVPBaseOperManage" scope="prototype"/>
+   <!-- add by huangqirong 2012-11-15 sgory #3272-->
+  	<bean id="checkguessvalue" class="com.yss.main.operdeal.report.stockcheck.CtkGuessValueCheck" scope="prototype">
+  		<property name="reportFields1">
+  			<value>FAcctLevel	FHzMx	FSrcAcctCode	FACCTCODE	FSrcAcctName	FACCTNAME	FSrcAmount	FAMOUNT	FSrcPortUnitCost	FUNITNVAMONEY	FSrcPortCost	FSTANDARDMONEYCOST	FSrcPortCostRatio	FSTANDARDMONEYCOSTTONETRATIO	FSrcPortMarketPrice	FMARKETPRICE	FSrcPortMarketValue	FSTANDARDMONEYMARKETVALUE	FSrcPortMarketValueRatio	FSTANDARDMONEYMARKETVALUETORAT	FSrcPortAppreciation	FSTANDARDMONEYAPPRECIATION</value>
+  		</property>
+  	</bean>
+  	<bean id="checkbalance" class="com.yss.main.operdeal.report.stockcheck.CtlBalanceCheck" scope="prototype">
+  		<property name="reportFields1">
+  			<value>FAcctLevel	FHzMx	FACCTCODEA	FACCTCODEB	FACCTNAMEA	FACCTNAMEB	FSTARTBALA	FSTARTBALB	FDEBITA	FDEBITB	FCREDITA	FCREDITB	FACCDEBITA	FACCDEBITB	FACCCREDITA	FACCCREDITB	FENDBALA	FENDBALB	FBSTARTBALA	FBSTARTBALB	FBDEBITA	FBDEBITB	FBCREDITA	FBCREDITB	FBACCDEBITA	FBACCDEBITB	FBACCREDITA	FBACCREDITB	FBENDBALA	FBENDBALB	FASTARTBALA	FASTARTBALB	FADEBITA	FADEBITB	FACREDITA	FACREDITB	FAACCDEBITA	FAACCDEBITB	FAACCREDITA	FAACCCREDITB	FAENDBALA	FAENDBALB</value>
+  		</property>
+  	</bean>
+  <!-- end -->
+  <!-- start by huangqirong 2013-02-05 story #3401 管理费报表 CF322 -->
+  <bean id="managefee" class="com.yss.main.operdeal.report.repfix.ManageFee" scope="prototype">
+  	<property name="reportFields1">
+  		<value>a	b	c	d	e	f	g	h	i</value>
+  	</property>
+  </bean>
+  <!-- end by huangqirong 2013-02-05 story #3401 管理费报表 CF322 -->
+<!-- end by huangqirong 2013-02-05 story #3401 管理费报表 CF322 -->
+  
+  	<!-- add...shashijie 2013-5-9 STORY 3926 需求上海-(国泰基金)QDIIV4.0(紧急)20130507001-->
+	<bean id="NationalSafe" class="com.yss.main.operdeal.report.repfix.build.NationalSafe" scope="prototype">
+	  <property name="reportFields1">
+	    <value>1	2	3	4	5	6	7	8	9	10</value>
+	  </property>
+	</bean>
+	<!-- end...shashijie 2013-5-9 STORY 3826-->
+
+  <!--start add by huangqirong 2013-05-22 story #3871 需求北京-[建设银行]QDII系统[高]20130419001 -->
+  <bean id="AL044IT13" class="com.yss.main.operdeal.report.repfix.FixCashAcountBalaceLD" scope="prototype"> </bean>
+  <!--end add by huangqirong 2013-05-22 story #3871 需求北京-[建设银行]QDII系统[高]20130419001 -->
+<!-- add shashijie 2013-5-18 STORY 3857 配置跨境ETF境内人民币及境外外币头寸预测表 -->
+<!-- 境内 -->
+<bean id="ETFDomesticMoneyForecast" class="com.yss.main.etfoperation.etfaccbook.ETFReport.ETFDomesticMoneyForecast" scope="prototype">
+  <property name="reportFields1">
+    <value>1	2	3	4	5	6	7	8</value>
+  </property>
+</bean>
+<!-- 境外 -->
+<bean id="ETFExternalMoneyForecast" class="com.yss.main.etfoperation.etfaccbook.ETFReport.ETFExternalMoneyForecast" scope="prototype">
+  <property name="reportFields1">
+    <value>1	2	3	4	5	6	7	8	9	10	11	12	13</value>
+  </property>
+</bean>
+<!-- end shashijie 2013-5-18 STORY 3857-->
+</beans>

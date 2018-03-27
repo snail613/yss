@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.ysstech.com/product_service" xmlns:ser="http://www.ysstech.com/product_service" elementFormDefault="qualified">
+	<element name="plug-mapping">
+        	<complexType>
+        		<sequence>
+        		<element name ="plug-id" type = "string"/> <!-- 产品代码 -->
+				<element name ="plug-url" type = "string"/> <!-- 产品名称 -->
+        		</sequence>	
+        	</complexType>
+	</element>
+	
+	<element name="product">
+        	<complexType>
+        		<sequence>
+        			<element ref="ser:plug-mapping" maxOccurs = "unbounded"/>
+    			</sequence>	
+    			<attribute name ="id" type ="string"/>
+        	</complexType>
+	</element>  
+	
+	<element name="products">
+        	<complexType>
+        		<sequence>
+        			<element ref="ser:product" maxOccurs = "unbounded"/>
+    			</sequence>	
+        	</complexType>
+	</element>     		
+
+</schema>

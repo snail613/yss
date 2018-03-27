@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+	  <bean id="shhq" class="com.yss.main.operdeal.datainterface.pretfun.shstock.SHHqDataBean" scope="prototype">
+	  </bean>
+	  <bean id="sjshq" class="com.yss.main.operdeal.datainterface.pretfun.szstock.SZHqDataBean" scope="prototype">
+	  </bean>
+	  <bean id="sjsxx" class="com.yss.main.operdeal.datainterface.pretfun.szstock.SZXxDataBean" scope="prototype">
+	  </bean>
+	  <bean id="sjshb" class="com.yss.main.operdeal.datainterface.pretfun.szstock.SZHBBean" scope="prototype">
+	  </bean>
+	  <bean id="sjsgf" class="com.yss.main.operdeal.datainterface.pretfun.szstock.SZGFBean" scope="prototype">
+	  </bean>
+	  <bean id="sjsgh" class="com.yss.main.operdeal.datainterface.pretfun.shstock.SHGHBean" scope="prototype">
+	  </bean>
+	  <bean id="sjsbd" class="com.yss.main.operdeal.datainterface.pretfun.shstock.SHZQBDBean" scope="prototype">
+	  </bean>
+	  <bean id="sjszqlx"  class="com.yss.main.operdeal.datainterface.pretfun.shstock.SHZQLXBean" scope="prototype"> 
+	  </bean>
+	  <!--QDII国内：MS00011 add by songjie QDV4.1赢时胜（上海）2009年4月20日11_A-->
+      <bean id="cnstock" class="com.yss.main.operdeal.datainterface.cnstock.CtlStock" scope="prototype">
+	  </bean>
+      <bean id="cnshhq" class="com.yss.main.operdeal.datainterface.cnstock.shstock.SHHQBean" scope="prototype">
+	  </bean>
+      <bean id="cnszhq" class="com.yss.main.operdeal.datainterface.cnstock.szstock.SZHQBean" scope="prototype">
+	  </bean>
+      <bean id="cnshzqlx" class="com.yss.main.operdeal.datainterface.cnstock.shstock.SHZQLXBean" scope="prototype">
+	  </bean>
+      <bean id="cnszzqlx" class="com.yss.main.operdeal.datainterface.cnstock.szstock.SZZQLXBean" scope="prototype">
+	  </bean>
+      <bean id="cnshzqye" class="com.yss.main.operdeal.datainterface.cnstock.shstock.SHZQYEBean" scope="prototype">
+	  </bean>
+      <bean id="cnshqtsl" class="com.yss.main.operdeal.datainterface.cnstock.shstock.SHQTSLBean" scope="prototype">
+	  </bean>
+      <bean id="cnszdz" class="com.yss.main.operdeal.datainterface.cnstock.szstock.SZDZBean" scope="prototype">
+	  </bean>
+      <bean id="cnshgh" class="com.yss.main.operdeal.datainterface.cnstock.SuccessInPutBean" scope="prototype">
+	  </bean>
+      <bean id="cnshzqbd" class="com.yss.main.operdeal.datainterface.cnstock.SuccessInPutBean" scope="prototype">
+	  </bean>
+      <bean id="cnszhb" class="com.yss.main.operdeal.datainterface.cnstock.SuccessInPutBean" scope="prototype">
+	  </bean>
+      <bean id="cnszfx" class="com.yss.main.operdeal.datainterface.cnstock.SuccessInPutBean" scope="prototype">
+	  </bean>
+      <bean id="cnszgf" class="com.yss.main.operdeal.datainterface.cnstock.SuccessInPutBean" scope="prototype">
+	  </bean>
+      <!-- add by songjie 2012.05.23 STORY #2599 QDV4赢时胜(上海开发部)2012年05月07日01_A -->
+      <bean id="cnshjsmx" class="com.yss.main.operdeal.datainterface.cnstock.SuccessInPutBean" scope="prototype">
+	  </bean>
+	  <!--QDII国内：MS00011 add by songjie QDV4.1赢时胜（上海）2009年4月20日11_A-->  
+	  
+	  <!--xuqiji 20090709 MS00497 -->
+	  <bean id="fixinterface" class="com.yss.main.operdeal.datainterface.fixInterface.ExpFixInformation" scope="prototype"></bean>
+	  <!--end-->
+	  <!--xuqiji 20091020-->
+	  
+<!-- add...shashijie 2013-7-3 STORY 4050 工银：报表导出 -->
+<!-- 财务估值表 -->
+<bean id="financialfund" class="com.yss.main.operdeal.datainterface.fixInterface.FinancialFund" scope="prototype"></bean>
+<!-- 净值统计表 -->
+<bean id="datanavdata" class="com.yss.main.operdeal.datainterface.fixInterface.DataNavData" scope="prototype"></bean>
+<!-- end...shashijie 2013-7-3 STORY 4050-->
+	  
+      <bean id="etfgh" class="com.yss.main.operdeal.datainterface.etf.ETFGHBean" scope="prototype">
+	  </bean>
+      <bean id="etfjsmx" class="com.yss.main.operdeal.datainterface.etf.ETFJsmxBean" scope="prototype">
+	  </bean>
+      <bean id="etfstocklist" class="com.yss.main.operdeal.datainterface.etf.ETFStockListBean" scope="prototype">
+	  </bean>
+	  <bean id="newetfstocklist" class="com.yss.main.operdeal.datainterface.etf.NewETFStockListBean" scope="prototype">
+	  </bean>
+	  <bean id="hbreturn" class="com.yss.main.operdeal.datainterface.etf.ETFReturnFeeBean" scope="prototype">
+	  </bean>
+	  <bean id="hxetfhb" class="com.yss.main.operdeal.datainterface.etf.ETFHXHBInterface" scope="prototype">
+	  </bean>
+	  <bean id="hxetfcjmx" class="com.yss.main.operdeal.datainterface.etf.ETFHXCJMXInterface" scope="prototype">
+	  </bean>
+	  <bean id="chgbxx" class="com.yss.main.operdeal.datainterface.cnstock.GBXXBean" scope="prototype">
+	  </bean>
+	  <bean id="gbqycl" class="com.yss.main.operdeal.datainterface.cnstock.QYXXBean" scope="prototype">
+	  </bean>
+	  <!--end-->
+	  <!-- shashijie 2011-11-01 STORY 1434 ETF易方达 -->
+	  <bean id="etfstocklistEFD" class="com.yss.main.operdeal.datainterface.etf.ETFStockListEFDBean" scope="prototype"></bean>
+	  <!--end-->
+	  
+<!-- shashijie 2012-4-26 STORY 2565 -->
+<bean id="ETFSubTrade" class="com.yss.main.operdeal.datainterface.etf.ETFLink.ETFLinkSubTrade" scope="prototype"></bean>
+<bean id="ETFCanCashMoney" class="com.yss.main.operdeal.datainterface.etf.ETFLink.ETFCanCashMoney" scope="prototype"></bean>
+<bean id="ImportSettle" class="com.yss.main.operdeal.datainterface.etf.ETFLink.ImportSettle" scope="prototype"></bean>
+<bean id="ImportCashBal" class="com.yss.main.operdeal.datainterface.etf.ETFLink.ImportCashBal" scope="prototype"></bean>
+<bean id="ImportBraket" class="com.yss.main.operdeal.datainterface.etf.ETFLink.ImportBraket" scope="prototype"></bean>
+<bean id="ImportCanReturn" class="com.yss.main.operdeal.datainterface.etf.ETFLink.ImportCanReturn" scope="prototype"></bean>
+<!-- end -->
+<!-- add by huhuichao  2013-11-13 STORY 13644  -->
+<bean id="NewImportCanReturn" class="com.yss.main.operdeal.datainterface.etf.ETFLink.NewImportCanReturn" scope="prototype"></bean>
+<!-- end -->
+<!-- add by zhouwei 20120620 story 2727 固定数据源  接口导入插入到可退款临时表 -->
+<bean id="ImportCanReturnTmp" class="com.yss.main.operdeal.datainterface.etf.ETFLink.ImportCanReturnTmp" scope="prototype"></bean>
+
+<!-- shashijie 2012-6-19 STORY 2727 -->
+<bean id="ImportJSMX" class="com.yss.main.operdeal.datainterface.etf.ETFLink.HuaXia.ImportJSMX" scope="prototype"></bean>
+<bean id="ETFCanCashHX" class="com.yss.main.operdeal.datainterface.etf.ETFLink.HuaXia.ETFCanCashMoneyHX" scope="prototype"></bean>
+<bean id="ETFSubTradeHX" class="com.yss.main.operdeal.datainterface.etf.ETFLink.HuaXia.ETFLinkSubTradeHX" scope="prototype"></bean>
+<!-- end -->
+
+	  <bean id="cbetfjsmx" class="com.yss.main.operdeal.datainterface.etf.CrossborderETFJsmxBean" scope="prototype"></bean>
+	  <!--add huhuichao 2013-08-15 story 4098 登记结算数据接口更新--> 	  
+	  <bean id="newcbetfjsmx" class="com.yss.main.operdeal.datainterface.etf.NewCrossborderETFJsmxBean" scope="prototype"></bean>
+	  <!--end huhuichao 2013-08-15 story 4098 -->
+	  <!-- MS01303  QDV4工银2010年6月13日01_A add by jiangshichao 2010.07.01--> 	  
+	  <bean id="transactiondetail" class="com.yss.main.operdeal.datainterface.transactionDetail.TransactionDetail" scope="prototype"></bean>
+	  <!-- MS01303  QDV4工银2010年6月13日01_A end -->
+	  
+	  <!-- MS01615 QDV4太平2010年08月16日01_A 以接口的方式进行批量导入定存数据  add by jiangshichao 2010.09.07 -->
+	  <bean id="imptimedeposits" class="com.yss.main.operdeal.datainterface.timeDeposits.ImpTimeDeposits" scope="prototype"></bean>
+	  <!-- MS01615 QDV4太平2010年08月16日01_A end -->
+	  
+	  <!-- #2745::“.DAT”文件类型接口导出需求变更  add by jiangshichao 2011.03.02 -->
+	  <bean id="custodydetail" class="com.yss.main.operdeal.datainterface.custodydetail.ExpCustodyDetail" scope="prototype"></bean>
+	  <!-- #2745::“.DAT”文件类型接口导出需求变更 end  -->
+	  
+	  <!-- add by lidaolong 20110418 #758 希望开发重读TA数据、交易数据、外汇数据后，将原资金调拨覆盖功能-->
+	
+	   <bean id="judgeTAALLOTBean" class="com.yss.main.operdeal.datainterface.judgeSettlement.JudgeTAALLOTBean" scope="prototype"></bean>
+	   <bean id="judgeTAREDEEMBean" class="com.yss.main.operdeal.datainterface.judgeSettlement.JudgeTAREDEEMBean" scope="prototype"></bean>
+	   <bean id="judgeTradeBean" class="com.yss.main.operdeal.datainterface.judgeSettlement.JudgeTradeBean" scope="prototype"></bean>
+	  <!-- end by lidaolong-->
+	  <!--//add by huangqirong 2011-07-13 story #1192-->
+	  <bean id="equity" class="com.yss.main.operdata.EquityBean" scope="prototype"></bean>
+	  <!-- end -->
+	  
+	  
+	  <!-- by zhouwei 20111118 结果表 -->
+	  <bean id="hxetfjg" class="com.yss.main.operdeal.datainterface.etf.ETFHXJGInterface" scope="prototype"/>
+	  <!-- end -->
+	  
+	  <!-- add by zhaoxianlin 20121031 #story 3159 -->
+	  <bean id="HKIndexFu" class="com.yss.main.operdata.HIndexFturesBean"  scope="prototype"></bean>
+	  <!-- end -->
+	  <!--start add by huangqirong 2013-05-17 story #3871   关于QDII清核联动需求 	资金流水查询-->
+	  <bean id="AL044IT12" class="com.yss.main.operdeal.datainterface.fixInterface.FundRunningLD"  scope="prototype"></bean>
+	  <!--end  add by huangqirong 2013-05-17 story #3871  关于QDII清核联动需求-->
+	  
+	  <!--start 20130717 added by liubo.Story #4123.需求深圳-(南方基金)QDII估值系统V4.0(高)20130621001.自动生成债券计息期间设置-->
+	  <bean id="ctlinteresttime" class="com.yss.main.operdeal.datainterface.cnstock.CtlInterestTime"  scope="prototype"></bean>
+	  <!--end  20130717 added by liubo.Story #4123.需求深圳-(南方基金)QDII估值系统V4.0(高)20130621001.-->
+	  
+	  
+</beans>
+
+
+

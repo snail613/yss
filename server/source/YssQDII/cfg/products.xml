@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:multiP xmlns:tns="http://www.example.org/product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.example.org/product products.xsd ">
+  <tns:oneP>
+    <tns:ProductCode>4.0</tns:ProductCode>
+    <tns:ProductName>估值系统V4.0</tns:ProductName>
+    <tns:Version>V1.0</tns:Version>
+    <tns:ProSys>QDII4.0</tns:ProSys>
+    <tns:ProCustomer>通用</tns:ProCustomer>
+    <tns:ProductDes>QDII的预警设置</tns:ProductDes>
+  </tns:oneP>
+</tns:multiP>

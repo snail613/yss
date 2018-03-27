@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+ 
+	<description>Spring Quick Start</description>
+   <bean id="menu" class="com.yss.main.funsetting.MenuBean" scope="prototype">
+     <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>menuSet</value>
+	  </property>
+          <property name="refName">
+             <value>000001</value>
+          </property>
+   </bean>
+   <bean id="menubar" class="com.yss.main.funsetting.MenubarBean" scope="prototype">
+          <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>menubarSet</value>
+	  </property>
+          <property name="refName">
+             <value>000002</value>
+          </property>
+   </bean>
+   <!-- xuqiji 20090526:QDV4海富通2009年05月13日01_AB MS00447  删除更新表结构时产生的临时表 --> 
+   <bean id="droptemptable" class="com.yss.main.funsetting.DropTempTableBean" scope="prototype">
+          <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>droptemptable</value>
+	  </property>
+          <property name="refName">
+             <value>000777</value>
+          </property>
+   </bean>
+   <!--end -->
+   <!--flowbean-->
+   <bean id="flow" class="com.yss.main.funsetting.FlowBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>流程代码	流程名称	流程类型	创建人、修改人	创建、修改时间	复核人	复核时间</value>
+    </property>
+    <property name="listView1ShowCols">
+      <value>FFlowCode	FFlowName	FFlowType	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+      <value>sysfun</value>
+    </property>
+    <property name="funName">
+      <value>FlowSet</value>
+    </property>
+    <property name="refName">
+      <value>000Flow</value>
+    </property>
+   </bean>
+      <bean id="refinvoke" class="com.yss.main.funsetting.RefInvokeBean" scope="prototype">
+	  <property name="listView1ShowCols">
+	     <value>FRefInvokeCode	FRefInvokeName	FDllName	FClassName	FMethodName	FParams	FDesc</value>
+	  </property>
+	  <property name="listView1Headers">
+	     <value>窗体调用代码	窗体调用名称	调用Dll名称	调用类名	调用的方法名	参数	描 述</value>
+	  </property>
+       <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>refInvoke</value>
+	  </property>
+          <property name="refName">
+             <value>000004</value>
+          </property>
+	 </bean>
+    <bean id="vocabulary" class="com.yss.main.funsetting.VocabularyBean" scope="prototype">
+      <property name="listView1ShowCols">
+          <value>FVocCode	FVocName</value>
+     </property>
+      <property name="listView1Headers">
+          <value>词汇代码	词汇名称</value>
+     </property>
+      <property name="listView3ShowCols">
+          <value>FVocName</value>
+     </property>
+      <property name="listView3Headers">
+          <value>词汇名称</value>
+     </property>
+   </bean>
+    <bean id="voctype" class="com.yss.main.funsetting.VocabularyTypeBean" scope="prototype">
+      <property name="listView1ShowCols">
+                  <value>FVocTypeCode	FVocTypeName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+     </property>
+      <property name="listView1Headers">
+          <value>词汇类型代码	词汇类型名称	描述	制作人	制作时间	审核人	审核时间</value>
+     </property>
+	  <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>vocabularyType</value>
+	  </property>
+          <property name="refName">
+             <value>0000093</value>
+          </property>
+   </bean>
+
+
+
+   <bean id="log" class="com.yss.log.OperateLogBean" scope="prototype">
+      <property name="listView1ShowCols">
+      <!-- edit by songjie 2012.08.16 STORY #2344 QDV4赢时胜(上海开发部)2012年3月2日05_A 添加 FLogCode -->
+            <value>FLogCode	FLogDate	FLogTime	FOperUser	FCategory	FModuleName	FFunName	FOperTypeValue	FOperResultValue	FMacClientIP	FMacClientName	FMacNetCardAddr</value>
+     </property>
+      <property name="listView1Headers">
+      <!-- edit by songjie 2012.08.16 STORY #2344 QDV4赢时胜(上海开发部)2012年3月2日05_A 添加 日志编号 -->
+          <value>日志编号	日志日期	日志时间	用户名	日志类别	模块名称	功能名称	操作类型	操作结果	客户端IP	 客户端机器名	 客户端网卡地址</value>
+     </property>
+   </bean>
+
+    <bean id="sysdata" class="com.yss.main.funsetting.SysDataBean" scope="prototype">
+      <property name="listView1ShowCols">
+            <value>FNum	FAssetGroupCode	FAssetGroupName	FFunName	FCode	FName	FUpdateSql	FCreator	FCreateDate	FCreateTime</value>
+     </property>
+      <property name="listView1Headers">
+          <value>自动编号	组合群代码	组合群名称	功能名称	代码	名称	更新SQL	创建人	创建日期	创建时间</value>
+     </property>
+	  <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>sysdata</value>
+	  </property>
+          <property name="refName">
+             <value>000333</value>
+          </property>
+   </bean>
+
+   <bean id="springinvoke" class="com.yss.main.funsetting.SpringInvokeBean" scope="prototype">
+      <property name="listView1ShowCols">
+            <value>FSICode	FSIName	FBeanId	FParams	FReturnTypeName	FFormCode	FFormName	FCtlName	FModuleName	FDesc</value>
+     </property>
+      <property name="listView1Headers">
+          <value>调用代码	调用名称	BeanID	参数	返回类型	窗体代码	窗体名称	控件名称	模板名称	描述</value>
+     </property>
+      <property name="moduleName">
+	     <value>sysfun</value>
+	  </property>
+	  <property name="funName">
+	     <value>springinvoke</value>
+	  </property>
+          <property name="refName">
+             <value>0000095</value>
+      </property>
+   </bean>
+
+   <bean id="version" class="com.yss.main.funsetting.VersionBean" scope="prototype">
+		<property name="listView1ShowCols">
+			<value>FAssetGroupCode	FVerNum	FIssueDate	FFinish	FDesc	FCreateDate	FCreateTime</value>
+		</property>
+		<property name="listView1Headers">
+			<value>组合群代码	版本编号	发布日期	是否更新成功	更新描述	创建日期	创建时间</value>
+		</property>
+		<property name="moduleName">
+			<value>sysfun</value>
+		</property>
+		<property name="funName">
+			<value>version</value>
+		</property>
+        <property name="refName">
+			<value>0000096</value>
+		</property>
+   </bean>
+
+    <bean id="commonparamsattr" class="com.yss.main.funsetting.CommonParamsAttrBean" scope="prototype">
+		<property name="listView1ShowCols">
+			<value>FCPAttrCode	FCPAttrName	FAttrSrcName	FAttrCfg	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+		</property>
+		<property name="listView1Headers">
+			<value>参数属性代码	参数属性名称	属性来源	属性配置	描述	创建人	创建时间	审核人	审核时间</value>
+		</property>
+		<property name="moduleName">
+			<value>sysfun</value>
+		</property>
+		<property name="funName">
+			<value>commonparamsattr</value>
+		</property>
+        <property name="refName">
+			<value>000335</value>
+		</property>
+   </bean>
+
+ <bean id="commonparams" class="com.yss.main.funsetting.CommonParamsBean" scope="prototype">
+		<property name="listView1ShowCols">
+			<value>FCondType	FCondTypeName	FCondCode	FCondName</value>
+		</property>
+		<property name="listView1Headers">
+			<value>条件类型	条件类型名称	条件代码	条件名称</value>
+		</property>
+		<property name="moduleName">
+			<value>sysfun</value>
+		</property>
+		<property name="funName">
+			<value>commonparams</value>
+		</property>
+        <property name="refName">
+			<value>000336</value>
+		</property>
+   </bean>
+
+ <bean id="commonparamssub" class="com.yss.main.funsetting.CommonParamsSubBean" scope="prototype">
+		<property name="listView1ShowCols">
+			<value>FCPTypeCode	FCPTypeName	FParamCode	FParamName	FParamValue	FValueDesc	FDesc</value>
+		</property>
+		<property name="listView1Headers">
+			<value>参数类型代码	参数类型名称	参数代码	参数名称	参数值	参数值名称	描述</value>
+		</property>
+		<property name="moduleName">
+			<value>sysfun</value>
+		</property>
+		<property name="funName">
+			<value>commonparamssub</value>
+		</property>
+        <property name="refName">
+			<value>0000100</value>
+		</property>
+   </bean>
+   <bean id="recycle" class="com.yss.main.funsetting.RecycleBean" scope="prototype">
+		<property name="moduleName">
+			<value>sysfun</value>
+		</property>
+		<property name="funName">
+			<value>recycle</value>
+		</property>
+        <property name="refName">
+			<value>000502</value>
+		</property>
+   </bean>
+
+</beans>
+

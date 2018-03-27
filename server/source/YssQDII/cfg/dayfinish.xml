@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+	<bean id="storagestat" class="com.yss.main.dayfinish.StorageStatBean" scope="prototype">
+	     <property name="moduleName">
+	     <value>dayfinish</value>
+	  </property>
+	  <property name="funName">
+	     <value>storagestat</value>
+	  </property>
+          <property name="refName">
+             <value >000095</value>
+          </property>
+	</bean>
+	<bean id="bondinterest" class="com.yss.main.dayfinish.IncomeStatBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>债券代码	债券名称	计息日期	投资组合	投资经理	交易券商	债券子类型	本次起息日	本次到息日	百元债券利息;R	票面利率;R	付息频率;R	证券数量;R	报价因子;R	计息方法	累计应收利息;R	累计实收利息;R</value>
+      </property>
+	  <property name="listView1ShowCols">
+         <value>SecurityCode	SecurityName	CurrentDate	PortName	InvmgrName	BrokerName	SubCatName	CurCpnDate	NextCpnDate	AccPer100;#,##0.############	FaceRate;#,##0.########	InsFrequency;#,##0.####	Amount;#,##0.####	Factor;#,##0.######	CalcInsWayName	ArSumMoney;#,##0.##	PaidSumMoney;#,##0.##</value>
+      </property>
+      <property name="parseShowFields1">
+         <value>SecurityCode	SecurityName	PortCode	PortName	InvmgrCode	InvmgrName	BrokerCode	BrokerName	SubCatCode	SubCatName	CurCpnDate	NextCpnDate	CurrentDate	FaceRate	AccPer100	CalcInsWay	InsFrequency	Amount	Factor	InterestMoney	BaseCuryRate	PortCuryRate	BaseInterestMoney	PortInterestMoney	StrCuryCode	ArSumMoney	PaidSumMoney	StartDate	EndDate	PortCodes</value>
+      </property>
+	  <property name="builderRowFields1">
+         <value>SecurityCode	SecurityName	PortCode	PortName	InvmgrCode	InvmgrName	BrokerCode	BrokerName	SubCatCode	SubCatName	CurCpnDate	NextCpnDate	CurrentDate	FaceRate	AccPer100	CalcInsWay	InsFrequency	Amount	Factor	InterestMoney	BaseCuryRate	PortCuryRate	BaseInterestMoney	PortInterestMoney	StrCuryCode	ArSumMoney	PaidSumMoney</value>
+      </property>
+    </bean>
+
+    <bean id="bondpaid" class="com.yss.main.dayfinish.IncomePaidBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>支付日期	债券代码	债券名称	组合代码	组合名称	所属分类代码	所属分类名称	投资分类代码	投资分类名称	帐户代码	帐户名称	投资经理	投资经理名称	交易券商	交易券商名称	调拨类型	调拨类型名称	调拨子类型	调拨子类型名称	币种代码	币种名称	金额;#,##0.##	管理金额;#,##0.##	估值金额;#,##0.##	基础汇率;#,##0.####	组合汇率;#,##0.####	到期日	组合群代码;k	组合群名称;v</value>
+      </property>
+	  <property name="listView1ShowCols">
+         <value>DDate	SecurityCode	SecurityName	PortCode	PortName	AttrClsCode	AttrClsName	InvestType	InvestTypeName	CashAccCode	CashAccName	InvmgrCode	InvmgrName	BrokerCode	BrokerName	TsfTypeCode	TsfTypeName	SubTsfTypeCode	SubTsfTypeName	CuryCode	CuryName	Money	MMoney	VMoney	BaseCuryRate	PortCuryRate	NextCpnDate	fassetgroupcode	fassetgroupname</value>
+      </property>
+      <property name="moduleName">
+	     <value>dayfinish</value>
+	  </property>
+	  <property name="funName">
+	     <value>incomepaid</value>
+	  </property>
+          <property name="refName">
+             <value >000127</value>
+          </property>
+	</bean>
+	<!--add by zhouxiang 2010.12.20 收益支付标题文字 -->
+	<bean id="secblendpaid" class="com.yss.main.dayfinish.IncomePaidBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>支付日期	借贷证券代码	借贷证券名称	组合代码	组合名称	所属分类代码	所属分类名称	帐户代码	帐户名称	投资经理	投资经理名称	交易券商	交易券商名称	调拨类型	调拨类型名称	调拨子类型	调拨子类型名称	币种代码	币种名称	金额;#,##0.##	管理金额;#,##0.##	估值金额;#,##0.##	基础汇率;#,##0.####	组合汇率;#,##0.####	组合群代码;k	组合群名称;v</value>
+      </property>
+	  <property name="listView1ShowCols">
+         <value>DDate	SecurityCode	SecurityName	PortCode	PortName	AttrClsCode	AttrClsName	CashAccCode	CashAccName	InvmgrCode	InvmgrName	BrokerCode	BrokerName	TsfTypeCode	TsfTypeName	SubTsfTypeCode	SubTsfTypeName	CuryCode	CuryName	Money	MMoney	VMoney	BaseCuryRate	PortCuryRate	fassetgroupcode	fassetgroupname</value>
+      </property>
+      <property name="moduleName">
+	     <value>dayfinish</value>
+	  </property>
+	  <property name="funName">
+	     <value>incomepaid</value>
+	  </property>
+          <property name="refName">
+             <value >000127</value>
+          </property>
+	</bean>
+	
+	<bean id="accpaid" class="com.yss.main.dayfinish.IncomePaidBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>支付日期	组合代码	组合名称	投资经理	投资经理名称	品种代码	品种名称	调拨类型	调拨类型名称	调拨子类型	调拨子类型名称	币种代码	币种名称	帐户代码	帐户名称	金额;#,##0.##	基础货币金额;#,##0.##	组合货币金额;#,##0.##	基础汇率;#,##0.####	组合汇率;#,##0.####	到期日期	组合群代码;k	组合群名称;v</value>
+      </property>
+	  <property name="listView1ShowCols">
+         <value>DDate	PortCode	PortName	InvmgrCode	InvmgrName	CatCode	CatName	TsfTypeCode	TsfTypeName	SubTsfTypeCode	SubTsfTypeName	CuryCode	CuryName	CashAccCode	CashAccName	Money	BaseMoney	PortMoney	BaseCuryRate	PortCuryRate	FMatureDate	fassetgroupcode	fassetgroupname</value>
+      </property>
+      <property name="moduleName">
+	     <value>dayfinish</value>
+	  </property>
+	  <property name="funName">
+	     <value>incomepaid</value>
+	  </property>
+          <property name="refName">
+             <value >000127</value>
+          </property>
+	</bean>
+
+	<bean id="investpaid" class="com.yss.main.dayfinish.IncomePaidBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>支付日期	运营收支品种代码	运营收支品种名称	运营品种类型	组合代码	组合名称	投资经理	投资经理名称	分析代码2	分析名称2	分析代码3	分析名称3	资产类型代码	资产类型名称	货币代码	货币名称	帐户代码	帐户名称	金额;R	基础货币金额;R	组合货币金额;R	基础汇率;R	组合汇率;R	到期日期	组合群代码;k	组合群名称;v</value>
+	</property>
+	 <property name="listView1ShowCols">
+		<value>DDate	PortCode	FIVPayCatCode	FIVPayCatName	FFeeType	PortName	AnalysisCode1	AnalysisName1	AnalysisCode2	AnalysisName2	AnalysisCode3	AnalysisName3	FPayType	FASetTypeName	CuryCode	CuryName	CashAccCode	CashAccName	money	FBaseCuryMoney	FPortCuryMoney	BaseCuryRate	PortCuryRate	FMatureDate	fassetgroupcode	fassetgroupname</value>
+	</property>
+	<property name="moduleName">
+	     <value>dayfinish</value>
+	  </property>
+	  <property name="funName">
+	     <value>incomepaid</value>
+	  </property>
+          <property name="refName">
+             <value >000127</value>
+          </property>
+	</bean>
+
+    <bean id="bondinterestbean" class="com.yss.pojo.dayfinish.BondInterest" scope="prototype">
+	</bean>
+    <bean id="bondpaidbean" class="com.yss.pojo.dayfinish.BondPaid" scope="prototype">
+	</bean>
+	<!-- add by zhouxiang 2010.12.20 证券借贷收益支付 后台实体类 -->
+	<bean id="secblendpaidbean" class="com.yss.pojo.dayfinish.SecBLendPaid" scope="prototype">
+	</bean>
+	<bean id="accpaidbean" class="com.yss.pojo.dayfinish.AccPaid" scope="prototype">
+	</bean>
+	<bean id="investpaidbean" class="com.yss.pojo.dayfinish.InvestPaid" scope="prototype">
+	</bean>
+	<bean id="investfee" class="com.yss.main.dayfinish.InvestFeeBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>运营收支品种代码	运营收支品种名称	计提日期	投资组合代码	舍入条件代码	舍入条件名称	比率公式代码	比率公式名称	期间代码	期间名称	固定比率;R	收支来源;R</value>
+      </property>
+	  <property name="listView1ShowCols">
+         <value>FIVPayCatCode	FIVPayCatName	CurrentDate	PortCode	RoundCode	RoundName	PerExpCode	PerExpName	PeriodCode	PeriodName	FixRate;#,##0.####	PayOrigin;#,##0.####</value>
+      </property>
+      <property name="parseShowFields1">
+         <value>FIVPayCatCode	FIVPayCatName	CurrentDate	PortCode	PortName	RoundCode	RoundName	PerExpCode	PerExpName	PeriodCode	PeriodName	FixRate	PayOrigin	StartDate	EndDate	PortCodes</value>
+      </property>
+	  <property name="builderRowFields1">
+        <value>FIVPayCatCode	FIVPayCatName	CurrentDate	PortCode	PortName	RoundCode	RoundName	PerExpCode	PerExpName	PeriodCode	PeriodName	FixRate	PayOrigin</value>
+      </property>
+	</bean>
+
+	<bean id="incomestat" class="com.yss.main.dayfinish.IncomeStatBean" scope="prototype">
+
+	     <property name="moduleName">
+	     <value>dayfinish</value>
+	  </property>
+	  <property name="funName">
+	     <value>incomecalculate</value>
+	  </property>
+          <property name="refName">
+             <value >000096</value>
+          </property>
+
+	</bean>
+	<bean id="incomepaid" class="com.yss.main.dayfinish.IncomePaidBean" scope="prototype">
+	 <property name="moduleName">
+	     <value>dayfinish</value>
+	  </property>
+	  <property name="funName">
+	     <value>incomepaid</value>
+	  </property>
+          <property name="refName">
+             <value >000127</value>
+          </property>
+	</bean>
+    <bean id="accinterest" class="com.yss.main.dayfinish.IncomeStatBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>帐户代码	帐户名称	计息日期	投资组合	投资经理	品种类型	计息公式	舍入设置	期间设置	计息周期	利息来源	金额;R	基础货币金额;R	组合货币金额;R	累计应收利息;R	累计实收利息;R</value>
+      </property>
+	  <property name="listView1ShowCols">
+         <value>CashAccCode	CashAccName	CurrentDate	PortName	InvMgrName	CatName	FormulaName	RoundName	PeriodName	InterestCycle	InterestOrigin	Money;#,##0.####	BaseMoney;#,##0.####	PortMoney;#,##0.####	ArSumMoney;#,##0.##	PaidSumMoney;#,##0.##</value>
+      </property>
+      <property name="parseShowFields1">
+         <value>CashAccCode	CashAccName	PortCode	PortName	InvMgrCode	InvMgrName	CatCode	CatName	FormulaCode	FormulaName	RoundCode	RoundName	PeriodCode	PeriodName	InterestCycle	InterestOrigin	FixRate	CurrentDate	Money	BaseMoney	PortMoney	InterestMoney	BaseInterestMoney	PortInterestMoney	BaseCuryRate	PortCuryRate	StrCuryCode	ArSumMoney	PaidSumMoney	StartDate	EndDate	PortCodes	InteresetWay</value>
+      </property>
+	  <property name="builderRowFields1">
+         <value>CashAccCode	CashAccName	PortCode	PortName	InvMgrCode	InvMgrName	CatCode	CatName	FormulaCode	FormulaName	RoundCode	RoundName	PeriodCode	PeriodName	InterestCycle	InterestOrigin	FixRate	CurrentDate	Money	BaseMoney	PortMoney	InterestMoney	BaseInterestMoney	PortInterestMoney	BaseCuryRate	PortCuryRate	StrCuryCode	ArSumMoney	PaidSumMoney	InteresetWay</value>
+      </property>
+	</bean>
+
+   <bean id="accinterestbean" class="com.yss.pojo.dayfinish.AccInterest" scope="prototype">
+	</bean>
+   <bean id="valuation" class="com.yss.main.dayfinish.ValuationBean" scope="prototype">
+	  <property name="moduleName">
+	     <value>dayfinish</value>
+	  </property>
+	  <property name="funName">
+	     <value>valuation</value>
+	  </property>
+          <property name="refName">
+             <value >000097</value>
+          </property>
+	</bean>
+	<!-- 业务处理 add by zhouxiang 2011.01.07  -->
+	<bean id="businessdeal" class="com.yss.main.dayfinish.ValuationBean" scope="prototype">
+	  <property name="moduleName">
+	     <value>dayfinish</value>
+	  </property>
+	  <property name="funName">
+	     <value>businessdeal</value>
+	  </property>
+          <property name="refName">
+             <value >00008BD</value>
+          </property>
+	</bean>
+	<bean id="ctlnavrep" class="com.yss.main.operdeal.report.navrep.CtlNavRep" scope="prototype">
+     </bean>
+   <bean id="monetaryfund" class="com.yss.main.parasetting.MonetaryFundAdmin" scope="prototype">
+   	</bean>
+   	<bean id="stockcheck" class="com.yss.main.operdeal.report.stockcheck.CtlStockCheck" scope="prototype">
+   	</bean>
+   	<bean id="balancecheck" class="com.yss.main.operdeal.report.stockcheck.CtlBalanceCheck" scope="prototype">
+   	</bean>
+   	<!-- QDV4华安2010年7月20日01_A add by yanghaiming 2010.08.03 -->
+  	<bean id="moneycontrol" class="com.yss.main.operdeal.report.moneycontrol.MoneyControl" scope="prototype">  </bean>
+  	<bean id="cnymoneycontrol" class="com.yss.main.operdeal.report.moneycontrol.CNYMoneyControl" scope="prototype">  </bean>
+  	<!-- end  -->
+  	
+  	<!-- shashijie 2011-09-29 STORY 1561 送股税金  -->
+  	<bean id="bounsscot" class="com.yss.main.dayfinish.IncomePaidBean" scope="prototype">
+		<property name="listView1Headers">
+			<value>帐户代码	帐户名称	库存日期	应付税金	帐户类型代码	帐户类型	帐户子类型代码	帐户子类型	货币代码</value>
+      	</property>
+	  	<property name="listView1ShowCols">
+			<value>CashAccCode	CashAccName	StorageDate	Bal	AccType	AccTypeName	SubAccType	SubAccTypeName	CuryCode</value>
+		</property>
+		<property name="moduleName">
+			<value>dayfinish</value>
+		</property>
+		<property name="funName">
+			<value>incomepaid</value>
+		</property>
+		<property name="refName">
+			<value >000127</value>
+		</property>
+	</bean>
+	
+	<bean id="bounsScotBean" class="com.yss.pojo.dayfinish.ScotDefrayBean" scope="prototype"/>
+	
+  	<!-- end -->
+  	
+  	
+</beans>

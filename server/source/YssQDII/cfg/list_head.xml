@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="GBK"?>
+
+<ListHeaders>
+
+	<ListHeader id = 'Project' desc ='方案设置'>
+		<Header key='C_PRODUCT_NAME' text='预警产品包' align='L' format=''></Header>
+		<Header key='C_PROJECT_NAME' text='方案名称' align='L' format='' ></Header>
+		<Header key='C_PROJECT_DES' text='方案说明' align='L' format='' showConvert="false"></Header>
+	</ListHeader>
+	
+	<ListHeader id = 'portPluginReal' desc ='组合指标关联'>
+	    <Header key='C_PORT_CODE' text='组合' align='L' format=''></Header>
+		<Header key='C_PLUGIN_CODE' text='预警指标编号' align='L' format=''></Header>
+		<Header key='C_PLUGIN_NAME' text='预警指标名称' align='L' format=''></Header>
+		<Header key='C_PLUGIN_PROPERTY' text='指标分类' align='L' format=''></Header>
+		<Header key='C_PLUGIN_TYPENAME' text='指标类型' align='L' format=''></Header>
+		<Header key='C_PLUGIN_RANGENAME' text='适用范围' align='L' format=''></Header>
+		<Header key='C_PLUGIN_WARNTIME' text='执行时间点' align='L' format=''></Header>
+		<Header key='C_PLUGIN_WARNTYPE' text='提醒类型' align='L' format=''></Header>
+		<Header key='C_PLUGIN_INCLUDE' text='所属产品' align='L' format='' ></Header>
+		<Header key='nothing' text='条件设置' align='L' format='' showConvert="false"></Header>
+	</ListHeader>
+	
+	<ListHeader id = 'portPluginReals' desc ='组合指标关联子集'>
+		<Header key='C_PLUGIN_CODE' text='预警指标编号' align='L' format=''></Header>
+		<Header key='C_PLUGIN_NAME' text='预警指标名称' align='L' format=''></Header>
+		<Header key='C_PLUGIN_PROPERTY' text='指标分类' align='L' format=''></Header>
+		<Header key='C_PLUGIN_TYPENAME' text='指标类型' align='L' format=''></Header>
+		<Header key='C_PLUGIN_RANGENAME' text='适用范围' align='L' format=''></Header>
+		<Header key='C_PLUGIN_WARNTIME' text='执行时间点' align='L' format=''></Header>
+		<Header key='C_PLUGIN_WARNTYPE' text='提醒类型' align='L' format=''></Header>
+		<Header key='C_PLUGIN_INCLUDE' text='所属产品' align='L' format='' ></Header>
+		<Header key='nothing' text='条件设置' align='L' format='' showConvert="false"></Header>
+	</ListHeader>
+	
+	<ListHeader id = 'productStart' desc ='产品启用状态'>
+		<Header key='C_PRODUCT_CODE' text='预警产品包' align='L' format=''></Header>
+		<Header key='C_PRODUCT_NAME' text='包名称' align='L' format='' ></Header>
+		<Header key='C_VERSION' text='版本' align='L' format='' ></Header>
+		<Header key='C_PRO_SYS' text='适用系统' align='L' format='' ></Header>
+		<Header key='C_PRO_CUSTOMER' text='适用用户' align='L' format='' ></Header>
+		<Header key='C_PRO_DES' text='说明' align='L' format='' ></Header>
+	</ListHeader>
+	
+	<ListHeader id = 'pluginproduce' desc ='插件执行'>
+		<Header key='C_PORT_CODE' text='组合' align='L' format=''></Header>
+		<Header key='C_PLUGIN_CODE' text='插件编号' align='L' format=''></Header>
+		<Header key='C_PLUGIN_NAME' text='插件名称' align='L' format=''></Header>
+		<Header key='C_PLUGIN_DESC' text='插件说明' align='L' format='' ></Header>
+		<Header key='C_PLUGIN_TYPENAME' text='插件类型' align='L' format='' ></Header>
+		<Header key='nothing' text='执行进度' align='L' format='' ></Header>
+	</ListHeader>
+	
+	<ListHeader id = 'portInfo' desc ='组合信息'>
+		<Header key='C_PORT_CODE' text='组合代码' align='L' format=''></Header>
+		<Header key='C_PORT_NAME' text='组合名称' align='L' format='' ></Header>
+	</ListHeader>
+	
+  <ListHeader id='pluginlog' desc='执行日志'>
+  	<Header key='D_OPER_DATE' text='操作日期' align='L' format='yyyy-MM-dd'></Header>
+	<Header key='D_BUSSINESS_DATE' text='业务日期' align='L' format='yyyy-MM-dd'></Header>
+	<Header key='D_EXECUTE_START' text='执行开始' align='L' format='HH:mm:ss'></Header>
+	<Header key='D_EXECUTE_END' text='执行结束' align='L' format='HH:mm:ss'></Header>
+	<Header key='C_EXECUTE_TIME' text='执行时长' align='L' format=''></Header>
+	<!--<Header key='C_EXECUTE_NAME' text='执行项目' align='L' format=''></Header> -->
+	<Header key='C_RESULT_TYPENAME' text='结果类型' align='L' format=''></Header>
+	<Header key='C_BUSSINESS_MODULE' text='业务模块' align='L' format=''></Header>
+	<Header key='C_BUSSINESS_SUB_MODULE' text='业务子模块' align='L' format=''></Header>
+	<!--<Header key='C_RESULT_INFO' text='结果信息' align='L' format=''></Header> -->
+	<Header key='C_PORT_CODE' text='组合编号' align='L' format=''></Header>
+	<Header key='C_ASSET_TYPE' text='资产类型' align='L' format=''></Header>
+	<Header key='C_BOOKSET_CODE' text='套帐号' align='L' format=''></Header>
+	<!-- edit by songjie 2012.10.29 STORY #2344 QDV4赢时胜(上海开发部)2012年3月2日05_A 创建人改为操作人 -->
+	<Header key='C_CREATOR_CODE' text='操作人' align='L' format=''></Header>
+	<Header key='C_CREATOR_NAME' text='操作人名称' align='L' format=''></Header>
+	<!-- <Header key='C_EXECUTE_CODE' text='执行编号' align='L' format=''></Header> -->
+	<Header key='C_ACC_TYPE' text='账户类型' align='L' format=''></Header>
+	<Header key='C_MAC_IP' text='MAC_IP' align='L' format=''></Header>
+	<Header key='C_MAC_NAME' text='MAC_NAME' align='L' format=''></Header>
+	<Header key='C_MAC_ADDR' text='MAC_ADDR' align='L' format=''></Header>
+	<!-- <Header key='C_PRODUCT_NAME' text='预警产品' align='L' format=''></Header>
+	<Header key='C_EW_TYPENAME' text='指标类型' align='L' format=''></Header>
+	<Header key='C_OPER_TYPENAME' text='操作类型' align='L' format=''></Header> -->
+  </ListHeader>
+  
+  <ListHeader id='plugin' desc='预警插件'>
+ 	<Header key='C_PLUGIN_CODE' text='执行日期' align='L' format=''></Header>
+	<Header key='C_PLUGIN_NAME' text='执行时间' align='L' format=''></Header>	
+  </ListHeader>
+  </ListHeaders>

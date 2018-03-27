@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+   <bean id="configure" class="com.yss.main.datainterface.ConfigureBean" scope="prototype">
+      <property name="listView1Headers">
+         <value>配置代码	配置名称	导入导出	文件类型	文件路径	文件名称	脚本代码	配置描述</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FCfgCode	FCfgName	FInOutValue	FFileType	FFilePath	FFileName	FSqlText	FDesc</value>
+      </property>
+
+
+    		    <property name="moduleName">
+	     <value>commondao</value>
+	  </property>
+	  <property name="funName">
+	     <value>configure</value>
+	  </property>
+          <property name="refName">
+             <value >000069</value>
+          </property>
+
+	</bean>
+   <bean id="configurerela" class="com.yss.main.datainterface.ConfigureRelaBean" scope="prototype">
+	</bean>
+	<bean id="impexp" class="com.yss.main.datainterface.ImpExpDataBean" scope="prototype">
+		    <property name="moduleName">
+	     <value>commondao</value>
+	  </property>
+	  <property name="funName">
+	     <value>interface</value>
+	  </property>
+          <property name="refName">
+             <value >000067</value>
+          </property>
+	</bean>
+
+
+
+
+	 <bean id="daofileinfo" class="com.yss.main.datainterface.DaoFileInfoBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>读取行	读取位置	读取长度	对应表字段	对应表字段名称	转换格式	文件头字典	文件头字典名称	描述</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FLoadRow	FLoadIndex	FLoadLen	FTabFeild	FFieldDesc	FFormat	FFileInfoDict	FDictName	FDesc</value>
+	 </property>
+   </bean>
+   <bean id="daofilename" class="com.yss.main.datainterface.DaoFileNameBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>对应表字段	对应表字段名称	文件名内容	文件名类型名称	文件名字典	文件名字典名称	描述	延迟天数	节假日代码	节假日名称</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FTabFeild	FFieldDesc	FFIleNameConent	FFileNameClsName	FFileNameDict	FDictName	FDesc	delaydays	holidaycode	holidayname</value>
+	 </property>
+   </bean>
+   <!-- shashijie 2011.03.23 STORY #557 希望优化追加数据的功能 -->
+   <bean id="daofilemergername" class="com.yss.main.datainterface.DaoFileMergerNameBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>对应表字段	对应表字段名称	文件名内容	文件名类型名称	文件名字典	文件名字典名称	描述	延迟天数	节假日代码	节假日名称</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FTabFeild	FFieldDesc	FFIleNameConent	FFileNameClsName	FFileNameDict	FDictName	FDesc	delaydays	holidaycode	holidayname</value>
+	 </property>
+   </bean>
+   <!-- end -->
+   
+   <!-- add...shashijie 2013-2-22 STORY 3366 增加对存储类型字段处理 -->
+   <bean id="dict" class="com.yss.main.datainterface.DaoDictBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>存储类型	字典代码	字典名称	描述</value>
+	</property>
+    <property name="listView1ShowCols">
+	<value>saveType	FDictCode	FDictName	FDesc</value>
+	</property>
+	 <!-- 添加通用导入导出配置信息  add by guolongchao 20111214 STORY 1499 QDV4中银基金2011年11月16日01_A代码开发 start -->
+	<property name="moduleName">
+      <value>datainterface</value>
+    </property>
+    <property name="funName">
+      <value>dict</value>
+    </property>
+    <property name="refName">
+      <value>000218</value>
+    </property>
+	<!-- 添加通用导入导出配置信息  add by guolongchao 20111214 STORY 1499 QDV4中银基金2011年11月16日01_A代码开发 end -->
+   </bean>
+   <!-- end...shashijie 2013-2-22 STORY 3366-->
+   
+   <!-- swift QDV4赢时胜（深圳）2009年5月12日01_A MS00455 by leeyu 20090601-->
+   <bean id="swiftset" class="com.yss.main.datainterface.swift.DaoSwiftSet" scope="prototype">
+    <property name="listView1Headers">
+      <value>报文代码	报文类型	报文描述	报文表代码	报文表名称	路径	报文标准	报文标准名称	业务类型	业务类型名称	报文流向	报文流向名称	预处理代码	审核状态	创建人、修改人	创建、修改时间	复核人	复核时间</value>
+	</property>
+    <property name="listView1ShowCols">
+      <value>FSwiftCode	FSwiftType	FSwiftDesc	FTableCode	FTableCodeName	FPath	FCriterion	FCriterionName	FOperType	FOperTypeName	FReflow	FReflowName	FDSCode	FCheckState	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <property name="moduleName">
+	     <value>datainterface</value>
+	  </property>
+	  <property name="funName">
+	     <value>swiftset</value>
+	  </property>
+     <property name="refName">
+       <value >0SWIFT</value>
+     </property>
+   </bean>
+   <bean id="swiftentity" class="com.yss.main.datainterface.swift.DaoSwiftEntitySet" scope="prototype">
+    <property name="listView1Headers">
+      <value>内容序号	报文状态	报文标识	限定符	字段简称	字段全称	内容	选项	表字段	表字段名</value>
+	</property>
+    <property name="listView1ShowCols">
+      <value>FIndex	FStatusName	FTag	FQualifier	FFieldName	FFIeldFullName	FContent	FOption	FTableField	FTableFieldName</value>
+    </property>
+   </bean>
+   <bean id="swiftoper" class="com.yss.main.datainterface.swift.DaoSwiftControl" scope="prototype">
+   </bean>
+   <bean id="mt545" class="com.yss.main.operdeal.datainterface.swift.SwiftInputISO15022MT545" scope="prototype">
+   </bean>
+   <!-- swift QDV4赢时胜（深圳）2009年5月12日01_A MS00455 by leeyu 20090601-->
+   <!--add by libo 导出功能,导出信息时需要加载的数据-->
+   <bean id="swiftoutinfo" class="com.yss.main.datainterface.swift.DaoSwiftOutInfo" scope="prototype">
+   </bean>
+   <!--add by libo 导出功能,导出信息时需要加载的数据-->
+   <!--add by libo 导出功能相关显示数据-->
+   <bean id="outswiftlist" class="com.yss.main.operdeal.datainterface.swift.SaveSwiftContentBean" scope="prototype">
+   </bean>
+   <!--add by libo 导出功能相关显示数据-->
+   <!-- 接口数据核对配置 QDV4深圳2009年01月13日01_RA MS00192 by leeyu 20090303 !-->
+   <bean id="compareex" class="com.yss.main.datainterface.compare.DaoCompareExSet" scope="prototype">
+    <property name="listView1Headers">
+      <value>配置源代码	配置源名称	描述	创建人	创建时间	审核人	审核时间</value>
+	</property>
+    <property name="listView1ShowCols">
+      <value>FCompCode	FCompName	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+    </property>
+    <!-- 添加通用导入导出配置信息-->
+    <property name="moduleName">
+      <value>commondao</value>
+    </property>
+    <property name="funName">
+      <value>compareex</value>
+    </property>
+    <property name="refName">
+      <value >000801</value>
+    </property>
+   </bean>
+   <bean id="compmanage" class="com.yss.main.datainterface.compare.DaoCompManager" scope="prototype"/>
+   <!-- 接口数据核对字段配置 QDV4深圳2009年01月13日01_RA MS00192 by leeyu 20090303 !-->
+   <bean id="comparefield" class="com.yss.main.datainterface.compare.DaoCompareField" scope="prototype">
+    <property name="listView1Headers">
+      <value>字段代码	字段描述	分组字段</value>
+	</property>
+    <property name="listView1ShowCols">
+      <value>FFieldCode	FFieldName	FGroupFieldMark</value>
+    </property>
+   </bean>
+   
+   <!-- add...shashijie 2013-2-25 STORY 3366 增加对存储类型字段处理 -->
+   <!--  modify by yangshaokai 2011.12.31 STORY 2007  -->
+   <bean id="daopretreat" class="com.yss.main.datainterface.DaoPretreatBean" scope="prototype">
+    <property name="listView1Headers">
+      <value>存储类型	数据源代码	数据源名称	数据源类型	目标表名称	组合群代码	组合群名称	配置的BeanID	描述</value>
+	</property>
+    <property name="listView1ShowCols">
+	<value>saveType	FDPDsCode	FDPDsName	FDsTypeCode	FTargetTab	FMGroupShare	FAssetGroupName	FBeanId	FDesc</value>
+    </property>
+   </bean>
+   <!-- end...shashijie 2013-2-25 STORY 3366 增加对存储类型字段处理 -->
+   
+   <bean id="daoprefield" class="com.yss.main.datainterface.DaoPretreatFieldBean" scope="prototype">
+   <property name="listView1Headers">
+     <value>数据源字段	目标表字段	Spring调用</value>
+   </property>
+   <property name="listView1ShowCols">
+     <value>FDsField	FTargetField	FSICode</value>
+   </property>
+   </bean>
+   
+   
+    <bean id="daofilecontent" class="com.yss.main.datainterface.DaoFileContentBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>起始行	读取位置	读取长度	对应表字段	对应表字段名称	转换格式	文件内容字典	文件内容字典名称	描述	排序状态	不导出此列</value>
+	  <!--增加排序字段，导出状态　 by leeyu　QDV4易方达2009年8月13日01_B MS00995 20100223 -->
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FBeginRow	FLoadIndex	FLoadLen	FTabFeild	FFieldDesc	FFormat	FFileContentDict	FDictName	FDesc	FOrder	FUnExport</value>
+	  <!--增加排序字段 ，导出状态　 by leeyu　QDV4易方达2009年8月13日01_B MS00995 20100223 -->
+	 </property>
+   </bean>
+   
+   
+   <!--xuqiji 20100303 MS00948  QDV4易方达2010年1月22日01_A-->
+   <!--wuweiqi 20101102 QDV4深圳赢时胜2010年10月8日01_A -->
+   <!-- add...shashijie 2013-2-22 STORY 3366 增加对存储类型字段处理 -->
+   <bean id="cusconfigure" class="com.yss.main.datainterface.DaoCusConfigureBean" scope="prototype">
+        <!--guolongchao 20110916 SRORY 1285 添加菜单条代码，名称 -->
+    	 <property name="listView1Headers">
+	  <value>存储类型	接口代码	接口名称	分割类型	分割标记	接口类型名称	文件类型	导出编码方式	对应表名	对应表描述	文件名描述	文件头描述	文件内容描述	文件尾描述	预处理代码组	描述	导出EXCEL是否加密	菜单条代码	菜单条名称</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>saveType	FCusCfgCode	FCusCfgName	FSplitTypeValue	FSplitMark	FCusCfgTypeValue	FFileTypeValue	CfgENCode	FTabName	FTabDesc	FFileNameDesc	FFileInfoDesc	FFileCntDesc	FFileTrailDesc	FDPCodes	FDesc	EXCELPWD	FMenuBarCode	FMenuBarName</value>
+	 </property>
+	  <property name="funName">
+	     <value>interface</value>
+	  </property>
+          <property name="refName">
+             <value >000221</value>
+          </property>
+   </bean>
+   <!-- end...shashijie 2013-2-22 STORY 3366 增加对存储类型字段处理 -->
+   
+   <!--  by leeyu 20100225 QDII4.1赢时胜上海2010年02月10日01_AB MS00878-->
+   <bean id="daofilefilter" class="com.yss.main.datainterface.DaoFileFilterBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>字段代码	字段类型代码	字段类型名称	筛选内容	描述</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FFieldCode	FFieldType	FFieldTypeName	FContent	FDesc</value>
+	 </property>
+	  <property name="funName">
+	     <value>interface</value>
+	  </property>
+          <property name="refName">
+             <value >000221</value>
+          </property>
+   </bean>
+   <!--  by leeyu 20100225 QDII4.1赢时胜上海2010年02月10日01_AB MS00878-->
+   
+   <bean id="groupset" class="com.yss.main.datainterface.DaoGroupSetBean" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value></value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value></value>
+	 </property>
+   </bean>
+
+   <bean id="tgttabcond" class="com.yss.main.datainterface.DaoTgtTabCond" scope="prototype">
+    	 <property name="listView1Headers">
+	  <value>数据源代码	数据源名称	描述</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FDPDsCode	FDPDsName	FDesc</value>
+	 </property>
+   </bean>
+
+     <bean id="commonprefun" class="com.yss.main.operdeal.datainterface.CommonPretFun" scope="prototype"></bean>
+     <bean id="datamanage" class="com.yss.main.datainterface.DaoInterfaceManageBean" scope="prototype"></bean>
+	 <bean id="daooperdeal" class="com.yss.main.operdeal.datainterface.BaseDaoOperDeal" scope="prototype"></bean>
+	 <bean id="imp" class="com.yss.main.operdeal.datainterface.ImpCusInterface" scope="prototype"></bean>
+	 <bean id="exp" class="com.yss.main.operdeal.datainterface.ExpCusInterface" scope="prototype"></bean>
+   <bean id="xmlconfigure" class="com.yss.main.datainterface.DaoXMLConfigureBean" scope="prototype">
+         <property name="listView1Headers">
+	  <value>接口代码	接口名称	读取方式	内容分隔标记	通用分隔符	描述</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+	  <value>FCusCfgCode	FCusCfgName	FReadType	FFileConLisSepSign	FLisSep	FDesc</value>
+	 </property>
+   </bean>
+   <bean id="paraminterface" class="com.yss.main.datainterface.DaoParamInterface" scope="prototype"></bean>
+   <bean id="interfaceparmamadmin" class="com.yss.main.datainterface.cnstock.CNInterfaceParamAdmin" scope="prototype"></bean>
+   <bean id="ratespecies" class="com.yss.main.datainterface.cnstock.RateSpeciesTypeBean" scope="prototype">
+         <property name="listView1Headers">
+           <value>费率类型	费率品种	交易费率	大宗交易费率	起点金额	启用日期	ETF代码	费用上限	创建人	创建时间	审核人	审核时间</value>
+	 </property>
+    	 <property name="listView1ShowCols">
+    	 <!-- edit by songjie 2012.11.13 STORY #3230 需求深圳-[南方]QDIIV4[低]20121102001 修改 FExchangeRate、FBigExchange显示精度 -->
+	  <value>FVocName1	FVocName2	FExchangeRate;#,##0.########	FBigExchange;#,##0.########	FStartMoney;#,##0.####	FStartDate	FETFCode	FUPPERLIMIT;#,##0.####	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+	 </property>
+	 <property name="moduleName">
+	     <value>datainterface</value>
+	  </property>
+	  <property name="funName">
+	     <value>ratespecies</value>
+	  </property>
+     <property name="refName">
+       <value >000997</value>
+     </property>
+   </bean>
+   <bean id="brokerrate" class="com.yss.main.datainterface.cnstock.BrokerRateBean" scope="prototype">
+  	<property name="listView1Headers">
+  	<!-- edit by songjie 2012.11.12 STORY #3230 需求深圳-[南方]QDIIV4[低]20121102001 添加 大宗交易佣金利率 -->
+    	<value>组合代码	组合名称	券商代码	券商名称	席位地点	席位号	席位名称	品种代码	品种类型	佣金利率	大宗交易佣金利率	起点金额	启用日期	计算深圳佣金小数保留位数	计算深圳佣金过程中费用小数保留位数	创建人	创建时间	审核人	审核时间</value>
+	</property>
+    <property name="listView1ShowCols">
+    <!-- edit by songjie 2012.11.12 STORY #3230 需求深圳-[南方]QDIIV4[低]20121102001 添加 FBigYJRate -->
+	  	<value>FPortCode	fportname1	FBrokerCode	fbrokername1	FVocName1	FSeatCode	fseatname1	FSpeciesType	fcatname1	FYJRate;#,##0.####	FBigYJRate;#,##0.####	FStartMoney;#,##0.####	FStartDate	FYJPreci	FYJCoursePreci	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+	</property>
+   </bean>
+   
+   <!-- MS01421  QDV4华安2010年07月07日01_AB add by jiangshichao -->
+   <bean id="datacenter" class="com.yss.main.operdeal.datainterface.dataCenter.BaseDataCenter" scope="prototype"/>
+   <bean id="excharage" class="com.yss.main.operdeal.datainterface.dataCenter.ImpExchgRateDeal" scope="prototype"/>
+   <bean id="fundasset" class="com.yss.main.operdeal.datainterface.dataCenter.ImpFundassetDeal" scope="prototype"/>
+   <bean id="fundfinancevalue" class="com.yss.main.operdeal.datainterface.dataCenter.ImpFundFinanceValueDeal" scope="prototype"/>
+   <bean id="fundnetvalue" class="com.yss.main.operdeal.datainterface.dataCenter.ImpFundNetValueDeal" scope="prototype"/>
+   <bean id="tradeinfo" class="com.yss.main.operdeal.datainterface.dataCenter.ImpTradeInfoDeal" scope="prototype"/>
+   <bean id="ratetrade" class="com.yss.main.operdeal.datainterface.dataCenter.ImpRateTrade" scope="prototype"/>
+   <!-- MS01421  QDV4华安2010年07月07日01_AB end                -->
+   
+   <!--add by hongqingbing 20130821 story #4357 分级产品数据中心接口-->
+   <bean id="multiclassfundnetvalue" class="com.yss.main.operdeal.datainterface.dataCenter.ImpMultiClassFundNetValueDeal" scope="prototype"/>
+   <!--story #4357 分级产品数据中心接口 end                        -->
+   
+</beans>
+
+
+

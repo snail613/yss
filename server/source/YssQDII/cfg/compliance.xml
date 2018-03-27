@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="UTF-8"?> 
+<beans xmlns="http://www.springframework.org/schema/beans" 
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+       xmlns:p="http://www.springframework.org/schema/p" 
+       xsi:schemaLocation="http://www.springframework.org/schema/beans 
+        http://www.springframework.org/schema/beans/spring-beans-2.0.xsd"> 
+
+	<description>Spring Quick Start</description>
+
+<bean id="compindexcfg" class="com.yss.main.compliance.CompIndexCfgBean" scope="prototype">
+	<property name="listView1Headers">
+		<value>指标配置代码	指标配置名称	指标类型	BeanID	监控参数	关联报表代码	储存方式	事前监控	日终监控</value>
+	</property>
+	<property name="listView1ShowCols">
+		<value>FIndexCfgCode	FIndexCfgName	FIndexTypeName	FBeanId	FCompParam	FRepCode	FMemoyWayName	FBefore	FFinal</value>
+	</property>
+	<property name="moduleName">
+		<value>compliance</value>
+	</property>
+	<property name="funName">
+		<value>compindexcfg</value>
+	</property>
+	<property name="refName">
+		<value>000201</value>
+	</property>
+</bean>
+
+<bean id="compgrade" class="com.yss.main.compliance.CompGradeBean" scope="prototype">
+   	<property name="listView1Headers">
+          <value>等级代码	等级名称	描述</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FGradeCode	FGradeName	FDesc</value>
+      </property>
+        <property name="moduleName">
+	     <value>compliance</value>
+	  </property>
+	  <property name="funName">
+	     <value>compgrade</value>
+	  </property>
+          <property name="refName">
+             <value >000100</value>
+          </property>
+
+	</bean>
+<bean id="indextemplate" class="com.yss.main.compliance.IndexTemplateBean" scope="prototype">
+   	<property name="listView1Headers">
+          <value>指标模版代码	指标模版名称	启用日期</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FIndexTempCode	FIndexTempName	FStartDate</value>
+      </property>
+
+         <property name="moduleName">
+	     <value>compliance</value>
+	  </property>
+	  <property name="funName">
+	     <value>indextemp</value>
+	  </property>
+          <property name="refName">
+             <value >0000101</value>
+          </property>
+	</bean>
+<bean id="compindex" class="com.yss.main.compliance.CompIndexBean" scope="prototype">
+   	<property name="listView1Headers">
+          <value>指标模版代码	指标代码	指标名称	下单前监控	前监控方式	下单后监控	后监控方式	日终监控	监控等级代码	监控等级名称	范围类型	监控处理方式	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FIndexTempCode	FIndexCode	FIndexName	FBOrderValue	FBCompWayValue	FAOrderValue	FACompWayValue	FEndOfDayValue	FEndCompGrade	EndCompGradeName	FRangeTypeValue	FCompDealWayValue	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+
+            <property name="moduleName">
+	     <value>compliance</value>
+	  </property>
+	  <property name="funName">
+	     <value>compindex</value>
+	  </property>
+          <property name="refName">
+             <value >0000200</value>
+          </property>
+	</bean>
+<bean id="indexcondition" class="com.yss.main.compliance.CompIndexCondBean" scope="prototype">
+   	<property name="listView1Headers">
+          <value>条件编号	监控类型	属性类型	符号	监控值	关系	属性代码	属性名称	分母属性代码	分母属性名称	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FConNum	FCompTypeValue	FAttrTypeValue	FSign	FValue	FConRela	FAttr	FAttrName	FDenominaAttr	FDenominaAttrName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+
+
+            <property name="moduleName">
+	     <value>compliance</value>
+	  </property>
+	  <property name="funName">
+	     <value>indexcondition</value>
+	  </property>
+          <property name="refName">
+             <value >0000201</value>
+          </property>
+	</bean>
+
+<bean id="compattr" class="com.yss.main.compliance.CompAttrBean" scope="prototype">
+   	<property name="listView1Headers">
+          <value>监控属性代码	监控属性名称	属性类型	数据类型	类型代码	参数	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FCompAttrCode	FCompAttrName	FAttrTypeDesc	FDataTypeDesc	FCatCodes	FParam	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+
+           <property name="moduleName">
+	     <value>compliance</value>
+	  </property>
+	  <property name="funName">
+	     <value>compattr</value>
+	  </property>
+          <property name="refName">
+             <value >000101</value>
+          </property>
+	</bean>
+<bean id="comprep" class="com.yss.main.compliance.CompRepBean" scope="prototype">
+	  <property name="reportFields1">
+         <value>DDate	PortCode	PortName	TemplateCode	TemplateName	CompIndexCode	CompIndexName	CompWay	CompResulte</value>
+      </property>
+      <property name="reportHeaders1">
+         <value>日期:1:0	组合代码:1:0	组合名称:1:0	监控模版:0:1		监控指标:0:1		监控结果:1:0
+			代码	名称	代码	名称	</value>
+      </property>
+	</bean>
+<bean id="compportindexlink" class="com.yss.main.compliance.CompPortIndexLinkBean" scope="prototype">
+	  <property name="listView1ShowCols">
+         <value>FIndexCfgCode	FIndexCfgName	FCtlGrpCode</value>
+      </property>
+      <property name="listView1Headers">
+         <value>监控指标代码	监控指标名称	控件组代码</value>
+      </property>
+      <property name="moduleName">
+	     <value>compliance</value>
+	  </property>
+	  <property name="funName">
+	     <value>compportindexlink</value>
+	  </property>
+          <property name="refName">
+             <value >0001010</value>
+          </property>
+	</bean>
+	<!--add by xuqiji 20090603 QDV4建行2009年5月15日01_A  MS00466 监控模块针对监控指标和监控所需数据来源需求开发 -->
+	<bean id="compstockpool" class="com.yss.main.compliance.CompStockPoolBean" scope="prototype">
+   	<property name="listView1Headers">
+          <value>证券代码	证券名称	品种代码	品种明细代码	国家代码	ISIN代码	外部代码	描述	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FSecurityCode	FSecurityName	FCatCode	FSubCatCode	FCountryCode	FISINCode	FExternalCode	FDesc	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+           <property name="moduleName">
+	     <value>compliance</value>
+	  </property>
+	  <property name="funName">
+	     <value>compattr</value>
+	  </property>
+          <property name="refName">
+             <value >0003001</value>
+          </property>
+	</bean>
+	<!-- end -->
+
+	<!--added by liubo QDV4赢时胜（招商银行）2011年08月16日01_A -->
+	<bean id="prompting" class="com.yss.main.compliance.PromptingBean" scope="prototype">
+   	<property name="listView1Headers">
+          <value>组合代码	组合名称	提示函日期格式	提示函导出路径	投资监督经理	托管行代码	托管行名称	联系人代码	联系人名称	制作人	制作时间	审核人	审核时间</value>
+      </property>
+      <property name="listView1ShowCols">
+        <value>FPortCode	FPortName	FDateFormat	FTransferPath	FSupervisionUserCode	FTrusteeCode	FTrusteeName	FLinkManCode	FLinkManName	FCreator	FCreateTime	FCheckUser	FCheckTime</value>
+      </property>
+           <property name="moduleName">
+	     <value>compliance</value>
+	  </property>
+	  <property name="funName">
+	     <value>Prompting</value>
+	  </property>
+          <property name="refName">
+             <value >0001011</value>
+          </property>
+	</bean>
+
+	<!-- end -->
+	<!--  -->
+	<bean id="compresult" class="com.yss.main.operdeal.report.compliance.pojo.ControlManagerBean" scope="prototype">
+	  <property name="listView1Headers">
+         <value>监控日期	组合代码	组合名称	监控指标代码	监控指标名称	监控类型	分子	分母	实际比值	阀值</value>
+      </property>
+      <property name="listView1ShowCols">
+         <value>FCOMPDATE	FPortCode	FPortName	FINDEXCFGCODE	FINDEXCFGNAME	FCOMPRESULT	FNUMERATOR	FDENOMINATOR	FFACTRATIO	FCOMPSTANDARD</value>
+      </property>
+	</bean>
+	<!--  -->
+</beans>
+
